@@ -1,0 +1,85 @@
+<odoo>
+    <data>
+
+
+<!-- ############################################################################################################### -->
+
+        <!--        Scheduled action for assign salesperson on lead based on contact-->
+        <record id="ir_cron_manage_salesperson_on_activity_in_lead" model="ir.cron">
+            <field name="name">Update Sales Person On Lead/Activities</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="state">code</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">hours</field>
+            <field name="code">
+partner_ids = env['res.partner'].search([('opportunity_ids', '!=', False)])
+for partner_id in partner_ids:
+    opportunity_ids = partner_id.opportunity_ids
+    if opportunity_ids:
+        opportunity_id = opportunity_ids.sorted('create_date')[-1]
+        if not partner_id.user_id and opportunity_id.user_id:
+            partner_id.with_context(from_server=True).write({'user_id': opportunity_id.user_id.id})
+        for opportunity_id in opportunity_ids:
+            if opportunity_id.user_id != partner_id.user_id and partner_id.user_id.active:
+                last_user_id = opportunity_id.user_id
+                opportunity_id.with_context(from_server=True).write({'user_id': partner_id.user_id.id})
+                for activity_id in opportunity_id.activity_ids:
+                    if activity_id.user_id != opportunity_id.user_id and activity_id.user_id == last_user_id:
+                        activity_id.write({'user_id': opportunity_id.user_id.id})
+            </field>
+        </record>
+
+
+<!-- ############################################################################################################### -->
+
+        <!--   Server Action for remove user from follower which user is archived   -->
+        <record id="ir_server_remove_follower_when_user_archived" model="ir.actions.server">
+            <field name="name">Remove From Follower Which User Is Archived</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field name="state">code</field>
+            <field name="code">
+for rec in records:
+    if rec.active == False:
+        for follower_id in env['mail.followers'].search([('partner_id.user_ids', '=', rec.id)]):
+            follower_id.unlink()
+        for activity_id in env['mail.activity'].search([('user_id', '=', rec.id)]):
+            activity_id.unlink()
+            </field>
+        </record>
+
+        <!--   Automated Action for remove user from follower which user is archived   -->
+        <record id="base_automation_remove_follower_when_user_archived" model="base.automation">
+            <field name="name">Remove From Follower Which User Is Archived</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field name="trigger">on_create_or_write</field>
+            <field name="trigger_field_ids" eval="[(4, ref('base.field_res_users__active'))]"/>
+            <field name="action_server_ids" eval="[(4, ref('access_rights_management.ir_server_remove_follower_when_user_archived'))]"/>
+        </record>
+
+<!-- ############################################################################################################### -->
+
+        <!--   Server Action for remove user from follower which user is archived   -->
+        <record id="ir_server_create_task_on_internal_erp" model="ir.actions.server">
+            <field name="name">CAP Create a task on internal ERP</field>
+            <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+            <field name="state">code</field>
+            <field name="code">
+INTERNAL_ERP = 1970
+SOLVED = 4
+HARIKET = 913
+KONSULTOO_INDIA = 246820
+
+task = env['project.task'].create({
+    'name': record.name,
+    'project_id': INTERNAL_ERP,
+    'description': record.description,
+    'user_ids' : [(4, HARIKET)],
+    'partner_id' : KONSULTOO_INDIA,
+})
+task.message_post(body="Task created from ticket " + str(record.id))
+record['stage_id'] = SOLVED
+record.message_post(body="Your ticket is considered as an Evolution. A Task is created in Internal ERP Project. This ticket has been closed.")
+            </field>
+        </record>
+    </data>
+</odoo>

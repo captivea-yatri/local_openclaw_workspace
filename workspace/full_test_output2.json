@@ -1,0 +1,499 @@
+[
+  {
+    "tc": 10,
+    "module": "res.partner",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 59,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=2280134"
+  },
+  {
+    "tc": 59,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "PASS",
+    "detail": "Deleted id=2280134"
+  },
+  {
+    "tc": 60,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 2)"
+  },
+  {
+    "tc": 61,
+    "module": "crm.lead",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 62,
+    "module": "crm.lead",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 62,
+    "module": "crm.lead",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'description': 'QA edit'}"
+  },
+  {
+    "tc": 63,
+    "module": "crm.lead",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=526641"
+  },
+  {
+    "tc": 63,
+    "module": "crm.lead",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 64,
+    "module": "crm.lead",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 65,
+    "module": "sale.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 66,
+    "module": "sale.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 66,
+    "module": "sale.order",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'note': 'QA edit note'}"
+  },
+  {
+    "tc": 67,
+    "module": "sale.order",
+    "action": "Create (missing field)",
+    "status": "PASS",
+    "detail": "Expected error: The operation cannot be completed: Missing required value for the field 'Customer' (partner_id).\nModel: 'Sales Order' (sale.order)\n- create/update: a mandatory field is not set\n- delete: another model requires the record being deleted, you can archive it instead\n"
+  },
+  {
+    "tc": 68,
+    "module": "sale.order",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 2)"
+  },
+  {
+    "tc": 69,
+    "module": "project.project",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 70,
+    "module": "project.project",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 70,
+    "module": "project.project",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'description': 'QA edit'}"
+  },
+  {
+    "tc": 71,
+    "module": "project.project",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Project' (project.project) records.\n\nThis operation is allowed for the following groups:\n\t- Project/Administrator\n\t- Can Create/Delete Project\n\t- Super Admin Project\n\t- Team Director\n\t- VP of Quality and Knowledge\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 72,
+    "module": "project.project",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 73,
+    "module": "project.task",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 74,
+    "module": "project.task",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 74,
+    "module": "project.task",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'name': 'QA Validation Task - Edit'}"
+  },
+  {
+    "tc": 75,
+    "module": "project.task",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=221289"
+  },
+  {
+    "tc": 75,
+    "module": "project.task",
+    "action": "Delete",
+    "status": "PASS",
+    "detail": "Deleted id=221289"
+  },
+  {
+    "tc": 76,
+    "module": "project.task",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 2)"
+  },
+  {
+    "tc": 77,
+    "module": "account.analytic.line",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 78,
+    "module": "account.analytic.line",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 78,
+    "module": "account.analytic.line",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'name': 'QA Timesheet Edit'}"
+  },
+  {
+    "tc": 79,
+    "module": "account.analytic.line",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=563493"
+  },
+  {
+    "tc": 79,
+    "module": "account.analytic.line",
+    "action": "Delete",
+    "status": "PASS",
+    "detail": "Deleted id=563493"
+  },
+  {
+    "tc": 80,
+    "module": "account.analytic.line",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 2)"
+  },
+  {
+    "tc": 81,
+    "module": "account.move",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 82,
+    "module": "account.move",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 82,
+    "module": "account.move",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'narration': 'QA edit'}"
+  },
+  {
+    "tc": 83,
+    "module": "account.move",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault The operation cannot be completed: Another model is using the record you are trying to delete.\n\nThe troublemaker is: 'Journal Item' (account.move.line)\nThanks to the following constraint: 'Account' (account_id)\nHow about archiving the record instead?"
+  },
+  {
+    "tc": 84,
+    "module": "account.move",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 2)"
+  },
+  {
+    "tc": 85,
+    "module": "account.asset",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 86,
+    "module": "account.asset",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 86,
+    "module": "account.asset",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'name': 'QA Asset Edit'}"
+  },
+  {
+    "tc": 87,
+    "module": "account.asset",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault Traceback (most recent call last):\n  File \"/home/odoo/src/odoo/addons/rpc/controllers/xmlrpc.py\", line 162, in xmlrpc_2\n    response = self._xmlrpc(service)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/addons/rpc/controllers/xmlrpc.py\", line 134, in _xmlrpc\n    result = dispatch_rpc(service, method, params)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/odoo/http.py\", line 449, in dispatch_rpc\n    return dispatch(method, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/odoo/service/model.py\", line 133, in dispatch\n    res = execute_cr(cr, uid, model, method_, args, kw)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/user/rpc_helper/patch.py\", line 19, in protected__execute_cr\n    return protected__execute_cr._orig__execute_cr(cr, uid, obj, method, *args, **kw)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/odoo/service/model.py\", line 150, in execute_cr\n    result = retrying(partial(call_kw, recs, method, args, kw), env)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/odoo/service/model.py\", line 188, in retrying\n    result = func()\n             ^^^^^^\n  File \"/home/odoo/src/odoo/odoo/service/model.py\", line 97, in call_kw\n    result = method(recs, *args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/odoo/orm/decorators.py\", line 365, in create\n    return method(self, vals_list)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/addons/base_automation/models/base_automation.py\", line 868, in create\n    records = create.origin(self.with_env(automations.env), vals_list, **kw)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/odoo/orm/decorators.py\", line 365, in create\n    return method(self, vals_list)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/user/cap_automatic_deferred_earnings_account/models/account_assets.py\", line 79, in create\n    res = super(AccountAsset, self).create(vals_list)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/odoo/orm/decorators.py\", line 365, in create\n    return method(self, vals_list)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/enterprise/account_asset/models/account_asset.py\", line 528, in create\n    new_recs = super(AccountAsset, self.with_context(mail_create_nolog=True)).create(vals_list)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/odoo/orm/decorators.py\", line 365, in create\n    return method(self, vals_list)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/addons/mail/models/mail_thread.py\", line 328, in create\n    threads = super(MailThread, self).create(vals_list)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/odoo/orm/decorators.py\", line 365, in create\n    return method(self, vals_list)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/addons/analytic/models/analytic_mixin.py\", line 180, in create\n    return super().create(vals_list)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/odoo/orm/decorators.py\", line 365, in create\n    return method(self, vals_list)\n           ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/odoo/orm/models.py\", line 4654, in create\n    raise ValueError(f\"Invalid field {field_name!r} in {self._name!r}\")\nValueError: Invalid field 'category_id' in 'account.asset'\n"
+  },
+  {
+    "tc": 88,
+    "module": "account.asset",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 2)"
+  },
+  {
+    "tc": 89,
+    "module": "purchase.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 90,
+    "module": "purchase.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 90,
+    "module": "purchase.order",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'note': 'QA edit'}"
+  },
+  {
+    "tc": 91,
+    "module": "purchase.order",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=15"
+  },
+  {
+    "tc": 91,
+    "module": "purchase.order",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 92,
+    "module": "purchase.order",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 93,
+    "module": "hr.employee",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 94,
+    "module": "hr.employee",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 94,
+    "module": "hr.employee",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'name': 'QA Employee Edit'}"
+  },
+  {
+    "tc": 95,
+    "module": "hr.employee",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=1510"
+  },
+  {
+    "tc": 95,
+    "module": "hr.employee",
+    "action": "Delete",
+    "status": "PASS",
+    "detail": "Deleted id=1510"
+  },
+  {
+    "tc": 96,
+    "module": "hr.employee",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 2)"
+  },
+  {
+    "tc": 117,
+    "module": "helpdesk.ticket",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 118,
+    "module": "helpdesk.ticket",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 118,
+    "module": "helpdesk.ticket",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'description': 'QA edit'}"
+  },
+  {
+    "tc": 119,
+    "module": "helpdesk.ticket",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=10914"
+  },
+  {
+    "tc": 119,
+    "module": "helpdesk.ticket",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 120,
+    "module": "helpdesk.ticket",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 202,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=2280136"
+  },
+  {
+    "tc": 202,
+    "module": "sale.order",
+    "action": "Button Confirm",
+    "status": "PASS",
+    "detail": "Order 8553 confirmed"
+  },
+  {
+    "tc": 202,
+    "module": "sale.order",
+    "action": "Button Confirm",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"The operation cannot be completed: Another model is using the record you are trying to delete.\\n\\nThe troublemaker is: 'Product' (product.template)\\nThanks to the following constraint: 'Skip For So Line' (skip_for_so_line_id)\\nHow about archiving the record instead?\">"
+  },
+  {
+    "tc": 202,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 2)"
+  },
+  {
+    "tc": 203,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=2280137"
+  },
+  {
+    "tc": 203,
+    "module": "sale.order",
+    "action": "Post Invoice",
+    "status": "FAIL",
+    "detail": "<Fault 1: 'Traceback (most recent call last):\\n  File \"/home/odoo/src/odoo/addons/rpc/controllers/xmlrpc.py\", line 162, in xmlrpc_2\\n    response = self._xmlrpc(service)\\n               ^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/addons/rpc/controllers/xmlrpc.py\", line 134, in _xmlrpc\\n    result = dispatch_rpc(service, method, params)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/odoo/http.py\", line 449, in dispatch_rpc\\n    return dispatch(method, params)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/odoo/service/model.py\", line 133, in dispatch\\n    res = execute_cr(cr, uid, model, method_, args, kw)\\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/user/rpc_helper/patch.py\", line 19, in protected__execute_cr\\n    return protected__execute_cr._orig__execute_cr(cr, uid, obj, method, *args, **kw)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/odoo/service/model.py\", line 150, in execute_cr\\n    result = retrying(partial(call_kw, recs, method, args, kw), env)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/odoo/service/model.py\", line 188, in retrying\\n    result = func()\\n             ^^^^^^\\n  File \"/home/odoo/src/odoo/odoo/service/model.py\", line 79, in call_kw\\n    method = get_public_method(model, name)\\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/home/odoo/src/odoo/odoo/service/model.py\", line 60, in get_public_method\\n    raise AttributeError(f\"The method \\'{model._name}.{name}\\' does not exist\")  # noqa: TRY004\\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nAttributeError: The method \\'sale.order.action_invoice_create\\' does not exist\\n'>"
+  },
+  {
+    "tc": 203,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 2)"
+  },
+  {
+    "tc": 204,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=2280138"
+  },
+  {
+    "tc": 204,
+    "module": "helpdesk.ticket",
+    "action": "Assign Ticket",
+    "status": "PASS",
+    "detail": "Assigned ticket 10915 to user 15030"
+  },
+  {
+    "tc": 204,
+    "module": "helpdesk.ticket",
+    "action": "Delete",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 204,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "PASS",
+    "detail": "Deleted id=2280138"
+  }
+]

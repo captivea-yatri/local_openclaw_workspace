@@ -1,0 +1,104 @@
+{
+  "log": [
+    {
+      "step": "auth",
+      "status": "PASS",
+      "detail": "uid=2"
+    },
+    {
+      "step": "create_partner",
+      "status": "PASS",
+      "detail": "partner_id=2280340"
+    },
+    {
+      "step": "fetch_product",
+      "status": "PASS",
+      "detail": "product_id=3019"
+    },
+    {
+      "step": "create_sales_order",
+      "status": "PASS",
+      "detail": "so_id=8667"
+    },
+    {
+      "step": "confirm_sales_order",
+      "status": "PASS",
+      "detail": "so_id=8667 confirmed"
+    },
+    {
+      "step": "create_project_manual",
+      "status": "PASS",
+      "detail": "project_id=2859"
+    },
+    {
+      "step": "status_lifecycle",
+      "status": "FAIL",
+      "detail": "Field 'x_status' not present on project.project; skipping status updates"
+    },
+    {
+      "step": "create_invoice",
+      "status": "PASS",
+      "detail": "invoice_id=341988"
+    },
+    {
+      "step": "post_invoice",
+      "status": "PASS",
+      "detail": "invoice_id=341988 posted"
+    },
+    {
+      "step": "set_due_future",
+      "status": "PASS",
+      "detail": "due=2026-06-04"
+    },
+    {
+      "step": "check_colour_future",
+      "status": "PASS",
+      "detail": "colour=green"
+    },
+    {
+      "step": "set_due_near",
+      "status": "PASS",
+      "detail": "due=2026-05-28"
+    },
+    {
+      "step": "check_colour_near",
+      "status": "PASS",
+      "detail": "colour=yellow"
+    },
+    {
+      "step": "set_due_past",
+      "status": "PASS",
+      "detail": "due=2026-05-23"
+    },
+    {
+      "step": "check_colour_past",
+      "status": "PASS",
+      "detail": "colour=red"
+    },
+    {
+      "step": "timesheet_blocked",
+      "status": "PASS",
+      "detail": "Expected error: <Fault 2: 'Timesheet logging is not possible due to a missing intercompany configuration. \\nPlease contact to the CEO for further guidance.'>"
+    },
+    {
+      "step": "set_colour_yellow",
+      "status": "PASS",
+      "detail": "Project colour forced to yellow for timesheet test"
+    },
+    {
+      "step": "timesheet_allowed",
+      "status": "FAIL",
+      "detail": "<Fault 2: 'Timesheet logging is not possible due to a missing intercompany configuration. \\nPlease contact to the CEO for further guidance.'>"
+    },
+    {
+      "step": "late_auth",
+      "status": "FAIL",
+      "detail": "Late‑auth could not be applied: <Fault 1: 'Traceback (most recent call last):\n  File \"/home/odoo/src/odoo/odoo/orm/models.py\", line 4381, in write\n    self._check_field_access(self._fields[field_name], \'write\')\n                             ~~~~~~~~~~~~^^^^^^^^^^^^\nKeyError: \'x_late_authorization\'\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"/home/odoo/src/odoo/addons/rpc/controllers/xmlrpc.py\", line 162, in xmlrpc_2\n    response = self._xmlrpc(service)\n               ^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/addons/rpc/controllers/xmlrpc.py\", line 134, in _xmlrpc\n    result = dispatch_rpc(service, method, params)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/odoo/http.py\", line 449, in dispatch_rpc\n    return dispatch(method, params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/odoo/service/model.py\", line 133, in dispatch\n    res = execute_cr(cr, uid, model, method_, args, kw)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/user/rpc_helper/patch.py\", line 19, in protected__execute_cr\n    return protected__execute_cr._orig__execute_cr(cr, uid, obj, method, *args, **kw)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/odoo/service/model.py\", line 150, in execute_cr\n    result = retrying(partial(call_kw, recs, method, args, kw), env)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/odoo/service/model.py\", line 188, in retrying\n    result = func()\n             ^^^^^^\n  File \"/home/odoo/src/odoo/odoo/service/model.py\", line 97, in call_kw\n    result = method(recs, *args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/addons/base_automation/models/base_automation.py\", line 896, in write\n    write.origin(self.with_env(automations.env), vals, **kw)\n  File \"/home/odoo/src/user/ksc_emp_customer_access/models/project_project.py\", line 41, in write\n    res = super(Project, self).write(vals)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/user/cap_requirements/model/project.py\", line 153, in write\n    return super(Project, self).write(vals)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/user/cap_domain/model/project.py\", line 102, in write\n    return super(Project, self).write(vals)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/addons/sale_timesheet/models/project_project.py\", line 170, in write\n    res = super().write(vals)\n          ^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/addons/sale_project/models/project_project.py\", line 194, in write\n    project = super().write(vals)\n              ^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/enterprise/timesheet_grid/models/project_project.py\", line 32, in write\n    result = super().write(vals)\n             ^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/addons/hr_timesheet/models/project_project.py\", line 150, in write\n    return super().write(vals)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/addons/project_sms/models/project_project.py\", line 25, in write\n    res = super().write(vals)\n          ^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/enterprise/documents_project/models/project_project.py\", line 109, in write\n    res = super().write(vals)\n          ^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/addons/project/models/project_project.py\", line 673, in write\n    res = super().write(vals) if vals else True\n          ^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/addons/mail/models/mail_alias_mixin_optional.py\", line 124, in write\n    super().write(record_vals)\n  File \"/home/odoo/src/odoo/addons/mail/models/mail_thread.py\", line 391, in write\n    result = super().write(vals)\n             ^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/enterprise/ai_fields/models/models.py\", line 57, in write\n    res = super().write(vals)\n          ^^^^^^^^^^^^^^^^^^^\n  File \"/home/odoo/src/odoo/odoo/orm/models.py\", line 4383, in write\n    raise ValueError(f\"Invalid field {field_name!r} in {self._name!r}\") from e\nValueError: Invalid field 'x_late_authorization' in 'project.project'\n'>"
+    },
+    {
+      "step": "create_requirement",
+      "status": "FAIL",
+      "detail": "<Fault 4: \"Uh-oh! Looks like you have stumbled upon some top-secret records.\n\nSorry, Sébastien RISS (id=2) doesn't have 'create' access to:\n- Project Domain Information (project.domain)\n\nIf you really, really need access, perhaps you can win over your friendly administrator with a batch of freshly baked cookies.\">"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_mailing_mailing_form_inherited_custom" model="ir.ui.view">
+        <field name="name">mailing.mailing.form.inherited.custom</field>
+        <field name="model">mailing.mailing</field>
+        <field name="inherit_id" ref="mass_mailing.view_mail_mass_mailing_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_launch']" position="attributes">
+                <attribute name="groups">access_rights_management.role_marketing_manager,access_rights_management.role_vp_of_marketing,access_rights_management.role_president</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_cancel']" position="attributes">
+                <attribute name="groups">access_rights_management.role_marketing_manager,access_rights_management.role_vp_of_marketing,access_rights_management.role_president</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_schedule']" position="attributes">
+                <attribute name="groups">access_rights_management.role_marketing_manager,access_rights_management.role_vp_of_marketing,access_rights_management.role_president</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

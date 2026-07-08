@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="hr_applicant_view_form_inherit_roles">
+        <field name="name">hr.applicant.view.form.inherit.roles</field>
+        <field name="model">hr.applicant</field>
+        <field name="inherit_id"
+               ref="hr_recruitment.hr_applicant_view_form"/>
+        <field name="arch" type="xml">
+            <button name="create_employee_from_applicant" position="replace">
+                <button string="Create Employee" name="create_employee_from_applicant" type="object" data-hotkey="q" groups="hr_recruitment.group_hr_recruitment_user,access_rights_management.role_administrative_responsible,access_rights_management.role_hr,access_rights_management.role_hr_responsible,access_rights_management.role_vps,access_rights_management.role_vp_of_sales"
+                        class="o_create_employee" invisible="employee_id or not active or not date_closed"/>
+            </button>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hr_job_form_inherit_published">
+        <field name="name">hr.job.form</field>
+        <field name="model">hr.job</field>
+        <field name="inherit_id" ref="hr.view_hr_job_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='website_id']" position="replace">
+                <field name="website_id" options="{'no_create': True}"
+                       groups="website.group_multi_website"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

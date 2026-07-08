@@ -1,0 +1,26 @@
+{
+  "_comment": "Optional overrides for Studio field names on your database. Leave null to auto-discover via keywords.",
+  "gamification.goal": {
+    "redefined_onboard_target": null,
+    "adjustment": null,
+    "bonus_for_reaching_target": null,
+    "commission_over_target_until_120": null,
+    "commission_over_target_after_120": null,
+    "completeness_score": null,
+    "month_advancment": null,
+    "team_manager_bonus": null,
+    "team_members_succeed_bonus": null,
+    "company": null
+  },
+  "hr.job": {
+    "pto_holidays_impact": null,
+    "bonus_when_reach_target": null,
+    "incentive_amount_offshore": null,
+    "commission_over_target_until_120": null,
+    "commission_over_target_after_120": null,
+    "percentage_over_target_team_manager": null
+  },
+  "hr.employee": {
+    "joining_date": "x_studio_joining_date"
+  }
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="quality_category_timesheet" model="quality.category">
+            <field name="name">Timesheet</field>
+            <field name="weight">10.0</field>
+        </record>
+        <record id="quality_category_pm_report" model="quality.category">
+            <field name="name">PM Report</field>
+            <field name="weight">20.0</field>
+        </record>
+        <record id="quality_category_project_status" model="quality.category">
+            <field name="name">Project Status</field>
+            <field name="weight">5.0</field>
+        </record>
+        <record id="quality_category_go_live_date" model="quality.category">
+            <field name="name">Go live Date</field>
+            <field name="weight">30.0</field>
+        </record>
+        <record id="quality_category_retention" model="quality.category">
+            <field name="name">Retention</field>
+            <field name="weight">30.0</field>
+        </record>
+    </data>
+</odoo>

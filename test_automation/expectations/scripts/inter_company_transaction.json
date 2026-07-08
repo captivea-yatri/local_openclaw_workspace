@@ -1,0 +1,7 @@
+{
+  "scenario": "inter_company_transaction",
+  "description": "Script matrix expectations for inter_company_transaction",
+  "full_access": [],
+  "blocked": {},
+  "notes": "Run run_script_matrix.py, review REPORT rows, then fill full_access and blocked."
+}

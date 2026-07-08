@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem name="Contacts"
+        id="contacts.menu_contacts"
+        sequence="20"
+        web_icon="contacts,static/description/icon.png"
+        groups="show_contacts,base.group_partner_manager"/>
+
+    <menuitem id="crm.crm_menu_root"
+              name="CRM"
+              groups="sales_team.group_sale_manager,role_marketing_manager,role_email_manager,role_community_manager,role_infographiste,role_webmaster,role_sales_hot,role_sales_cold_team_director,role_sales_cold_team_manager,role_sales_cold,show_sales,role_vps,role_cfo,role_cfo_for_his_company"/>
+
+    <menuitem id="crm.crm_menu_sales"
+              name="Sales"
+              parent="crm.crm_menu_root"
+              groups="show_sales,role_sales_hot,role_vps,role_cfo,role_cfo_for_his_company"
+              sequence="1"/>
+
+    <menuitem id="crm.crm_menu_report"
+              name="Reporting"
+              parent="crm.crm_menu_root"
+              sequence="20"
+              groups="sales_team.group_sale_salesman,role_community_manager,role_sales_hot,role_sales_cold_team_director,role_sales_cold_team_manager,role_sales_cold,role_vps,role_cfo,role_cfo_for_his_company"/>
+
+    <menuitem id="crm.crm_lead_menu_my_activities"
+              name="My Activities"
+              parent="crm.crm_menu_sales"
+              groups="sales_team.group_sale_salesman,role_sales_hot,role_vps,role_cfo,role_cfo_for_his_company"
+              action="crm.crm_lead_action_my_activities"
+              sequence="2"/>
+
+    <menuitem id="crm.crm_activity_report_menu"
+              name="Activities"
+              parent="crm.crm_menu_report"
+              groups="role_sales_hot,role_sales_cold_team_director,role_sales_cold_team_manager,role_sales_cold,role_vps,role_cfo,role_cfo_for_his_company,access_rights_management.role_vp_of_sales"
+              action="crm.crm_activity_report_action"
+              sequence="4"/>
+
+    <menuitem id="sale_crm.sale_order_menu_quotations_crm"
+              name="My Quotations"
+              action="sale.action_quotations"
+              parent="crm.crm_menu_sales"
+              groups="show_sales,role_sales_hot"
+              sequence="2"/>
+
+    <menuitem name="All Tasks"
+              id="project.menu_project_management"
+              parent="project.menu_main_pm"
+              sequence="1"
+              groups="role_administrative,role_administrative_responsible,role_management_control,role_operation,role_operation_on_boarder,role_sales_hot,role_team_director,role_team_manager,role_vp_of_sales,role_vps,role_hr,role_hr_responsible,role_legal,role_recruiter,role_webmaster,role_infographiste,role_community_manager,role_email_manager,role_marketing_manager,role_it_person,role_customer_referencer"/>
+
+    <menuitem id="hr_gamification.menu_hr_gamification"
+              parent="hr.menu_hr_root"
+              groups="role_administrative,role_administrative_responsible,role_community_manager,role_email_manager,role_it_person,role_infographiste,role_management_control,role_marketing_manager,role_operation,role_operation_on_boarder,override_purchase_rights,role_sales_cold_team_director,role_sales_cold_team_manager,role_sales_hot,role_sales_cold,show_sales,role_team_director,role_team_manager,role_webmaster,role_hr,role_hr_responsible,role_customer_referencer,role_legal,role_drh,role_cfo,role_cfo_for_his_company"
+              name="Challenges"
+              sequence="3"/>
+
+    <menuitem id="crm.crm_menu_config"
+              name="Configuration"
+              parent="crm.crm_menu_root"
+              action="crm.action_your_pipeline"
+              sequence="25" groups="sales_team.group_sale_manager,role_vp_of_marketing"/>
+
+    <menuitem id="crm.menu_crm_config_lead"
+              name="Pipeline"
+              parent="crm.crm_menu_config"
+              sequence="15"
+              groups="sales_team.group_sale_manager,role_vp_of_marketing"/>
+
+    <menuitem id="crm.menu_crm_lead_stage_act"
+              name="Stages"
+              sequence="0"
+              parent="crm.menu_crm_config_lead"
+              action="crm.crm_stage_action"
+              groups="base.group_no_one,role_vp_of_marketing"/>
+
+    <menuitem id="website_sale.menu_product_pages"
+              parent="website.menu_content"
+              groups="show_products"
+              name="Products"
+              action="website_sale.action_product_pages_list"/>
+
+    <menuitem name="Website"
+            id="website.menu_website_configuration"
+            sequence="95"
+            groups="show_website"
+            web_icon="website,static/description/icon.png"/>
+    
+    <menuitem id="purchase.menu_purchase_products" name="Products" parent="purchase.menu_purchase_root"
+              groups="show_products,purchase.group_purchase_user"
+              sequence="5"/>
+
+    <menuitem id="hr_timesheet.timesheet_menu_root"
+              name="Timesheets"
+              sequence="75"
+              groups="role_sales_hot,role_management_control,role_administrative_responsible,role_administrative,role_operation_on_boarder,role_operation,role_team_manager,role_team_director,role_vps,role_vp_of_sales,role_drh,role_hr,role_hr_responsible,role_cashflow_manager,role_budget_manager,role_legal,role_president,role_vp_of_marketing,role_cfo,role_cfo_for_his_company,role_vp_of_quality_and_knowledge,role_ceo,role_recruiter,role_webmaster,role_customer_referencer,role_infographiste,role_community_manager,role_email_manager,role_marketing_manager,role_it_person"
+              web_icon="hr_timesheet,static/description/icon_timesheet.png"/>
+
+    <menuitem id="hr_timesheet.menu_hr_time_tracking"
+              name="Timesheets"
+              parent="hr_timesheet.timesheet_menu_root"
+              groups="hr_timesheet.group_hr_timesheet_approver,role_sales_hot,role_management_control,role_administrative_responsible,role_administrative,role_operation_on_boarder,role_operation,role_team_manager,role_team_director,role_vps,role_vp_of_sales,role_drh,role_hr,role_hr_responsible,role_cashflow_manager,role_budget_manager,role_legal"
+              sequence="5"/>
+
+    <menuitem id="hr_timesheet.timesheet_menu_activity_all"
+              name="All Timesheets"
+              parent="hr_timesheet.menu_hr_time_tracking"
+              action="hr_timesheet.timesheet_action_all"
+              groups="hr_timesheet.group_hr_timesheet_approver,role_sales_hot,role_management_control,role_administrative_responsible,role_administrative,role_operation_on_boarder,role_operation,role_team_manager,role_team_director,role_vps,role_vp_of_sales,role_drh,role_hr,role_hr_responsible,role_cashflow_manager,role_budget_manager,role_legal"/>
+
+    <menuitem id="hr_timesheet.timesheet_menu_activity_mine"
+              name="My Timesheets"
+              groups="hr_timesheet.group_hr_timesheet_approver,role_operation,role_vps"
+              parent="hr_timesheet.menu_hr_time_tracking"
+              action="hr_timesheet.act_hr_timesheet_line"/>
+
+    <menuitem name="To Validate" id="timesheet_grid.menu_timesheet_grid_validate"
+              parent="hr_timesheet.timesheet_menu_root"
+              groups="access_rights_management.role_cfo,access_rights_management.role_ceo,access_rights_management.role_vp_of_quality_and_knowledge,access_rights_management.role_operation,access_rights_management.role_operation_on_boarder,access_rights_management.role_team_manager,access_rights_management.role_team_director,access_rights_management.role_vp_of_marketing,access_rights_management.role_administrative,access_rights_management.role_administrative_responsible,role_recruiter,role_webmaster,role_infographiste,role_community_manager,role_email_manager,role_marketing_manager,role_it_person,role_customer_referencer,role_hr,role_hr_responsible,role_drh"
+              sequence="10"/>
+
+    <menuitem name="Project"
+              id="project.menu_main_pm"
+              groups="project.group_project_manager,project.group_project_user,role_sales_hot,role_management_control,role_administrative_responsible,role_administrative,role_operation_on_boarder,role_operation,role_team_manager,role_team_director,role_vps,role_vp_of_sales,role_hr,role_hr_responsible,role_legal,role_recruiter,role_webmaster,role_infographiste,role_community_manager,role_email_manager,role_marketing_manager,role_it_person,role_customer_referencer"
+              web_icon="project,static/description/icon.png"
+              sequence="70"/>
+
+    <menuitem id="project.menu_project_config" name="Configuration" parent="project.menu_main_pm"
+              sequence="100"
+              groups="project.group_project_manager,access_rights_management.role_vp_of_quality_and_knowledge"/>
+
+    <menuitem action="project.open_task_type_form" id="project.menu_project_config_project" name="Task Stages"
+              parent="project.menu_project_config" sequence="10"
+              groups="base.group_no_one,role_vp_of_quality_and_knowledge"/>
+
+    <menuitem id="project.menu_project_report" name="Reporting" groups="role_vps,role_vp_of_sales"
+              parent="project.menu_main_pm" sequence="99"/>
+
+    <menuitem name="Go Live Change Request" id="ksc_project_go_live_maintainer.menu_glive_change_request"
+              parent="project.menu_main_pm"
+              action="ksc_project_go_live_maintainer.action_view_glive_change_request"
+              groups="base.group_no_one,project.group_project_user,role_sales_hot,role_management_control,role_administrative_responsible,role_administrative,role_team_director,role_team_manager,role_operation,role_operation_on_boarder,role_vps,role_vp_of_sales,role_hr,role_hr_responsible,role_legal"/>
+
+    <menuitem id="sale.sale_menu_root"
+              name="Sales"
+              web_icon="sale_management,static/description/icon.png"
+              groups="show_sales,role_sales_hot,role_management_control,role_administrative_responsible,role_administrative,role_vps,role_cfo,role_cfo_for_his_company,role_sales_cold,role_sales_cold_team_manager,role_sales_cold_team_director,role_team_director,role_cashflow_manager,role_budget_manager,role_legal"
+              sequence="30"/>
+
+    <menuitem id="sale.menu_sale_quotations"
+              name="Quotations"
+              parent="sale.sale_order_menu"
+              groups="sales_team.group_sale_salesman,role_sales_hot,role_management_control,role_administrative_responsible,role_administrative,role_vps,role_cfo,role_cfo_for_his_company,role_sales_cold,role_sales_cold_team_manager,role_sales_cold_team_director,role_team_director,role_cashflow_manager,role_budget_manager,role_legal"
+              sequence="10"/>
+
+    <menuitem id="sale.menu_sale_order"
+              name="Orders"
+              parent="sale.sale_order_menu"
+              action="sale.action_orders"
+              groups="sales_team.group_sale_salesman,role_sales_hot,role_management_control,role_administrative_responsible,role_administrative,role_vps,role_cfo,role_cfo_for_his_company,access_rights_management.role_sales_cold,role_sales_cold_team_manager,role_sales_cold_team_director,role_team_director,role_cashflow_manager,role_budget_manager,role_legal"
+              sequence="20"/>
+
+    <menuitem id="sale.res_partner_menu"
+              action="account.res_partner_action_customer"
+              parent="sale.sale_order_menu"
+              groups="sales_team.group_sale_salesman,role_sales_hot,role_management_control,role_administrative_responsible,role_administrative,role_vps,role_cfo,role_cfo_for_his_company,access_rights_management.role_sales_cold,role_sales_cold_team_manager,role_sales_cold_team_director,role_cashflow_manager,role_budget_manager,role_legal"
+              sequence="40"/>
+
+    <menuitem id="sale.menu_sale_invoicing"
+              name="To Invoice"
+              parent="sale.sale_menu_root"
+              groups="sales_team.group_sale_salesman,role_sales_hot,role_management_control,role_administrative_responsible,role_administrative,role_vps,role_cfo,role_cfo_for_his_company"
+              sequence="20"/>
+
+    <menuitem id="sale.product_menu_catalog"
+              name="Products"
+              parent="sale.sale_menu_root"
+              groups="sales_team.group_sale_salesman,role_sales_hot,role_management_control,role_administrative_responsible,role_administrative,role_vps,role_cfo,role_cfo_for_his_company,role_sales_cold,role_sales_cold_team_manager,role_sales_cold_team_director,role_team_director,role_cashflow_manager,role_budget_manager,role_legal"
+              sequence="30"/>
+
+    <menuitem id="sale.menu_sale_config"
+              parent="sale.sale_menu_root"
+              name="Configuration"
+              groups="sales_team.group_sale_manager,access_rights_management.role_cfo,role_cfo_for_his_company"/>
+
+    <menuitem name="Events"
+              id="event.event_main_menu"
+              sequence="125"
+              groups="show_sales"
+              web_icon="event,static/description/icon.png"/>
+
+    <menuitem id="sale_subscription.menu_sale_subscription_root"
+              name="Subscriptions"
+              sequence="40"
+              web_icon="sale_subscription,static/description/icon.png"
+              groups="show_sales,role_administrative_responsible"/>
+
+    <menuitem id="website.menu_website_global_configuration" parent="website.menu_website_configuration"
+              sequence="100" name="Configuration"
+              groups="base.group_system,access_rights_management.role_vp_of_marketing,access_rights_management.role_webmaster"/>
+
+    <menuitem name="Websites"
+              id="website.menu_website_websites_list"
+              action="website.action_website_list"
+              parent="website.menu_website_global_configuration"
+              groups="base.group_system,access_rights_management.role_vp_of_marketing"
+              sequence="10"/>
+
+    <menuitem name="Redirects"
+              id="website.menu_website_rewrite"
+              action="website.action_website_rewrite_list"
+              parent="website.menu_website_global_configuration"
+              sequence="30"
+              groups="base.group_system,access_rights_management.role_vp_of_marketing"/>
+
+    <menuitem name="Menus"
+              id="website.menu_website_menu_list"
+              action="website.action_website_menu"
+              parent="website.menu_website_global_configuration"
+              sequence="45"
+              groups="base.group_system,access_rights_management.role_vp_of_marketing"/>
+
+    <menuitem id="website_sale.menu_ecommerce" name="eCommerce"
+              parent="website.menu_website_configuration"
+              sequence="20"
+              groups="show_sales"/>
+
+    <menuitem id="website.menu_website_dashboard"
+              name="eCommerce"
+              sequence="20"
+              parent="website.menu_reporting"
+              action="website.ir_actions_server_website_dashboard"
+              groups="show_sales"
+              active="0"/>
+
+    <menuitem name="Accounting"
+              id="accountant.menu_accounting"
+              groups="account.group_account_readonly,account.group_account_invoice,role_sales_hot,role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"
+              web_icon="accountant,static/description/icon.png"
+              sequence="60"/>
+
+    <menuitem id="account.menu_board_journal_1"
+              name="Dashboard"
+              parent="accountant.menu_accounting"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"
+              sequence="1"/>
+
+    <menuitem id="account.menu_finance_reports" name="Reporting" sequence="20"
+              parent="accountant.menu_accounting"
+              groups="account.group_account_readonly,account.group_account_invoice,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+    <menuitem id="account.account_reports_legal_statements_menu" name="Statement Reports" sequence="1"
+              parent="account.menu_finance_reports"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+<!--    TODO : need to check in v18 Removed-->
+    <menuitem id="account_reports.menu_action_account_report_cash_flow" name="Cash Flow Statement"
+              action="account_reports.action_account_report_cs"
+              parent="account.account_reports_legal_statements_menu"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+    <menuitem id="account_reports.menu_action_account_report_balance_sheet" name="Balance Sheet"
+              action="account_reports.action_account_report_bs"
+              parent="account.account_reports_legal_statements_menu"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+    <menuitem id="account_reports.menu_action_account_report_profit_and_loss" name="Profit and Loss"
+              action="account_reports.action_account_report_pl"
+              parent="account.account_reports_legal_statements_menu"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+    <menuitem id="account_reports.menu_action_account_report_exec_summary" name="Executive Summary"
+              action="account_reports.action_account_report_exec_summary"
+              parent="account.account_reports_legal_statements_menu"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+    <menuitem id="account_reports.menu_action_account_report_sales" action="account_reports.action_account_report_sales"
+              parent="account.account_reports_legal_statements_menu" sequence="60"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+    <menuitem id="account_reports.menu_action_account_report_general_ledger" name="General Ledger"
+              parent="account_reports.account_reports_audit_reports_menu"
+              action="account_reports.action_account_report_general_ledger"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+    <menuitem id="account_reports.menu_action_account_report_coa" name="Trial Balance"
+              action="account_reports.action_account_report_coa"
+              parent="account_reports.account_reports_audit_reports_menu"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+    <menuitem id="account_reports.menu_action_account_report_ja" name="Journal Report"
+              action="account_reports.action_account_report_ja"
+              parent="account_reports.account_reports_audit_reports_menu"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+    <menuitem id="l10n_us_reports.check_register_menu"
+              name="Check Register"
+              parent="account_reports.account_reports_audit_reports_menu"
+              sequence="100"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"
+              action="l10n_us_reports.check_register_action"/>
+
+    <menuitem id="account_reports.menu_action_account_report_partner_ledger" name="Partner Ledger"
+              action="account_reports.action_account_report_partner_ledger"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative,access_rights_management.role_vps,access_rights_management.role_vp_of_sales"
+              parent="account.account_reports_partners_reports_menu"/>
+
+    <menuitem id="account_reports.menu_action_account_report_aged_receivable"
+              name="Aged Receivable" action="account_reports.action_account_report_ar"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative,access_rights_management.role_vps,access_rights_management.role_vp_of_sales"
+              parent="account.account_reports_partners_reports_menu"/>
+
+    <menuitem id="account_reports.menu_action_account_report_aged_payable"
+              name="Aged Payable" action="account_reports.action_account_report_ap"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative,access_rights_management.role_vps,access_rights_management.role_vp_of_sales"
+              parent="account.account_reports_partners_reports_menu"/>
+
+    <menuitem id="account_asset.menu_action_account_report_assets"
+              name="Depreciation Schedule"
+              action="account_asset.action_account_report_assets"
+              parent="account.account_reports_management_menu"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+    <menuitem id="l10n_in_reports.menu_account_report_gstr1" name="GSTR-1" sequence="6"
+              parent="l10n_in.account_reports_in_statements_menu" action="l10n_in_reports.action_account_report_gstr1"
+              groups="base.group_no_one,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+    <menuitem id="l10n_in_reports.menu_account_report_gstr3b" name="GSTR-3B" sequence="6"
+              parent="l10n_in.account_reports_in_statements_menu" action="l10n_in_reports.action_l10n_in_gstr3b"
+              groups="base.group_no_one,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+    <menuitem id="l10n_lu.account_reports_lu_statements_menu" name="Luxembourg" parent="account.menu_finance_reports"
+              sequence="5"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+<!--    TODO : need to check deferred revenue deferred expense-->
+    <menuitem parent="account.account_reports_management_menu"
+              id="account_reports.menu_action_account_report_deferred_expense"
+              action="account_reports.action_account_report_deferred_expense" sequence="104"
+              groups="account.group_account_readonly,role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+    <menuitem parent="account.account_reports_management_menu"
+              id="account_reports.menu_action_account_report_deferred_revenue"
+              action="account_reports.action_account_report_deferred_revenue" sequence="103"
+              groups="account.group_account_readonly,role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+<!--    <menuitem parent="account.menu_finance_entries_management" id="account_asset.menu_action_account_asset_form"-->
+<!--              action="account_asset.action_account_asset_form" sequence="101"-->
+<!--              groups="account.group_account_readonly,role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>-->
+
+
+    <menuitem id="account.account_management_menu" name="Management" parent="account.menu_finance_configuration"
+              groups="account.group_account_manager,role_management_control,role_administrative"/>
+
+<!--    TODO : need to check-->
+
+    <menuitem parent="account.account_management_menu" sequence="1"
+              id="account_asset.menu_action_account_asset_model_form"
+              action="account_asset.action_account_asset_model_form"
+              groups="account.group_account_manager,role_management_control,role_administrative"/>
+
+    <menuitem id="account.menu_finance_entries" name="Accounting"
+              parent="accountant.menu_accounting"
+              sequence="4"
+              groups="account.group_account_readonly,role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+    <menuitem id="account.menu_action_move_journal_line_form"
+              action="account.action_move_journal_line"
+              parent="account.menu_finance_entries"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"
+              sequence="1"/>
+
+    <menuitem id="account.menu_action_account_moves_all"
+              action="account.action_account_moves_all"
+              parent="account.menu_finance_entries"
+              groups="account.group_account_readonly,access_rights_management.role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"
+              sequence="10"/>
+
+    <menuitem id="account.menu_action_account_journal_form" action="account.action_account_journal_form"
+              parent="account.menu_finance_entries"
+              groups="account.group_account_manager,role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"
+              sequence="3"/>
+
+    <menuitem id="account.menu_finance_entries_management" name="Management" sequence="10"
+              parent="account.menu_finance_entries"
+              groups="account.group_account_invoice,account.group_account_readonly,role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+    <menuitem id="account.menu_finance_entries_actions" name="Actions" sequence="11"
+              parent="account.menu_finance_entries"
+              groups="account.group_account_user,role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+<!--    TODO : verify with menu reconcile in v18-->
+    <menuitem id="account_accountant.menu_account_reconcile" name="Reconcile"
+              parent="account.menu_finance_entries"
+              action="account_accountant.action_move_line_posted_unreconciled" sequence="65"
+              groups="account.group_account_user,role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"/>
+
+    <menuitem id="account.menu_finance_configuration" name="Configuration" sequence="35"
+              parent="accountant.menu_accounting"
+              groups="account.group_account_manager,role_management_control,role_administrative,role_budget_manager,group_can_synchronize_bank"/>
+
+    <menuitem id="account.account_account_menu" name="Accounting"
+              parent="account.menu_finance_configuration"
+              groups="account.group_account_manager,role_management_control,role_administrative"
+              sequence="3"/>
+
+    <menuitem id="account.menu_action_account_form" action="account.action_account_form"
+              groups="account.group_account_readonly,role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"
+              parent="account.account_account_menu"
+              sequence="1"/>
+
+    <menuitem id="account.menu_finance_payables"
+              name="Vendors"
+              groups="account.group_account_invoice,role_management_control,role_ceo,role_administrative,role_vps,role_vp_of_sales"
+              parent="accountant.menu_accounting"
+              sequence="3"/>
+
+    <menuitem id="account.account_banks_menu" name="Banks"
+              groups="account.group_account_manager,group_can_synchronize_bank"
+              parent="account.menu_finance_configuration" sequence="2"/>
+
+    <menuitem id="account.menu_action_account_bank_journal_form" action="account.action_new_bank_setting"
+              groups="account.group_account_manager,group_can_synchronize_bank" parent="account.account_banks_menu"
+              sequence="1"/>
+
+    <menuitem id="account.action_account_reconcile_model_menu" action="account.action_account_reconcile_model"
+              sequence="3" groups="account.group_account_user,group_can_synchronize_bank"
+              parent="account.account_banks_menu"/>
+
+    <menuitem name="Online Synchronization"
+              parent="account.account_banks_menu"
+              action="account_online_synchronization.action_account_online_link_form"
+              id="account_online_synchronization.menu_action_online_link_account"
+              groups="account.group_account_manager,group_can_synchronize_bank"
+              sequence="4"/>
+
+    <menuitem id="account.menu_analytic_accounting" name="Analytic Accounting"
+              parent="account.menu_finance_configuration"
+              groups="analytic.group_analytic_accounting,access_rights_management.role_management_control,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative"
+              sequence="6"/>
+
+    <menuitem id="account.account_analytic_def_account"
+              parent="account.menu_finance_configuration"
+              action="analytic.action_account_analytic_account_form"
+              groups="analytic.group_analytic_accounting,access_rights_management.role_management_control,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative"
+              sequence="1"/>
+
+    <menuitem name="Recruitment"
+              id="hr_recruitment.menu_hr_recruitment_root"
+              web_icon="hr_recruitment,static/description/icon.png"
+              groups="hr_recruitment.group_hr_recruitment_user,hr_recruitment.group_hr_recruitment_interviewer,role_recruiter,role_management_control,role_administrative_responsible,role_administrative,role_office_manager,role_team_manager,role_team_director,role_vps,role_vp_of_sales,role_hr,role_hr_responsible"
+              sequence="210"/>
+
+    <menuitem name="Reporting" id="hr_recruitment.report_hr_recruitment"
+              parent="hr_recruitment.menu_hr_recruitment_root"
+              groups="hr_recruitment.group_hr_recruitment_user,role_recruiter,role_management_control,role_administrative_responsible,role_administrative,role_office_manager,,role_vps,role_vp_of_sales,role_hr,role_hr_responsible"
+              sequence="99"/>
+
+    <menuitem id="hr_recruitment.menu_hr_recruitment_configuration" name="Configuration"
+              parent="hr_recruitment.menu_hr_recruitment_root"
+              groups="hr_recruitment.group_hr_recruitment_user,role_recruiter,role_administrative_responsible,role_office_manager,role_vps,role_vp_of_sales,role_hr,role_hr_responsible"
+              sequence="100"/>
+
+    <menuitem name="By Job Positions" parent="hr_recruitment.menu_crm_case_categ0_act_job"
+              id="hr_recruitment.menu_hr_job_position" action="hr_recruitment.action_hr_job"
+              sequence="1"
+              groups="hr_recruitment.group_hr_recruitment_user,role_recruiter,role_management_control,role_administrative_responsible,role_administrative,role_office_manager,role_vps,role_vp_of_sales,role_hr,role_hr_responsible"/>
+
+    <menuitem id="hr_recruitment.menu_hr_recruitment_config_employees" name="Employees"
+              parent="hr_recruitment.menu_hr_recruitment_configuration"
+              sequence="30" groups="hr.group_hr_user"/>
+
+    <menuitem action="account_batch_payment.action_batch_payment_in" name="Batch Payments"
+              id="account_batch_payment.menu_batch_payment_sales"
+              parent="account.menu_finance_receivables" sequence="18"
+              groups="account.group_account_readonly,role_management_control,role_administrative,role_vps,role_vp_of_sales,role_ceo"/>
+
+    <menuitem action="account_batch_payment.action_batch_payment_out" name="Batch Payments"
+              id="account_batch_payment.menu_batch_payment_purchases"
+              parent="account.menu_finance_payables" sequence="21"
+              groups="account.group_account_readonly,role_management_control,role_administrative,role_vps,role_vp_of_sales,role_ceo"/>
+
+    <menuitem id="hr_expense.menu_hr_expense_account_employee_expenses" name="Employee Expenses"
+              parent="account.menu_finance_payables"
+              groups="hr_expense.group_hr_expense_user,role_management_control,role_administrative_responsible,role_administrative"
+              action="hr_expense.action_hr_expense_account"/>
+
+    <menuitem id="hr_expense.menu_hr_expense_reports" name="Reporting" sequence="4"
+              parent="hr_expense.menu_hr_expense_root"
+              groups="hr_expense.group_hr_expense_manager,access_rights_management.role_administrative"/>
+
+    <menuitem id="helpdesk.menu_helpdesk_root" name="Helpdesk"
+              sequence="90"
+              groups="helpdesk.group_helpdesk_user,access_rights_management.show_helpdesk,role_ceo,role_vps,role_vp_of_sales,role_sales_cold_team_director,role_sales_cold_team_manager,role_sales_cold"/>
+
+    <menuitem name="Purchase"
+              id="purchase.menu_purchase_root"
+              groups="purchase.group_purchase_manager,purchase.group_purchase_user,role_it_person,role_marketing_manager,role_administrative_responsible,role_administrative,role_office_manager,role_team_director,role_vps,role_vp_of_sales,role_vp_of_quality_and_knowledge"
+              web_icon="purchase,static/description/icon.png"
+              sequence="135"/>
+
+    <menuitem id="sale_planning.sale_planning_menu_schedule_by_sale_order"
+              name="By Sales Order"
+              sequence="40"
+              parent="planning.planning_menu_schedule"
+              action="sale_planning.sale_planning_action_schedule_by_sale_order"
+              groups="role_president,role_vp_of_marketing,role_cfo,role_cfo_for_his_company,role_vp_of_quality_and_knowledge,role_ceo,role_vp_of_sales,role_vps,role_administrative_responsible,role_management_control,role_team_director,role_team_manager,role_operation,role_operation_on_boarder,role_administrative,role_sales_hot"/>
+
+    <!--  ################  After Live   ###################  -->
+
+    <menuitem id="helpdesk.helpdesk_menu_team_dashboard" action="helpdesk.helpdesk_team_dashboard_action_main"
+              sequence="5" parent="helpdesk.menu_helpdesk_root" name="Overview"
+              groups="helpdesk.group_helpdesk_user,access_rights_management.show_helpdesk"/>
+
+    <menuitem id="cap_quality_issue_log.menu_quality_issue_log"
+              parent="cap_quality_issue_log.menu_employee_performance_quality" sequence="1"
+              name="All Quality Issue Log" action="cap_quality_issue_log.action_quality_issue_log"
+              groups="access_rights_management.role_president,access_rights_management.role_ceo,access_rights_management.role_team_director"/>
+
+    <menuitem
+            id="hr.menu_human_resources_configuration"
+            name="Configuration"
+            parent="hr.menu_hr_root"
+            groups="hr.group_hr_user,access_rights_management.role_ceo"
+            sequence="100"/>
+
+    <menuitem
+            id="hr_skills.menu_human_resources_configuration_resume"
+            name="Resume"
+            parent="hr.menu_human_resources_configuration"
+            sequence="15"
+            groups="base.group_no_one,access_rights_management.role_hr,access_rights_management.role_hr_responsible"/>
+
+    <menuitem
+            id="hr.menu_view_employee_category_form"
+            name="Tags"
+            action="hr.open_view_categ_form"
+            parent="hr.menu_config_employee"
+            groups="base.group_no_one,access_rights_management.role_hr,access_rights_management.role_hr_responsible"
+            sequence="10"/>
+
+    <menuitem
+        id="hr_skills.hr_resume_line_type_menu"
+        name="Line Types"
+        action="hr_skills.hr_resume_type_action"
+        parent="hr_skills.menu_human_resources_configuration_resume"
+        sequence="3"
+        groups="base.group_no_one,access_rights_management.role_hr,access_rights_management.role_hr_responsible"/>
+
+    <menuitem id="gamification.gamification_definition_menu"
+              parent="hr.menu_human_resources_configuration"
+              action="gamification.goal_definition_list_action"
+              groups="access_rights_management.role_president,access_rights_management.role_vp_of_quality_and_knowledge"
+              sequence="20"/>
+
+    <menuitem
+        id="social.menu_social_global"
+        name="Social Marketing"
+        web_icon="social,static/description/icon.png"
+        sequence="105"
+        groups="access_rights_management.show_social"/>
+
+    <menuitem name="Surveys"
+              id="survey.menu_surveys"
+              groups="survey.group_survey_user,access_rights_management.role_customer_referencer"/>
+
+    <menuitem id="cap_hr_skill.skill_validator_main_menu" action="cap_hr_skill.action_skill_validator"
+              name="Skills Validator" parent="hr.menu_config_employee"
+              groups="base.group_system,access_rights_management.role_vp_of_quality_and_knowledge"/>
+
+    <menuitem id="cap_hr_skill.domain_skill_main_menu" action="cap_hr_skill.action_domain_skill"
+              name="Skills Domain" parent="hr.menu_config_employee"
+              groups="base.group_system,access_rights_management.role_vp_of_quality_and_knowledge"/>
+
+
+    <menuitem id="website_sale.menu_ecommerce_settings" name="eCommerce" sequence="50"
+              groups="access_rights_management.role_president"
+              parent="website.menu_website_global_configuration"/>
+
+
+<!--    ######################## V18 #####################-->
+    <menuitem id="data_cleaning.ir_model_menu_merge_action_manager"
+              name="Manual Merge"
+              parent="data_recycle.menu_data_cleaning_config"
+              action="data_cleaning.ir_model_action_merge"
+              groups="base.group_erp_manager"
+              sequence="1"/>
+
+<!--    =======================================================-->
+
+    <!--    base menus in which delete the groups of base default  -->
+
+    <record id="social.menu_social_global" model="ir.ui.menu">
+        <field name="groups_id" eval="[(3, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="hr_timesheet.menu_timesheets_reports" model="ir.ui.menu">
+        <field name="groups_id" eval="[(3, ref('hr_timesheet.group_hr_timesheet_approver'))]"/>
+    </record>
+
+    <record id="sale_planning.sale_planning_menu_schedule_by_sale_order" model="ir.ui.menu">
+        <field name="groups_id" eval="[(3, ref('planning.group_planning_manager'))]"/>
+    </record>
+
+    <record id="contacts.menu_contacts" model="ir.ui.menu">
+        <field name="groups_id" eval="[(3, ref('base.group_user')), (3, ref('sales_team.group_sale_salesman'))]"/>
+    </record>
+
+    <record id="website_sale.menu_ecommerce" model="ir.ui.menu">
+        <field name="groups_id" eval="[(3, ref('sales_team.group_sale_salesman'))]"/>
+    </record>
+
+    <record id="sale_subscription.menu_sale_subscription_root" model="ir.ui.menu">
+        <field name="groups_id" eval="[(3, ref('sales_team.group_sale_salesman'))]"/>
+    </record>
+
+    <record id="event.event_main_menu" model="ir.ui.menu">
+        <field name="groups_id"
+               eval="[(3, ref('event.group_event_registration_desk')), (3, ref('event.group_event_user'))]"/>
+    </record>
+
+    <record id="website.menu_website_configuration" model="ir.ui.menu">
+        <field name="groups_id" eval="[(3, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="timesheet_grid.menu_timesheet_grid_validate" model="ir.ui.menu">
+        <field name="groups_id" eval="[(3, ref('hr_timesheet.group_hr_timesheet_approver'))]"/>
+    </record>
+
+    <!--    Product for team marketing-->
+    <record id="product_template_action_team_marketing" model="ir.actions.act_window">
+            <field name="name">Products</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                No product found. Let's create one!
+              </p><p>
+                Define the components and finished products you wish to use in
+                bill of materials and manufacturing orders.
+              </p>
+            </field>
+        </record>
+
+    <record id="product_normal_action_roles" model="ir.actions.act_window">
+            <field name="name">Product Variants</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">product.product</field>
+            <field name="view_mode">kanban,list,form</field>
+            <field name="view_id" ref="product.product_product_tree_view"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new product variant
+              </p><p>
+                You must define a product for everything you sell, whether it's a physical product,
+                a consumable or a service you offer to customers.
+                The product form contains information to simplify the sale process:
+                price, notes in the quotation, accounting data, procurement methods, etc.
+              </p>
+            </field>
+        </record>
+
+
+    <menuitem id="menu_product_for_team_marketing" name="Products" parent="website.menu_website_configuration"
+              groups="access_rights_management.role_marketing_manager,access_rights_management.role_infographiste" sequence="20">
+        <menuitem id="menu_products_team_marketing" name="Products" action="product_template_action_team_marketing"/>
+        <menuitem id="menu_product_variants_team_marketing" name="Product Variants" action="product_normal_action_roles"/>
+    </menuitem>
+
+<!--    email template menu specifically for group role_vp_of_quality_and_knowledge-->
+
+    <record model="ir.actions.act_window" id="action_pmm_email_template_tree">
+            <field name="name">PMM Email Templates</field>
+            <field name="res_model">mail.template</field>
+            <field name="view_mode">list,form</field>
+            <field name="view_id" ref="mail.email_template_tree"/>
+        </record>
+
+    <menuitem id="menu_email_template_in_marketing_automation" name="Email Templates"
+        parent="project.menu_project_config" groups="access_rights_management.role_vp_of_quality_and_knowledge"
+        sequence="10" action="access_rights_management.action_pmm_email_template_tree"/>
+
+    <menuitem
+            id="planning.planning_menu_settings_employee"
+            name="Employees"
+            parent="planning.planning_menu_settings"
+            sequence="12"
+            action="hr.open_view_employee_list_my"
+            groups="hr.group_hr_user"/>
+
+    <record id="planning.planning_menu_settings_employee" model="ir.ui.menu">
+        <field name="groups_id" eval="[(3, ref('planning.group_planning_manager'))]"/>
+    </record>
+
+</odoo>

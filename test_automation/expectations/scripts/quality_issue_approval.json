@@ -1,0 +1,7 @@
+{
+  "scenario": "quality_issue_approval",
+  "description": "Script matrix expectations for quality_issue_approval",
+  "full_access": [],
+  "blocked": {},
+  "notes": "Run run_script_matrix.py, review REPORT rows, then fill full_access and blocked."
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="filter_extra_options_template_inherit_roles"
+              inherit_id="account_reports.pdf_export_filter_extra_options_template">
+        <xpath expr="//t[@groups='account.group_account_readonly']" position="attributes">
+            <attribute name="groups">
+                account.group_account_readonly,access_rights_management.role_management_control,access_rights_management.role_administrative,access_rights_management.role_ceo
+            </attribute>
+        </xpath>
+    </template>
+
+    <!--    TODO : may be removed in V18 remove after test in database-->
+<!--    <template id="search_template_extra_options_inherit_roles" inherit_id="account_reports.search_template_extra_options">-->
+<!--        <xpath expr="//div[@role='menu']/a[1]" position="attributes">-->
+<!--            <attribute name="groups">-->
+<!--                account.group_account_readonly,access_rights_management.role_management_control,access_rights_management.role_administrative,access_rights_management.role_ceo-->
+<!--            </attribute>-->
+<!--        </xpath>-->
+<!--        <xpath expr="//div[@role='menu']/a[2]" position="attributes">-->
+<!--            <attribute name="groups">-->
+<!--                account.group_account_readonly,access_rights_management.role_management_control,access_rights_management.role_administrative,access_rights_management.role_ceo-->
+<!--            </attribute>-->
+<!--        </xpath>-->
+<!--    </template>-->
+
+<!--    <template id="search_template_extra_options_journal_audit_report_inherit_roles" inherit_id="account_reports.search_template_extra_options_journal_audit_report" primary="True">-->
+<!--        <xpath expr="//div[hasclass('o_filter_menu')]//a[1]" position="attributes">-->
+<!--            <attribute name="groups">-->
+<!--                account.group_account_readonly,access_rights_management.role_management_control,access_rights_management.role_administrative,access_rights_management.role_ceo-->
+<!--            </attribute>-->
+<!--        </xpath>-->
+<!--    </template>-->
+</odoo>

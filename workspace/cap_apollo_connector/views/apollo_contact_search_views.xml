@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="apollo_contact_search_form_view" model="ir.ui.view">
+        <field name="name">apollo.contact.search.form</field>
+        <field name="model">apollo.contact.search</field>
+        <field name="arch" type="xml">
+            <form string="Contact Search">
+                <sheet>
+                    <group>
+                        <field name="instance_id"/>
+                        <field name="first_name"/>
+                        <field name="last_name"/>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="organization_name"/>
+                        <field name="domain" placeholder="company.com"/>
+                        <field name="linkedin_url"/>
+                    </group>
+                    <group string="Result" invisible="state == 'draft'">
+                        <field name="state" widget="badge"
+                               decoration-success="state == 'done'"
+                               decoration-warning="state == 'no_match'"
+                               decoration-danger="state == 'error'"/>
+                        <field name="result_message"/>
+                        <field name="searched_at"/>
+                    </group>
+                    <group string="Debug" invisible="not response_json" groups="base.group_no_one">
+                        <field name="response_json" nolabel="1" colspan="2"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_search"
+                            string="Search"
+                            type="object"
+                            class="btn-primary"
+                            invisible="state == 'done'"/>
+                    <button string="Close" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_apollo_contact_search" model="ir.actions.act_window">
+        <field name="name">Apollo Contact Search</field>
+        <field name="res_model">apollo.contact.search</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_apollo_contact_search"
+              name="Contact Search"
+              parent="apollo_main_menu"
+              action="action_apollo_contact_search"
+              sequence="30"/>
+</odoo>

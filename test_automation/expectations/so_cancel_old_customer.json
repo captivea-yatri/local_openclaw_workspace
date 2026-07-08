@@ -1,0 +1,51 @@
+{
+  "scenario": "so_cancel_old_customer",
+  "description": "Confirm SO, link project, cancel SO, partner becomes old_customer",
+  "modules": [
+    "cap_partner",
+    "cap_offer",
+    "ksc_sale_project_extended",
+    "cap_quality_issue_log",
+    "access_rights_management",
+    "base_user_role"
+  ],
+  "steps": [
+    "create_partner",
+    "use_existing_partner",
+    "create_sale_order",
+    "action_confirm",
+    "assert_customer_status",
+    "link_so_project",
+    "assign_project_user",
+    "action_cancel",
+    "assert_old_customer_status",
+    "assert_quality_logs"
+  ],
+  "full_access": [
+    "President",
+    "CEO",
+    "Sales Manager",
+    "Team Manager",
+    "Team Director",
+    "Operation",
+    "Operation On Boarder",
+    "VPs",
+    "Can Create/Delete Project"
+  ],
+  "blocked": {
+    "HR": {
+      "at": "create_sale_order",
+      "error": "AccessError"
+    },
+    "Recruiter": {
+      "at": "create_sale_order",
+      "error": "AccessError"
+    },
+    "Administrative": {
+      "at": "create_sale_order",
+      "error": "AccessError"
+    }
+  },
+  "quality_log_count": null,
+  "notes": "Roles not listed in full_access or blocked are reported only. Update this file when access policy changes."
+}

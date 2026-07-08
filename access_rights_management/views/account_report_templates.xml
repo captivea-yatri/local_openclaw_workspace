@@ -1,0 +1,7 @@
+<odoo>
+
+    <template id="pdf_export_filters_inherit" inherit_id="account_reports.pdf_export_filters" name="Remove Journals in PDF Export Filters">
+        <xpath expr="//t//div[@name='filter_info_template_journals']" position="replace"/>
+    </template>
+
+</odoo>

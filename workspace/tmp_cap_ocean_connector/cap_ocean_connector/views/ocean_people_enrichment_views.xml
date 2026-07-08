@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ocean_people_enrichment_form_view" model="ir.ui.view">
+        <field name="name">ocean.people.enrichment.form</field>
+        <field name="model">ocean.people.enrichment</field>
+        <field name="arch" type="xml">
+            <form string="People Lookup">
+                <sheet>
+                    <div class="alert alert-info" role="alert">
+                        <p>
+                            Ocean.io supports several ways to find a person, ordered by match strength:
+                            <strong>Ocean ID</strong>, <strong>LinkedIn</strong>, <strong>email</strong>,
+                            then <strong>name + company domain</strong>.
+                        </p>
+                        <p>
+                            <strong>Fast lookup</strong> (<code>POST /v2/lookup/people</code>) works with
+                            LinkedIn or Ocean ID only (0.05 credits).
+                            <strong>Full enrich</strong> (<code>POST /v2/enrich/person</code>) needs a strong
+                            identifier (LinkedIn, email, or name + company domain).
+                            <strong>People search</strong> (<code>POST /v3/search/people</code>) is used when
+                            you only have a name and company.
+                        </p>
+                    </div>
+                    <group>
+                        <group string="Connection">
+                            <field name="instance_id"/>
+                            <field name="partner_id"/>
+                            <field name="lookup_method"/>
+                        </group>
+                        <group string="Options">
+                            <field name="apply_overwrite"/>
+                        </group>
+                    </group>
+                    <group string="Async reveal (requires Webhook URL on instance)">
+                        <field name="reveal_emails"/>
+                        <field name="reveal_phones"/>
+                        <div class="text-muted" colspan="2">
+                            Leave both unchecked for a normal lookup/enrich. These options send
+                            verified email/phone results to your webhook asynchronously.
+                        </div>
+                    </group>
+                    <group string="Direct Identifiers">
+                        <group>
+                            <field name="ocean_person_id"/>
+                            <field name="linkedin_url"/>
+                            <field name="linkedin_handle" placeholder="jane-doe-123"/>
+                        </group>
+                        <group>
+                            <field name="email" placeholder="john@company.com"/>
+                            <field name="phone"/>
+                        </group>
+                    </group>
+                    <group string="Person Details">
+                        <group>
+                            <field name="name"/>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="job_title"/>
+                        </group>
+                        <group>
+                            <field name="country" placeholder="us"/>
+                            <field name="company_domain" placeholder="company.com"/>
+                            <field name="company_name"/>
+                        </group>
+                    </group>
+                    <group string="Result" invisible="state == 'draft'">
+                        <field name="state" widget="badge"
+                               decoration-success="state == 'done'"
+                               decoration-danger="state == 'error'"
+                               decoration-warning="state == 'no_match'"/>
+                        <field name="result_message"/>
+                        <field name="enriched_at"/>
+                    </group>
+                    <group string="Enriched Data" invisible="state != 'done'">
+                        <group>
+                            <field name="enriched_ocean_id"/>
+                            <field name="enriched_name"/>
+                            <field name="enriched_email"/>
+                            <field name="email_status"/>
+                            <field name="enriched_title"/>
+                            <field name="enriched_phone"/>
+                            <field name="enriched_linkedin_url"/>
+                        </group>
+                        <group>
+                            <field name="enriched_company_name"/>
+                            <field name="enriched_domain"/>
+                            <field name="enriched_country"/>
+                            <field name="enriched_location"/>
+                        </group>
+                    </group>
+                    <group string="Debug" invisible="not response_json" groups="base.group_no_one">
+                        <field name="response_json" nolabel="1" colspan="2"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_enrich"
+                            string="Lookup / Enrich"
+                            type="object"
+                            class="btn-primary"
+                            invisible="state == 'done'"/>
+                    <button name="action_apply_to_partner"
+                            string="Apply to Contact"
+                            type="object"
+                            class="btn-secondary"
+                            invisible="state != 'done' or not partner_id"/>
+                    <button string="Close" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ocean_people_enrichment" model="ir.actions.act_window">
+        <field name="name">People Lookup</field>
+        <field name="res_model">ocean.people.enrichment</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

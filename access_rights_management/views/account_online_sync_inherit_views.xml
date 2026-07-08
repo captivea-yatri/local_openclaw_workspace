@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_online_link_view_form_inherit_roles" model="ir.ui.view">
+        <field name="name">account.online.link.form.inherit.role</field>
+        <field name="model">account.online.link</field>
+        <field name="inherit_id" ref="account_online_synchronization.account_online_link_view_form"/>
+        <field name="arch" type="xml">
+            <button name="action_fetch_transactions" position="attributes">
+                <attribute name="groups">account.group_account_user,access_rights_management.group_can_synchronize_bank</attribute>
+            </button>
+            <button name="action_update_credentials" position="attributes">
+                <attribute name="groups">account.group_account_user,access_rights_management.group_can_synchronize_bank</attribute>
+            </button>
+            <button name="action_reconnect_account" position="attributes">
+                <attribute name="groups">account.group_account_user,access_rights_management.group_can_synchronize_bank</attribute>
+            </button>
+            <button name="action_new_synchronization" position="attributes">
+                <attribute name="groups">account.group_account_user,access_rights_management.group_can_synchronize_bank</attribute>
+            </button>
+        </field>
+    </record>
+</odoo>

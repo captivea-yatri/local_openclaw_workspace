@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="goal_form_view_inherit_roles" model="ir.ui.view">
+        <field name="name">goal.form.roles</field>
+        <field name="model">gamification.goal</field>
+        <field name="inherit_id" ref="gamification.goal_form_view"/>
+        <field name="arch" type="xml">
+            <field name="definition_id" position="attributes">
+                <attribute name="groups">!access_rights_management.role_legal</attribute>
+            </field>
+            <field name="definition_id" position="after">
+                <field name="definition_id" readonly="1" groups="access_rights_management.role_legal"/>
+            </field>
+            <xpath expr="//div[hasclass('oe_grey')]" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="line_id" groups="!access_rights_management.role_legal"/>
+                <field name="line_id" readonly="1" groups="access_rights_management.role_legal"/>
+            </xpath>
+            <xpath expr="//field[@name='start_date']" position="replace">
+                <field name="start_date" groups="!access_rights_management.role_legal"/>
+                <field name="start_date" groups="access_rights_management.role_legal" readonly="1"/>
+            </xpath>
+            <xpath expr="//field[@name='end_date']" position="replace">
+                <field name="end_date" groups="!access_rights_management.role_legal"/>
+                <field name="end_date" groups="access_rights_management.role_legal" readonly="1"/>
+            </xpath>
+            <xpath expr="//field[@name='target_goal']" position="replace">
+                <field name="target_goal" readonly="1" string="Original Target" force_save="True"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

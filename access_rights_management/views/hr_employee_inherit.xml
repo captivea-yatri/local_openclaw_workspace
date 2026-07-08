@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Smartbutton Roles -->
+    <record id="view_employee_form_smartbutton_roles" model="ir.ui.view">
+        <field name="name">view.employee.form.smartbutton.roles.inherit</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form_smartbutton_inherited"/>
+        <field name="arch" type="xml">
+            <button name="action_related_contacts" position="attributes">
+                <attribute name="groups">access_rights_management.show_contacts</attribute>
+            </button>
+        </field>
+    </record>
+
+    <!-- Work Entry Button -->
+    <record id="hr_employee_view_form_work_entry_custom" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.work.entry.button</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_work_entry.hr_employee_view_form"/>
+        <field name="arch" type="xml">
+            <button name="action_open_work_entries" position="replace">
+                <button invisible="not has_work_entries" type="object" class="oe_stat_button"
+                        id="open_work_entries" icon="fa-calendar" name="action_open_work_entries"
+                        groups="hr.group_hr_user,base.group_system">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">Work Entries</span>
+                    </div>
+                </button>
+            </button>
+        </field>
+    </record>
+
+    <!-- Attendance Last Month Button -->
+    <record id="view_employee_form_inherit_hr_attendance_custom" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.attendance.button</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_attendance.view_employee_form_inherit_hr_attendance"/>
+        <field name="arch" type="xml">
+            <button name="action_open_last_month_attendances" position="replace">
+                <button name="action_open_last_month_attendances" class="oe_stat_button"
+                        icon="fa-clock-o" type="object"
+                        groups="hr_attendance.group_hr_attendance_officer,hr.group_hr_user"
+                        invisible="hours_last_month == 0"
+                        help="Worked hours this month">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="hours_last_month_display" widget="float_time"/>
+                            Hours
+                        </span>
+                        <span class="o_stat_text">This Month</span>
+                    </div>
+                </button>
+            </button>
+        </field>
+    </record>
+
+    <!-- HR Payroll IN Visibility -->
+    <record id="hr_employee_view_form_in_inherit_ex_custom" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.hr.payroll.visibility</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="l10n_in_hr_payroll.hr_employee_view_form_in_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr='//group[@invisible="company_country_code != &apos;IN&apos;"]' position="attributes">
+                <attribute name="groups">hr.group_hr_user</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Billable Time Target -->
+    <record id="view_employee_form_ex_roles_custom" model="ir.ui.view">
+        <field name="name">view.employee.form.inherit.hr.employee.billable.time.target.custom</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="sale_timesheet_enterprise.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr='//span[@invisible="not show_billable_time_target"]' position="attributes">
+                <attribute name="groups">hr.group_hr_user</attribute>
+            </xpath>
+            <xpath expr='//span[@name="billable_time_target"]' position="attributes">
+                <attribute name="groups">hr.group_hr_user</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Contract Warning Tooltip Removal -->
+    <record id="hr_hr_employee_view_form2_ex_custom" model="ir.ui.view">
+        <field name="name">hr.hr.employee.view.form2.custom</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_contract.hr_hr_employee_view_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//widget[@name='contract_warning_tooltip']" position="replace">
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Internal Project Quotas List -->
+    <record id="internal_project_quotas_view_list_custom" model="ir.ui.view">
+        <field name="name">internal.project.quota.view.list.custom</field>
+        <field name="model">internal.project.quotas</field>
+        <field name="arch" type="xml">
+            <list editable="top">
+                <field name="project_id" options="{'no_create': True}"/>
+                <field name="hours_per_month"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Internal Project Quotas Action -->
+    <record id="action_view_internal_project_quota_from_public_employee_custom" model="ir.actions.act_window">
+        <field name="name">Internal Project Quota</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">internal.project.quotas</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <!-- Public Employee Quotas Button -->
+    <record id="hr_employee_public_view_form_internal_project_quotas_custom" model="ir.ui.view">
+        <field name="name">hr.employee.public.form.internal.project.quotas</field>
+        <field name="model">hr.employee.public</field>
+        <field name="inherit_id" ref="hr.hr_employee_public_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[contains(@class,'oe_button_box')]" position="inside">
+                <button name="open_internal_project_quotas" type="object" class="oe_stat_button"
+                        icon="fa-puzzle-piece" groups="access_rights_management.role_team_director">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_text">Internal Project</span>
+                        <span class="o_stat_text">Quotas</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

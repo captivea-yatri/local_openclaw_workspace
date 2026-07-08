@@ -1,0 +1,170 @@
+[
+  {
+    "tc": 10,
+    "module": "res.partner",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 3 records"
+  },
+  {
+    "tc": 11,
+    "module": "crm.lead",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"You are not allowed to access 'Lead' (crm.lead) records.\\n\\nThis operation is allowed for"
+  },
+  {
+    "tc": 12,
+    "module": "sale.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 3 records"
+  },
+  {
+    "tc": 13,
+    "module": "project.project",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 3 records"
+  },
+  {
+    "tc": 14,
+    "module": "project.task",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 3 records"
+  },
+  {
+    "tc": 15,
+    "module": "account.analytic.line",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 3 records"
+  },
+  {
+    "tc": 16,
+    "module": "account.move",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 3 records"
+  },
+  {
+    "tc": 17,
+    "module": "account.asset",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 3 records"
+  },
+  {
+    "tc": 18,
+    "module": "purchase.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 3 records"
+  },
+  {
+    "tc": 19,
+    "module": "hr.employee",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 3 records"
+  },
+  {
+    "tc": 20,
+    "module": "helpdesk.ticket",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 3 records"
+  },
+  {
+    "tc": 21,
+    "module": "res.partner",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 3 records"
+  },
+  {
+    "tc": 21,
+    "module": "res.partner",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 22,
+    "module": "sale.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 3 records"
+  },
+  {
+    "tc": 22,
+    "module": "sale.order",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'note': 'QA test note'}"
+  },
+  {
+    "tc": 23,
+    "module": "project.project",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 3 records"
+  },
+  {
+    "tc": 23,
+    "module": "project.project",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'name': 'QA Test Project'}"
+  },
+  {
+    "tc": 24,
+    "module": "project.task",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 3 records"
+  },
+  {
+    "tc": 24,
+    "module": "project.task",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'name': 'QA Test Task'}"
+  },
+  {
+    "tc": 25,
+    "module": "account.analytic.line",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 3 records"
+  },
+  {
+    "tc": 25,
+    "module": "account.analytic.line",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'name': 'QA Timesheet'}"
+  },
+  {
+    "tc": 26,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Contact' (res.partner) records.\n\nThis operation is allowed for the following groups:\n\t- Contact/Creation\n\t- Purchase/Administrator\n\t- Recruitment/Officer: Manage all applicants\n\t- Sales/Administrator\n\t- Administrative Responsible\n\t- HR\n\t- HR Responsible\n\t- IT Person\n\t- Marketing Manager\n\t- Operation\n\t- Operation On Boarder\n\t- Quality Manager\n\t- Sales(cold)\n\t- Sales Cold Team Director\n\t- Sales Cold Team Manager\n\t- Sales(Hot)\n\t- Sales Manager\n\t- Show Sales\n\t- Team Director\n\t- Team Manager\n\t- VPs\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 28,
+    "module": "project.project",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Project' (project.project) records.\n\nThis operation is allowed for the following groups:\n\t- Project/Administrator\n\t- Can Create/Delete Project\n\t- Super Admin Project\n\t- Team Director\n\t- VP of Quality and Knowledge\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 30,
+    "module": "account.analytic.line",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=574965"
+  }
+]

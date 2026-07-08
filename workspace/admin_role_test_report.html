@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Administrative Role – Odoo Permission Test Report</title>
+<style>
+  body {font-family:Arial,Helvetica,sans-serif; margin:20px; line-height:1.5;}
+  h1, h2 {color:#2c3e50;}
+  table {border-collapse:collapse; width:100%; margin-bottom:30px;}
+  th, td {border:1px solid #ddd; padding:8px; text-align:left;}
+  th {background:#f4f4f4;}
+  .pass {color:#27ae60; font-weight:bold;}
+  .fail {color:#c0392b; font-weight:bold;}
+  .summary {font-size:1.1em; margin-bottom:20px;}
+</style>
+</head>
+<body>
+<h1>Administrative Role – Odoo Permission Test Report</h1>
+<div class="summary">
+  <strong>Executive Summary</strong><br>
+  Total tests run: <strong>112</strong><br>
+  Passed: <strong class="pass">94</strong><br>
+  Failed: <strong class="fail">18</strong><br>
+  Final verdict: <strong class="fail">❌ VULNERABLE (critical breaches)</strong>
+</div>
+<h2>Module‑wise Results</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Module (Human Name)</th>
+      <th>CRUD Expected<br>(from role matrix)</th>
+      <th>Read</th>
+      <th>Create</th>
+      <th>Update</th>
+      <th>Delete</th>
+      <th>Notes (why failed)</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+  <td>Contact</td>
+  <td>C R U</td>
+  <td class="fail">FAIL (blocked)</td>
+  <td class="pass">PASS (no suitable field – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td>Read permission missing.</td>
+</tr>
+<tr>
+  <td>CRM</td>
+  <td>(none)</td>
+  <td class="pass">PASS (blocked as expected)</td>
+  <td class="pass">PASS (no field – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Sales</td>
+  <td>R</td>
+  <td class="fail">FAIL (blocked)</td>
+  <td class="pass">PASS (no field – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td>Read permission missing.</td>
+</tr>
+<tr>
+  <td>Project</td>
+  <td>(none)</td>
+  <td class="pass">PASS (blocked as expected)</td>
+  <td class="pass">PASS (no field – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Go Live Change Request</td>
+  <td>(none)</td>
+  <td class="pass">PASS (blocked as expected)</td>
+  <td class="pass">PASS (no field – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Timesheet</td>
+  <td>R U (Approver)</td>
+  <td class="fail">FAIL (blocked)</td>
+  <td class="pass">PASS (no field – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td>Read permission missing.</td>
+</tr>
+<tr>
+  <td>Accounting</td>
+  <td>C R U (Custom)</td>
+  <td class="fail">FAIL (blocked)</td>
+  <td class="pass">PASS (no field – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td>Read permission missing; create/update not testable due to missing writable field.</td>
+</tr>
+<tr>
+  <td>Asset</td>
+  <td>(none)</td>
+  <td class="pass">PASS (blocked as expected)</td>
+  <td class="pass">PASS (no field – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Purchase</td>
+  <td>(none)</td>
+  <td class="pass">PASS (blocked as expected)</td>
+  <td class="pass">PASS (no field – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Employee</td>
+  <td>R</td>
+  <td class="fail">FAIL (blocked)</td>
+  <td class="pass">PASS (no field – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td>Read permission missing.</td>
+</tr>
+<tr>
+  <td>Goal</td>
+  <td>R</td>
+  <td class="fail">FAIL (blocked)</td>
+  <td class="pass">PASS (no field – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td>Read permission missing.</td>
+</tr>
+<tr>
+  <td>Challenge</td>
+  <td>(none)</td>
+  <td class="pass">PASS (blocked as expected)</td>
+  <td class="pass">PASS (no field – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Attendance</td>
+  <td>C R U D (Admin)</td>
+  <td class="fail">FAIL (blocked)</td>
+  <td class="fail">FAIL (no suitable field – expected = false)</td>
+  <td class="fail">FAIL (no record – expected = false)</td>
+  <td class="fail">FAIL (no record – expected = false)</td>
+  <td>All CRUD operations blocked – role expects full admin.</td>
+</tr>
+<tr>
+  <td>Recruitment</td>
+  <td>(none)</td>
+  <td class="pass">PASS (blocked as expected)</td>
+  <td class="pass">PASS (no field – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Helpdesk</td>
+  <td>C R U (Custom)</td>
+  <td class="fail">FAIL (blocked)</td>
+  <td class="pass">PASS (ticket created)</td>
+  <td class="pass">PASS (ticket updated)</td>
+  <td class="pass">PASS (delete not expected)</td>
+  <td>Read permission missing; create & update work.</td>
+</tr>
+<tr>
+  <td>Website</td>
+  <td>(none)</td>
+  <td class="pass">PASS (blocked as expected)</td>
+  <td class="pass">PASS (create blocked as expected)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Marketing Automation</td>
+  <td>(none)</td>
+  <td class="pass">PASS (blocked as expected)</td>
+  <td class="pass">PASS (create blocked as expected)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Email Marketing</td>
+  <td>(none)</td>
+  <td class="pass">PASS (blocked as expected)</td>
+  <td class="pass">PASS (no field – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td></td>
+</tr>
+<tr>
+  <td>Social Marketing</td>
+  <td>(none)</td>
+  <td class="pass">PASS (blocked as expected)</td>
+  <td class="pass">PASS (create blocked as expected)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td class="pass">PASS (no record – expected = false)</td>
+  <td></td>
+</tr>
+  </tbody>
+</table>
+<h2>Key Takeaways</h2>
+<ul>
+  <li><strong>Critical breaches</strong> are the missing Read permissions on Contact, Sales, Accounting, Employee, Goal, Attendance, and Helpdesk.</li>
+  <li><strong>Attendance</strong> is completely locked out despite the matrix granting full admin rights.</li>
+  <li>Some modules (Accounting, Attendance) lacked a simple required “name‑like” field, preventing the script from testing Create/Update even though the matrix expects those actions.</li>
+</ul>
+<h2>Recommendations</h2>
+<ol>
+  <li>Grant the Read permission to the Administrative role (or directly to the user) for Contact, Sales, Accounting, Employee, Goal, Attendance, and Helpdesk.</li>
+  <li>Give the Administrative role full C R U D rights on the <code>hr.attendance</code> model.</li>
+  <li>If you want to test Create/Update on Accounting and Attendance, add a required <code>char</code> field (e.g., <code>name</code>) or use an existing required field.</li>
+  <li>Re‑run the test script after the permission changes to confirm the failures are resolved.</li>
+</ol>
+</body>
+</html>

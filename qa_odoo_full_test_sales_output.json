@@ -1,0 +1,1682 @@
+[
+  {
+    "tc": 10,
+    "module": "res.partner",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 59,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=2338532"
+  },
+  {
+    "tc": 59,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=2338532"
+  },
+  {
+    "tc": 60,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 61,
+    "module": "crm.lead",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 62,
+    "module": "crm.lead",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 62,
+    "module": "crm.lead",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'description': 'QA edit'}"
+  },
+  {
+    "tc": 63,
+    "module": "crm.lead",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=539899"
+  },
+  {
+    "tc": 63,
+    "module": "crm.lead",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=539899"
+  },
+  {
+    "tc": 64,
+    "module": "crm.lead",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=539899"
+  },
+  {
+    "tc": 65,
+    "module": "sale.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 66,
+    "module": "sale.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 66,
+    "module": "sale.order",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'note': 'QA edit note'}"
+  },
+  {
+    "tc": 67,
+    "module": "sale.order",
+    "action": "Create (missing field)",
+    "status": "PASS",
+    "detail": "Expected error: The operation cannot be completed: Missing required value for the field 'Customer' (partner_id).\nModel: 'Sales Order' (sale.order)\n- create/update: a mandatory field is not set\n- delete: another model requires the record being deleted, you can archive it instead\n"
+  },
+  {
+    "tc": 68,
+    "module": "sale.order",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 69,
+    "module": "project.project",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 70,
+    "module": "project.project",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 70,
+    "module": "project.project",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'description': 'QA edit'}"
+  },
+  {
+    "tc": 71,
+    "module": "project.project",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Project' (project.project) records.\n\nThis operation is allowed for the following groups:\n\t- Project/Administrator\n\t- Can Create/Delete Project\n\t- Super Admin Project\n\t- Team Director\n\t- VP of Quality and Knowledge\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 72,
+    "module": "project.project",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 73,
+    "module": "project.task",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 74,
+    "module": "project.task",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 74,
+    "module": "project.task",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'name': 'QA Validation Task - Edit'}"
+  },
+  {
+    "tc": 75,
+    "module": "project.task",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault Uh-oh! Looks like you have stumbled upon some top-secret records.\n\nSorry, VP of Sales(Sales Manager) (id=15256) doesn't have 'read' access to:\n- Project (project.project)\n\nIf you really, really need access, perhaps you can win over your friendly administrator with a batch of freshly baked cookies.\n\nThis seems to be a multi-company issue, but you do not have access to the proper company to access the record anyhow."
+  },
+  {
+    "tc": 76,
+    "module": "project.task",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 77,
+    "module": "account.analytic.line",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 78,
+    "module": "account.analytic.line",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 78,
+    "module": "account.analytic.line",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'name': 'QA Timesheet Edit'}"
+  },
+  {
+    "tc": 79,
+    "module": "account.analytic.line",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=574936"
+  },
+  {
+    "tc": 79,
+    "module": "account.analytic.line",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=574936"
+  },
+  {
+    "tc": 80,
+    "module": "account.analytic.line",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 81,
+    "module": "account.move",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 82,
+    "module": "account.move",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 82,
+    "module": "account.move",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'narration': 'QA edit'}"
+  },
+  {
+    "tc": 83,
+    "module": "account.move",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Journal Entry' (account.move) records.\n\nThis operation is allowed for the following groups:\n\t- Accounting/Invoicing\n\t- Administrative\n\t- CEO\n\t- Management Control\n\t- Purchase custom\n\t- Sales(Hot)\n\t- Facturation (copie)\n\t- Facturation (copie)\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 84,
+    "module": "account.move",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 85,
+    "module": "account.asset",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 86,
+    "module": "account.asset",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 86,
+    "module": "account.asset",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 87,
+    "module": "account.asset",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Asset/Revenue Recognition' (account.asset) records.\n\nThis operation is allowed for the following groups:\n\t- Accounting/Bookkeeper\n\t- Accounting/Bookkeeper\n\t- Accounting/Invoicing\n\t- Administrative\n\t- Management Control\n\t- Facturation (copie)\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 88,
+    "module": "account.asset",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 89,
+    "module": "purchase.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 90,
+    "module": "purchase.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 90,
+    "module": "purchase.order",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'note': 'QA edit'}"
+  },
+  {
+    "tc": 91,
+    "module": "purchase.order",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=29"
+  },
+  {
+    "tc": 91,
+    "module": "purchase.order",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=29"
+  },
+  {
+    "tc": 92,
+    "module": "purchase.order",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 93,
+    "module": "hr.employee",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 94,
+    "module": "hr.employee",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 94,
+    "module": "hr.employee",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 95,
+    "module": "hr.employee",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=1375"
+  },
+  {
+    "tc": 95,
+    "module": "hr.employee",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1375"
+  },
+  {
+    "tc": 96,
+    "module": "hr.employee",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 117,
+    "module": "helpdesk.ticket",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 0 records"
+  },
+  {
+    "tc": 118,
+    "module": "helpdesk.ticket",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 0 records"
+  },
+  {
+    "tc": 119,
+    "module": "helpdesk.ticket",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=11381"
+  },
+  {
+    "tc": 119,
+    "module": "helpdesk.ticket",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=11381"
+  },
+  {
+    "tc": 120,
+    "module": "helpdesk.ticket",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 202,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=2338534"
+  },
+  {
+    "tc": 202,
+    "module": "sale.order",
+    "action": "Button Confirm",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Uh-oh! You\u2019ve got some company inconsistencies here:\\n- \u201cSO7718\u201d belongs to company \u201cGroupe RISS\u201d while \u201cSales Team\u201d (team_id: 'India - Outbound') belongs to another company.\\nTo avoid a mess, no company crossover is allowed!\">"
+  },
+  {
+    "tc": 202,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=2338534"
+  },
+  {
+    "tc": 203,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=2338535"
+  },
+  {
+    "tc": 203,
+    "module": "sale.order",
+    "action": "Post Invoice",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Uh-oh! You\u2019ve got some company inconsistencies here:\\n- \u201cSO7719\u201d belongs to company \u201cGroupe RISS\u201d while \u201cSales Team\u201d (team_id: 'India - Outbound') belongs to another company.\\nTo avoid a mess, no company crossover is allowed!\">"
+  },
+  {
+    "tc": 203,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=2338535"
+  },
+  {
+    "tc": 204,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=2338536"
+  },
+  {
+    "tc": 204,
+    "module": "helpdesk.ticket",
+    "action": "Assign Ticket",
+    "status": "PASS",
+    "detail": "Assigned ticket 11382 to user 15256"
+  },
+  {
+    "tc": 204,
+    "module": "helpdesk.ticket",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=11382"
+  },
+  {
+    "tc": 204,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=2338536"
+  },
+  {
+    "tc": 300,
+    "module": "go.live.change.request",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object go.live.change.request doesn't exist\">"
+  },
+  {
+    "tc": 301,
+    "module": "go.live.change.request",
+    "action": "Write",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object go.live.change.request doesn't exist\">"
+  },
+  {
+    "tc": 302,
+    "module": "go.live.change.request",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 303,
+    "module": "go.live.change.request",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 304,
+    "module": "hr.timesheet",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.timesheet doesn't exist\">"
+  },
+  {
+    "tc": 305,
+    "module": "hr.timesheet",
+    "action": "Write",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.timesheet doesn't exist\">"
+  },
+  {
+    "tc": 306,
+    "module": "hr.timesheet",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 307,
+    "module": "hr.timesheet",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 308,
+    "module": "hr.goal",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.goal doesn't exist\">"
+  },
+  {
+    "tc": 309,
+    "module": "hr.goal",
+    "action": "Write",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.goal doesn't exist\">"
+  },
+  {
+    "tc": 310,
+    "module": "hr.goal",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 311,
+    "module": "hr.goal",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 312,
+    "module": "hr.challenge",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.challenge doesn't exist\">"
+  },
+  {
+    "tc": 313,
+    "module": "hr.challenge",
+    "action": "Write",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.challenge doesn't exist\">"
+  },
+  {
+    "tc": 314,
+    "module": "hr.challenge",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 315,
+    "module": "hr.challenge",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 316,
+    "module": "hr.attendance",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 0 records"
+  },
+  {
+    "tc": 317,
+    "module": "hr.attendance",
+    "action": "Write",
+    "status": "SKIPPED",
+    "detail": "No writable name field or no records"
+  },
+  {
+    "tc": 318,
+    "module": "hr.attendance",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 319,
+    "module": "hr.attendance",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 320,
+    "module": "hr.applicant",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 321,
+    "module": "hr.applicant",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'display_name': 'QA edit hr.applicant'}"
+  },
+  {
+    "tc": 322,
+    "module": "hr.applicant",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 323,
+    "module": "hr.applicant",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 324,
+    "module": "website.page",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"You are not allowed to access 'Page' (website.page) records.\\n\\nThis operation is allowed for the following groups:\\n\\t- Website/Editor and Designer\\n\\nContact your administrator to request access if necessary.\">"
+  },
+  {
+    "tc": 325,
+    "module": "website.page",
+    "action": "Write",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"You are not allowed to access 'Page' (website.page) records.\\n\\nThis operation is allowed for the following groups:\\n\\t- Website/Editor and Designer\\n\\nContact your administrator to request access if necessary.\">"
+  },
+  {
+    "tc": 326,
+    "module": "website.page",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Page' (website.page) records.\n\nThis operation is allowed for the following groups:\n\t- Website/Editor and Designer\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 327,
+    "module": "website.page",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Create failed, nothing to delete"
+  },
+  {
+    "tc": 328,
+    "module": "marketing.campaign",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 329,
+    "module": "marketing.campaign",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'display_name': 'QA edit marketing.campaign'}"
+  },
+  {
+    "tc": 330,
+    "module": "marketing.campaign",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=599"
+  },
+  {
+    "tc": 331,
+    "module": "marketing.campaign",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=599"
+  },
+  {
+    "tc": 332,
+    "module": "mail.mass_mailing",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object mail.mass_mailing doesn't exist\">"
+  },
+  {
+    "tc": 333,
+    "module": "mail.mass_mailing",
+    "action": "Write",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object mail.mass_mailing doesn't exist\">"
+  },
+  {
+    "tc": 334,
+    "module": "mail.mass_mailing",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 335,
+    "module": "mail.mass_mailing",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 336,
+    "module": "social.post",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 337,
+    "module": "social.post",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'display_name': 'QA edit social.post'}"
+  },
+  {
+    "tc": 338,
+    "module": "social.post",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 339,
+    "module": "social.post",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 340,
+    "module": "account.account",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 341,
+    "module": "account.account",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 342,
+    "module": "account.account",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Account' (account.account) records.\n\nThis operation is allowed for the following groups:\n\t- CFO\n\t- President\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 343,
+    "module": "account.account",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Create failed, nothing to delete"
+  },
+  {
+    "tc": 344,
+    "module": "account.analytic.account",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 345,
+    "module": "account.analytic.account",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'display_name': 'QA edit account.analytic.account'}"
+  },
+  {
+    "tc": 346,
+    "module": "account.analytic.account",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault The operation cannot be completed: Missing required value for the field 'Plan' (plan_id).\nModel: 'Analytic Account' (account.analytic.account)\n- create/update: a mandatory field is not set\n- delete: another model requires the record being deleted, you can archive it instead\n"
+  },
+  {
+    "tc": 347,
+    "module": "account.analytic.account",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Create failed, nothing to delete"
+  },
+  {
+    "tc": 348,
+    "module": "Timesheet",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object Timesheet doesn't exist\">"
+  },
+  {
+    "tc": 349,
+    "module": "Timesheet",
+    "action": "Write",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object Timesheet doesn't exist\">"
+  },
+  {
+    "tc": 350,
+    "module": "Timesheet",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 351,
+    "module": "Timesheet",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 352,
+    "module": "hr.applicant",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 353,
+    "module": "hr.applicant",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'display_name': 'QA edit hr.applicant'}"
+  },
+  {
+    "tc": 354,
+    "module": "hr.applicant",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 355,
+    "module": "hr.applicant",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 356,
+    "module": "hr.employee.public",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 357,
+    "module": "hr.employee.public",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 358,
+    "module": "hr.employee.public",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 359,
+    "module": "hr.employee.public",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 360,
+    "module": "gamification.challenge",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 361,
+    "module": "gamification.challenge",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'display_name': 'QA edit gamification.challenge'}"
+  },
+  {
+    "tc": 362,
+    "module": "gamification.challenge",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=350"
+  },
+  {
+    "tc": 363,
+    "module": "gamification.challenge",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=350"
+  },
+  {
+    "tc": 364,
+    "module": "gamification.goal",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 365,
+    "module": "gamification.goal",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'display_name': 'QA edit gamification.goal'}"
+  },
+  {
+    "tc": 366,
+    "module": "gamification.goal",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 367,
+    "module": "gamification.goal",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 368,
+    "module": "account.journal",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 369,
+    "module": "account.journal",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 370,
+    "module": "account.journal",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Journal' (account.journal) records.\n\nThis operation is allowed for the following groups:\n\t- Accounting/Administrator\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 371,
+    "module": "account.journal",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Create failed, nothing to delete"
+  },
+  {
+    "tc": 372,
+    "module": "account.payment",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 373,
+    "module": "account.payment",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 374,
+    "module": "account.payment",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 375,
+    "module": "account.payment",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 376,
+    "module": "account.tax",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 377,
+    "module": "account.tax",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 378,
+    "module": "account.tax",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Tax' (account.tax) records.\n\nThis operation is allowed for the following groups:\n\t- Accounting/Administrator\n\t- Administrative\n\t- Management Control\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 379,
+    "module": "account.tax",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Create failed, nothing to delete"
+  },
+  {
+    "tc": 380,
+    "module": "product.template",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 381,
+    "module": "product.template",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 382,
+    "module": "product.template",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Product' (product.template) records.\n\nThis operation is allowed for the following groups:\n\t- Products/Create\n\t- CFO\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 383,
+    "module": "product.template",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Create failed, nothing to delete"
+  },
+  {
+    "tc": 384,
+    "module": "product.product",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 385,
+    "module": "product.product",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 386,
+    "module": "product.product",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Product Variant' (product.product) records.\n\nThis operation is allowed for the following groups:\n\t- Products/Create\n\t- CFO\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 387,
+    "module": "product.product",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Create failed, nothing to delete"
+  },
+  {
+    "tc": 388,
+    "module": "project.project.stage",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 389,
+    "module": "project.project.stage",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 390,
+    "module": "project.project.stage",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Project Stage' (project.project.stage) records.\n\nThis operation is allowed for the following groups:\n\t- Project/Administrator\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 391,
+    "module": "project.project.stage",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Create failed, nothing to delete"
+  },
+  {
+    "tc": 392,
+    "module": "sale.order.line",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 393,
+    "module": "sale.order.line",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'display_name': 'QA edit sale.order.line'}"
+  },
+  {
+    "tc": 394,
+    "module": "sale.order.line",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault The operation cannot be completed: Missing required value for the field 'Order Reference' (order_id).\nModel: 'Sales Order Line' (sale.order.line)\n- create/update: a mandatory field is not set\n- delete: another model requires the record being deleted, you can archive it instead\n"
+  },
+  {
+    "tc": 395,
+    "module": "sale.order.line",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Create failed, nothing to delete"
+  },
+  {
+    "tc": 396,
+    "module": "crm.stage",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 397,
+    "module": "crm.stage",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 398,
+    "module": "crm.stage",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'CRM Stages' (crm.stage) records.\n\nThis operation is allowed for the following groups:\n\t- Marketing Director\n\t- Role / Administrator\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 399,
+    "module": "crm.stage",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Create failed, nothing to delete"
+  },
+  {
+    "tc": 400,
+    "module": "crm.lost.reason",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 401,
+    "module": "crm.lost.reason",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 402,
+    "module": "crm.lost.reason",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Opp. Lost Reason' (crm.lost.reason) records.\n\nThis operation is allowed for the following groups:\n\t- Sales/Administrator\n\t- Marketing Director\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 403,
+    "module": "crm.lost.reason",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Create failed, nothing to delete"
+  },
+  {
+    "tc": 404,
+    "module": "product.pricelist",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 405,
+    "module": "product.pricelist",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 406,
+    "module": "product.pricelist",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Pricelist' (product.pricelist) records.\n\nThis operation is allowed for the following groups:\n\t- Products/Create\n\t- Sales/Administrator\n\t- CFO\n\t- CFO For His Company\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 407,
+    "module": "product.pricelist",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Create failed, nothing to delete"
+  },
+  {
+    "tc": 408,
+    "module": "website",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 409,
+    "module": "website",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 410,
+    "module": "website",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Website' (website) records.\n\nThis operation is allowed for the following groups:\n\t- Website/Editor and Designer\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 411,
+    "module": "website",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Create failed, nothing to delete"
+  },
+  {
+    "tc": 412,
+    "module": "helpdesk.team",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 413,
+    "module": "helpdesk.team",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 414,
+    "module": "helpdesk.team",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Helpdesk Team' (helpdesk.team) records.\n\nThis operation is allowed for the following groups:\n\t- Helpdesk/Administrator\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 415,
+    "module": "helpdesk.team",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Create failed, nothing to delete"
+  },
+  {
+    "tc": 416,
+    "module": "social.media",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 417,
+    "module": "social.media",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'display_name': 'QA edit social.media'}"
+  },
+  {
+    "tc": 418,
+    "module": "social.media",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Social Media' (social.media) records.\n\nNo group currently allows this operation.\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 419,
+    "module": "social.media",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Create failed, nothing to delete"
+  },
+  {
+    "tc": 420,
+    "module": "hr.attendance",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 0 records"
+  },
+  {
+    "tc": 421,
+    "module": "hr.attendance",
+    "action": "Write",
+    "status": "SKIPPED",
+    "detail": "No writable name field or no records"
+  },
+  {
+    "tc": 422,
+    "module": "hr.attendance",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 423,
+    "module": "hr.attendance",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 424,
+    "module": "go.live.change.request",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object go.live.change.request doesn't exist\">"
+  },
+  {
+    "tc": 425,
+    "module": "go.live.change.request",
+    "action": "Write",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object go.live.change.request doesn't exist\">"
+  },
+  {
+    "tc": 426,
+    "module": "go.live.change.request",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 427,
+    "module": "go.live.change.request",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 428,
+    "module": "hr.leave",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on hr.leave is not allowed'>"
+  },
+  {
+    "tc": 429,
+    "module": "hr.leave",
+    "action": "Write",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on hr.leave is not allowed'>"
+  },
+  {
+    "tc": 430,
+    "module": "hr.leave",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 431,
+    "module": "hr.leave",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 432,
+    "module": "documents.document",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 433,
+    "module": "documents.document",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 434,
+    "module": "documents.document",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 435,
+    "module": "documents.document",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 436,
+    "module": "go.live.change.request",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object go.live.change.request doesn't exist\">"
+  },
+  {
+    "tc": 437,
+    "module": "go.live.change.request",
+    "action": "Write",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object go.live.change.request doesn't exist\">"
+  },
+  {
+    "tc": 438,
+    "module": "go.live.change.request",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 439,
+    "module": "go.live.change.request",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 440,
+    "module": "hr.goal",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.goal doesn't exist\">"
+  },
+  {
+    "tc": 441,
+    "module": "hr.goal",
+    "action": "Write",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.goal doesn't exist\">"
+  },
+  {
+    "tc": 442,
+    "module": "hr.goal",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 443,
+    "module": "hr.goal",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 444,
+    "module": "hr.challenge",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.challenge doesn't exist\">"
+  },
+  {
+    "tc": 445,
+    "module": "hr.challenge",
+    "action": "Write",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.challenge doesn't exist\">"
+  },
+  {
+    "tc": 446,
+    "module": "hr.challenge",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 447,
+    "module": "hr.challenge",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 448,
+    "module": "hr.attendance",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 0 records"
+  },
+  {
+    "tc": 449,
+    "module": "hr.attendance",
+    "action": "Write",
+    "status": "SKIPPED",
+    "detail": "No writable name field or no records"
+  },
+  {
+    "tc": 450,
+    "module": "hr.attendance",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 451,
+    "module": "hr.attendance",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 452,
+    "module": "hr.applicant",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 453,
+    "module": "hr.applicant",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'display_name': 'QA edit hr.applicant'}"
+  },
+  {
+    "tc": 454,
+    "module": "hr.applicant",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 455,
+    "module": "hr.applicant",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 456,
+    "module": "website.page",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"You are not allowed to access 'Page' (website.page) records.\\n\\nThis operation is allowed for the following groups:\\n\\t- Website/Editor and Designer\\n\\nContact your administrator to request access if necessary.\">"
+  },
+  {
+    "tc": 457,
+    "module": "website.page",
+    "action": "Write",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"You are not allowed to access 'Page' (website.page) records.\\n\\nThis operation is allowed for the following groups:\\n\\t- Website/Editor and Designer\\n\\nContact your administrator to request access if necessary.\">"
+  },
+  {
+    "tc": 458,
+    "module": "website.page",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Page' (website.page) records.\n\nThis operation is allowed for the following groups:\n\t- Website/Editor and Designer\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 459,
+    "module": "website.page",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Create failed, nothing to delete"
+  },
+  {
+    "tc": 460,
+    "module": "marketing.campaign",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 461,
+    "module": "marketing.campaign",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'display_name': 'QA edit marketing.campaign'}"
+  },
+  {
+    "tc": 462,
+    "module": "marketing.campaign",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=600"
+  },
+  {
+    "tc": 463,
+    "module": "marketing.campaign",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=600"
+  },
+  {
+    "tc": 464,
+    "module": "mail.mass_mailing",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object mail.mass_mailing doesn't exist\">"
+  },
+  {
+    "tc": 465,
+    "module": "mail.mass_mailing",
+    "action": "Write",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object mail.mass_mailing doesn't exist\">"
+  },
+  {
+    "tc": 466,
+    "module": "mail.mass_mailing",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 467,
+    "module": "mail.mass_mailing",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  },
+  {
+    "tc": 468,
+    "module": "social.post",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 469,
+    "module": "social.post",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'display_name': 'QA edit social.post'}"
+  },
+  {
+    "tc": 470,
+    "module": "social.post",
+    "action": "Create",
+    "status": "SKIPPED",
+    "detail": "No obvious required name/code field"
+  },
+  {
+    "tc": 471,
+    "module": "social.post",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "No record created"
+  }
+]

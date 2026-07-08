@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="views_marketing_campaign_inherited_form_views" model="ir.ui.view">
+        <field name="name">marketing.campaign</field>
+        <field name="model">marketing.campaign</field>
+        <field name="inherit_id" ref="marketing_automation.marketing_campaign_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_start_campaign']" position="replace">
+                <button name="action_start_campaign" type="object" class="btn-primary" string="Start"
+                        groups="access_rights_management.role_marketing_manager,access_rights_management.role_vp_of_marketing,access_rights_management.role_president"
+                        invisible="state == 'running' or not active" />
+            </xpath>
+            <xpath expr="//button[@name='action_stop_campaign']" position="replace">
+                <button name="action_stop_campaign" type="object"
+                        groups="access_rights_management.role_marketing_manager,access_rights_management.role_vp_of_marketing,access_rights_management.role_president"
+                        invisible="state != 'running'" class="btn-primary" string="Stop" />
+            </xpath>
+            <xpath expr="//button[@name='%(marketing_automation.marketing_campaign_test_action)d']" position="replace">
+                <button name="%(marketing_automation.marketing_campaign_test_action)d" type="action"
+                        groups="access_rights_management.role_marketing_manager,access_rights_management.role_vp_of_marketing,access_rights_management.role_president"
+                        invisible="not marketing_activity_ids or state == 'stopped'" class="btn-secondary" string="Launch a Test" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

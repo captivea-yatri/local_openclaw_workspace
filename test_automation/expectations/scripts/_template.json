@@ -1,0 +1,7 @@
+{
+  "scenario": "my_feature",
+  "description": "Bundled script scenario — one-line description",
+  "full_access": [],
+  "blocked": {},
+  "notes": "After first matrix run: python3 test_automation/scripts/report_to_expectations.py --report /tmp/matrix.json --scenario my_feature --write"
+}

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_hr_expense_sheet_form_roles" model="ir.ui.view">
+        <field name="name">hr.expense.sheet.form.roles</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_sheet_move_post']" position="attributes">
+                <attribute name="groups">account.group_account_invoice,access_rights_management.role_administrative</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_open_account_moves']" position="attributes">
+                <attribute name="groups">account.group_account_invoice,access_rights_management.role_administrative</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_expense_form_inherit" model="ir.ui.view">
+        <field name="name">hr.expense.form</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for='product_id']" position="before">
+                <field name="expense_type" required="1" readonly="not is_editable"/>
+                <field name="partner_id" invisible="expense_type != 'for_customer'"
+                       required="expense_type == 'for_customer'" readonly="not is_editable"
+                       domain="[('status','=','customer'),('is_company','=',True)]"
+                       options="{'no_create': True, 'no_create_edit': True}"/>
+            </xpath>
+            <xpath expr="//field[@name='analytic_distribution']" position="attributes">
+                <attribute name="groups">access_rights_management.role_president,access_rights_management.role_administrative_responsible,access_rights_management.role_cfo</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_sale_expense_sheet_form_inherit" model="ir.ui.view">
+        <field name="name">hr.expense.form</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="sale_expense.hr_expense_form_view_inherit_sale_expense"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sale_order_id'][1]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='sale_order_id'][2]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='sale_order_id'][3]" position="attributes">
+                <attribute name="groups">access_rights_management.role_president,access_rights_management.role_administrative_responsible,access_rights_management.role_cfo</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_expense_tree_inherit" model="ir.ui.view">
+        <field name="name">hr.expense.tree</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_expenses_analysis_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='analytic_distribution']" position="attributes">
+                <attribute name="groups">access_rights_management.role_president,access_rights_management.role_administrative_responsible,access_rights_management.role_cfo</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_sale_expense_tree_inherit" model="ir.ui.view">
+        <field name="name">hr.expense.tree</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="sale_expense.hr_expense_tree_view_inherit_sale_expense"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sale_order_id']" position="attributes">
+                <attribute name="groups">access_rights_management.role_president,access_rights_management.role_administrative_responsible,access_rights_management.role_cfo</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_expense_split_inherit" model="ir.ui.view">
+        <field name="name">hr.expense.tree</field>
+        <field name="model">hr.expense.split.wizard</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_split"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='expense_split_line_ids']//field[@name='analytic_distribution']" position="attributes">
+                <attribute name="groups">access_rights_management.role_president,access_rights_management.role_administrative_responsible,access_rights_management.role_cfo</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_sale_expense_split_inherit" model="ir.ui.view">
+        <field name="name">hr.expense.tree</field>
+        <field name="model">hr.expense.split.wizard</field>
+        <field name="inherit_id" ref="sale_expense.hr_expense_split_view_inherit_sale_expense"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sale_order_id']" position="attributes">
+                <attribute name="groups">access_rights_management.role_president,access_rights_management.role_administrative_responsible,access_rights_management.role_cfo</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_hr_expense_sheet_form_inherit" model="ir.ui.view">
+        <field name="name">hr.expense.sheet.form</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="hr_expense.view_hr_expense_sheet_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='analytic_distribution']" position="attributes">
+                <attribute name="groups">access_rights_management.role_president,access_rights_management.role_administrative_responsible,access_rights_management.role_cfo</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_sale_expense_sheet_form_inherit" model="ir.ui.view">
+        <field name="name">hr.expense.sheet.form</field>
+        <field name="model">hr.expense.sheet</field>
+        <field name="inherit_id" ref="sale_expense.hr_expense_sheet_form_view_inherit_sale_expense"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sale_order_id']" position="attributes">
+                <attribute name="groups">access_rights_management.role_president,access_rights_management.role_administrative_responsible,access_rights_management.role_cfo</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

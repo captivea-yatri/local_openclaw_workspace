@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="lusha_lead_prospect_form_view" model="ir.ui.view">
+        <field name="name">lusha.lead.prospect.form</field>
+        <field name="model">lusha.lead.prospect</field>
+        <field name="arch" type="xml">
+            <form string="Lead Prospecting">
+                <sheet>
+                    <group>
+                        <group string="Search Filters">
+                            <field name="instance_id"/>
+                            <field name="job_titles"/>
+                            <field name="departments"/>
+                            <field name="countries"/>
+                            <field name="company_domains"/>
+                        </group>
+                        <group string="Pagination">
+                            <field name="page"/>
+                            <field name="page_size"/>
+                            <field name="total_entries" readonly="1"/>
+                            <field name="result_message" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="Enrichment Options">
+                        <field name="reveal_emails"/>
+                        <field name="reveal_phones"/>
+                    </group>
+                    <field name="line_ids">
+                        <list editable="bottom">
+                            <field name="selected"/>
+                            <field name="state" widget="badge"
+                                   decoration-success="state == 'enriched' or state == 'lead_created'"
+                                   decoration-warning="state == 'existing_lead'"
+                                   decoration-danger="state == 'error'"/>
+                            <field name="display_name"/>
+                            <field name="title"/>
+                            <field name="company_name"/>
+                            <field name="has_email"/>
+                            <field name="has_phone"/>
+                            <field name="enriched_email"/>
+                            <field name="enriched_phone"/>
+                            <field name="lusha_contact_id"/>
+                        </list>
+                    </field>
+                </sheet>
+                <footer>
+                    <button name="action_search_prospects"
+                            string="Search"
+                            type="object"
+                            class="btn-primary"/>
+                    <button name="action_enrich_selected"
+                            string="Enrich Selected"
+                            type="object"
+                            class="btn-secondary"/>
+                    <button name="action_create_crm_leads"
+                            string="Create CRM Leads"
+                            type="object"
+                            class="btn-secondary"/>
+                    <button name="action_enrich_and_create_leads"
+                            string="Enrich &amp; Create Leads"
+                            type="object"
+                            class="btn-secondary"/>
+                    <button string="Close" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_lusha_lead_prospect" model="ir.actions.act_window">
+        <field name="name">Lead Prospecting</field>
+        <field name="res_model">lusha.lead.prospect</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

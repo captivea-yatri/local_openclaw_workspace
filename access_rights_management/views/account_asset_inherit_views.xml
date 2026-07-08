@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_account_asset_deferred_earning_roles_form">
+        <field name="name">view.account.asset.deferred.earning.roles.form</field>
+        <field name="model">account.asset</field>
+        <field name="inherit_id"
+               ref="cap_automatic_deferred_earnings_account.view_account_asset_deferred_earning_form"/>
+        <field name="arch" type="xml">
+            <button name="auto_reconcile_deferred_revenue_expense" position="attributes">
+                    <attribute name="groups">account.group_account_invoice,access_rights_management.role_management_control,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative</attribute>
+                </button>
+        </field>
+    </record>
+
+</odoo>

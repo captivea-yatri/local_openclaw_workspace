@@ -1,0 +1,248 @@
+[
+  {
+    "tc": 10,
+    "module": "res.partner",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 342 records"
+  },
+  {
+    "tc": 59,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=2338413"
+  },
+  {
+    "tc": 59,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=2338413"
+  },
+  {
+    "tc": 60,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 61,
+    "module": "crm.lead",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 12 records"
+  },
+  {
+    "tc": 62,
+    "module": "crm.lead",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'description': 'QA edit'}"
+  },
+  {
+    "tc": 63,
+    "module": "crm.lead",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=128765"
+  },
+  {
+    "tc": 63,
+    "module": "crm.lead",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=128765"
+  },
+  {
+    "tc": 65,
+    "module": "sale.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 8 records"
+  },
+  {
+    "tc": 66,
+    "module": "sale.order",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'note': 'QA edit note'}"
+  },
+  {
+    "tc": 67,
+    "module": "sale.order",
+    "action": "Create (missing field)",
+    "status": "PASS",
+    "detail": "Expected error: Missing required field 'partner_id'"
+  },
+  {
+    "tc": 68,
+    "module": "sale.order",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 69,
+    "module": "project.project",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 70,
+    "module": "project.project",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'description': 'QA edit'}"
+  },
+  {
+    "tc": 71,
+    "module": "project.project",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=475920"
+  },
+  {
+    "tc": 71,
+    "module": "project.project",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=475920"
+  },
+  {
+    "tc": 72,
+    "module": "project.project",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 300,
+    "module": "go.live.change.request",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object go.live.change.request doesn't exist\">"
+  },
+  {
+    "tc": 300,
+    "module": "go.live.change.request",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'êtes pas autorisé à accéder aux enregistrements 'Fields' (ir.model.fields).\">"
+  },
+  {
+    "tc": 304,
+    "module": "hr.attendance",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 0 records"
+  },
+  {
+    "tc": 304,
+    "module": "hr.attendance",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'êtes pas autorisé à accéder aux enregistrements 'Fields' (ir.model.fields).\">"
+  },
+  {
+    "tc": 310,
+    "module": "account.account",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 310,
+    "module": "account.account",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'êtes pas autorisé à accéder aux enregistrements 'Fields' (ir.model.fields).\">"
+  },
+  {
+    "tc": 317,
+    "module": "account.journal",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'êtes pas autorisé à accéder aux enregistrements 'Journal' (account.journal).\">"
+  },
+  {
+    "tc": 317,
+    "module": "account.journal",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'êtes pas autorisé à accéder aux enregistrements 'Fields' (ir.model.fields).\">"
+  },
+  {
+    "tc": 318,
+    "module": "account.payment",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on account.payment is not allowed'>"
+  },
+  {
+    "tc": 318,
+    "module": "account.payment",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'êtes pas autorisé à accéder aux enregistrements 'Fields' (ir.model.fields).\">"
+  },
+  {
+    "tc": 319,
+    "module": "account.tax",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 319,
+    "module": "account.tax",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'êtes pas autorisé à accéder aux enregistrements 'Fields' (ir.model.fields).\">"
+  },
+  {
+    "tc": 320,
+    "module": "product.template",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 320,
+    "module": "product.template",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'êtes pas autorisé à accéder aux enregistrements 'Fields' (ir.model.fields).\">"
+  },
+  {
+    "tc": 321,
+    "module": "product.product",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 321,
+    "module": "product.product",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'êtes pas autorisé à accéder aux enregistrements 'Fields' (ir.model.fields).\">"
+  },
+  {
+    "tc": 322,
+    "module": "project.project.stage",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 4 records"
+  },
+  {
+    "tc": 322,
+    "module": "project.project.stage",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'êtes pas autorisé à accéder aux enregistrements 'Fields' (ir.model.fields).\">"
+  }
+  // ... more entries follow ...
+]

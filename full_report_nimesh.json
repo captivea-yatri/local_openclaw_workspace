@@ -1,0 +1,366 @@
+[
+  {
+    "tc": 10,
+    "module": "res.partner",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on res.partner is not allowed'>"
+  },
+  {
+    "tc": 59,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault RPC call on res.partner is not allowed"
+  },
+  {
+    "tc": 60,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 61,
+    "module": "crm.lead",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on crm.lead is not allowed'>"
+  },
+  {
+    "tc": 62,
+    "module": "crm.lead",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on crm.lead is not allowed'>"
+  },
+  {
+    "tc": 63,
+    "module": "crm.lead",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault RPC call on crm.lead is not allowed"
+  },
+  {
+    "tc": 64,
+    "module": "crm.lead",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 65,
+    "module": "sale.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 66,
+    "module": "sale.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 66,
+    "module": "sale.order",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'note': 'QA edit note'}"
+  },
+  {
+    "tc": 67,
+    "module": "sale.order",
+    "action": "Create (missing field)",
+    "status": "PASS",
+    "detail": "Expected error: The operation cannot be completed: Missing required value for the field 'Customer' (partner_id).\nModel: 'Sales Order' (sale.order)\n- create/update: a mandatory field is not set\n- delete: another model requires the record being deleted, you can archive it instead\n"
+  },
+  {
+    "tc": 68,
+    "module": "sale.order",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 69,
+    "module": "project.project",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on project.project is not allowed'>"
+  },
+  {
+    "tc": 70,
+    "module": "project.project",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on project.project is not allowed'>"
+  },
+  {
+    "tc": 71,
+    "module": "project.project",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault RPC call on project.project is not allowed"
+  },
+  {
+    "tc": 72,
+    "module": "project.project",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 73,
+    "module": "project.task",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on project.task is not allowed'>"
+  },
+  {
+    "tc": 74,
+    "module": "project.task",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on project.task is not allowed'>"
+  },
+  {
+    "tc": 75,
+    "module": "project.task",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault RPC call on project.task is not allowed"
+  },
+  {
+    "tc": 76,
+    "module": "project.task",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 77,
+    "module": "account.analytic.line",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on account.analytic.line is not allowed'>"
+  },
+  {
+    "tc": 78,
+    "module": "account.analytic.line",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on account.analytic.line is not allowed'>"
+  },
+  {
+    "tc": 79,
+    "module": "account.analytic.line",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault RPC call on account.analytic.line is not allowed"
+  },
+  {
+    "tc": 80,
+    "module": "account.analytic.line",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 81,
+    "module": "account.move",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on account.move is not allowed'>"
+  },
+  {
+    "tc": 82,
+    "module": "account.move",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on account.move is not allowed'>"
+  },
+  {
+    "tc": 83,
+    "module": "account.move",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault RPC call on account.move is not allowed"
+  },
+  {
+    "tc": 84,
+    "module": "account.move",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 85,
+    "module": "account.asset",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 86,
+    "module": "account.asset",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 86,
+    "module": "account.asset",
+    "action": "Write",
+    "status": "BLOCKED",
+    "detail": "Permission denied (fault 4)"
+  },
+  {
+    "tc": 87,
+    "module": "account.asset",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Asset/Revenue Recognition' (account.asset) records.\n\nThis operation is allowed for the following groups:\n\t- Accounting/Bookkeeper\n\t- Accounting/Bookkeeper\n\t- Accounting/Invoicing\n\t- Administrative\n\t- Management Control\n\t- Facturation (copie)\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 88,
+    "module": "account.asset",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 89,
+    "module": "purchase.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 90,
+    "module": "purchase.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 90,
+    "module": "purchase.order",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'note': 'QA edit'}"
+  },
+  {
+    "tc": 91,
+    "module": "purchase.order",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=15"
+  },
+  {
+    "tc": 91,
+    "module": "purchase.order",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=15"
+  },
+  {
+    "tc": 92,
+    "module": "purchase.order",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 93,
+    "module": "hr.employee",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on hr.employee is not allowed'>"
+  },
+  {
+    "tc": 94,
+    "module": "hr.employee",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on hr.employee is not allowed'>"
+  },
+  {
+    "tc": 95,
+    "module": "hr.employee",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault RPC call on hr.employee is not allowed"
+  },
+  {
+    "tc": 96,
+    "module": "hr.employee",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 117,
+    "module": "helpdesk.ticket",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 118,
+    "module": "helpdesk.ticket",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 118,
+    "module": "helpdesk.ticket",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'description': 'QA edit'}"
+  },
+  {
+    "tc": 119,
+    "module": "helpdesk.ticket",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=11524"
+  },
+  {
+    "tc": 119,
+    "module": "helpdesk.ticket",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=11524"
+  },
+  {
+    "tc": 120,
+    "module": "helpdesk.ticket",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 202,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault RPC call on res.partner is not allowed"
+  },
+  {
+    "tc": 203,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault RPC call on res.partner is not allowed"
+  },
+  {
+    "tc": 204,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault RPC call on res.partner is not allowed"
+  }
+]

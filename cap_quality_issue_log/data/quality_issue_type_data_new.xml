@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <!--   Server Action for Below Automated Action   -->
+        <record id="ir_server_timesheet_backlog" model="ir.actions.server">
+            <field name="name">Logging in late</field>
+            <field name="model_id" ref="cap_quality_issue_log.model_account_analytic_line"/>
+            <field name="state">code</field>
+            <field name="code">
+automation_id = env.ref('cap_quality_issue_log.base_automation_timesheet_backlog')
+issue_type = env['quality.issue.type'].search([('base_automation_id', '=', automation_id.id)])
+for rec in records:
+    if rec.company_id.number_of_days_authorized_to_backlog_timesheet and rec.project_id.on_hold_reason == False and (rec.project_id.project_status_id == False or rec.project_id.project_status_id.code not in ['dead', 'duplicate', 'internal', 'internal_p2p3']) and rec.company_id == rec.user_id.company_id:
+        if datetime.date.today() + datetime.timedelta(days=-rec.company_id.number_of_days_authorized_to_backlog_timesheet) > rec.date:
+            issue_vals = {'logged_date': datetime.date.today(),
+            'employee_id': rec.employee_id.id,
+            'description': 'Timesheet id = {}'.format(rec.id) + ' For Date: {}'.format(rec.date) + ' is Logged in late',
+            'score_impact': issue_type.score_impact,
+            'project_id': rec.project_id.id,
+            'timesheet_id': rec.id,
+            'quality_issue_type': issue_type.id,
+            'log_type': 'penalty'}
+            env['quality.issue.log'].create(issue_vals)
+            </field>
+        </record>
+
+        <!--   Automated Action for Timesheet Backlog Issue Type   -->
+        <record id="base_automation_timesheet_backlog" model="base.automation">
+            <field name="name">Logging in late</field>
+            <field name="model_id" ref="cap_quality_issue_log.model_account_analytic_line"/>
+            <field name="trigger">on_create_or_write</field>
+            <field name="trigger_field_ids" eval="[(4, ref('analytic.field_account_analytic_line__date'))]"/>
+            <field name="action_server_ids" eval="[(4, ref('cap_quality_issue_log.ir_server_timesheet_backlog'))]"/>
+        </record>
+
+        <!--   Issue Type Timesheet Backlog   -->
+        <record id="quality_issue_type_timesheet_backlog" model="quality.issue.type">
+            <field name="name">Logging in late</field>
+            <field name="action_performer">create_automated_action</field>
+            <field name="quality_category" ref="cap_quality_issue_log.quality_category_timesheet"/>
+            <field name="ir_model_id" ref="cap_quality_issue_log.model_account_analytic_line"/>
+            <field name="score_impact">100</field>
+            <field name="state">in_progress</field>
+            <field name="base_automation_id" ref="base_automation_timesheet_backlog"/>
+        </record>
+
+<!-- ############################### PM Report Not Done Quality issue type ################################ -->
+
+        <record id="ir_cron_pm_report_not_done" model="ir.cron">
+            <field name="name">PM Report Not Done</field>
+            <field name="model_id" ref="cap_project_progress_report.model_project_progress"/>
+            <field name="state">code</field>
+            <field name="code">model.pm_report_not_done()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+        </record>
+
+        <!--   Issue Type PM Report Not Done   -->
+        <record id="quality_issue_type_pm_report_not_done" model="quality.issue.type">
+            <field name="name">PM Report Not Done</field>
+            <field name="action_performer">create_schedule_action</field>
+            <field name="quality_category" ref="cap_quality_issue_log.quality_category_pm_report"/>
+            <field name="ir_model_id" ref="cap_project_progress_report.model_project_progress"/>
+            <field name="score_impact">40</field>
+            <field name="state">in_progress</field>
+            <field name="ir_cron_id" ref="ir_cron_pm_report_not_done"/>
+        </record>
+
+<!-- ############################### Project Status Not Manage Quality issue type ################################## -->
+
+        <record id="ir_cron_status_on_project" model="ir.cron">
+            <field name="name">Status On Project</field>
+            <field name="model_id" ref="project.model_project_project"/>
+            <field name="state">code</field>
+            <field name="code">model.check_project_status()</field>
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="nextcall" eval="DateTime.now().replace(day=20, hour=3, minute=0)"/>
+        </record>
+
+        <!--   Issue Type Check Project Status -->
+        <record id="quality_issue_type_status_on_project" model="quality.issue.type">
+            <field name="name">Status On Project</field>
+            <field name="action_performer">create_schedule_action</field>
+            <field name="quality_category" ref="cap_quality_issue_log.quality_category_project_status"/>
+            <field name="ir_model_id" ref="project.model_project_project"/>
+            <field name="score_impact">100</field>
+            <field name="state">in_progress</field>
+            <field name="ir_cron_id" ref="ir_cron_status_on_project"/>
+        </record>
+    </data>
+</odoo>

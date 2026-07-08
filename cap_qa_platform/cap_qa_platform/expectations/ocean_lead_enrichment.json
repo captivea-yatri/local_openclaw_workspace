@@ -1,0 +1,15 @@
+{
+  "scenario": "ocean_lead_enrichment",
+  "description": "Ocean.io prospect search imports CRM lead; live search path also validates people lookup enrichment.",
+  "modules": [
+    "cap_ocean_connector",
+    "crm"
+  ],
+  "full_access": [
+    "President",
+    "CEO",
+    "Sales Manager"
+  ],
+  "blocked": {},
+  "notes": "Requires active ocean.instance on staging. Set CAP_QA_OCEAN_SEARCH_DOMAIN to override search domain (default odoo.com). Seeded fallback skips live enrich step."
+}

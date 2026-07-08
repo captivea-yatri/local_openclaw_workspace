@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="account_journal_dashboard_kanban_view_inherited_roles" model="ir.ui.view">
+        <field name="name">account.journal.dashboard.kanban.inherited.roles</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account_accountant.account_journal_dashboard_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//a[@name='action_open_reconcile']" position="replace">
+                <a type="object" name="action_open_reconcile" groups="account.group_account_user,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative">Payments Matching</a>
+            </xpath>
+            <xpath expr="//button[@name='action_open_reconcile']" position="replace">
+                <button t-if="dashboard.number_to_reconcile > 0" type="object" name="action_open_reconcile" class="btn btn-secondary d-block text-nowrap" groups="account.group_account_basic,account.group_account_user,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_president"><t t-out="dashboard.number_to_reconcile"/> to reconcile</button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account_journal_dashboard_kanban_view_inherited_roles1" model="ir.ui.view">
+        <field name="name">account.journal.dashboard.kanban.inherited.roles1</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.account_journal_dashboard_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr='//t[@t-name="JournalBodySalePurchase"]//t[@t-if="journal_type == &apos;sale&apos;"]/button[@name="action_create_new"]' position="replace">
+                <button type="object" name="action_create_new" class="btn btn-primary" groups="account.group_account_invoice,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative">
+                    New
+                </button>
+            </xpath>
+            <xpath expr="//t[@t-name='JournalMiscelaneous']/div[@id='dashboard_misc_left']/button[@id='new_misc_entry_button']" position="replace">
+                <button id="new_misc_entry_button" type="object" name="action_create_new" class="btn btn-primary float-start me-1" groups="account.group_account_invoice,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative">
+                    New
+                </button>
+            </xpath>
+<!--            <xpath expr="//button[hasclass('btn-secondary')]" position="replace">-->
+<!--                <button type="object" name="action_create_new" class="btn-secondary " groups="account.group_account_invoice,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative">New</button>-->
+<!--            </xpath>-->
+            <xpath expr='//t[@t-name="menu"]//div[@t-if="journal_type == &apos;purchase&apos; || journal_type == &apos;sale&apos;"]//div[@name="kanban_manage_reports"]//div//a[1]'
+                   position="replace">
+            <a t-if="journal_type == 'sale'" type="action" name="%(account.action_account_invoice_report_all)d" groups="account.group_account_readonly,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_vps,access_rights_management.role_vp_of_sales">Invoices Analysis</a>
+            </xpath>
+            <xpath expr='//t[@t-name="menu"]//div[@t-if="journal_type == &apos;purchase&apos; || journal_type == &apos;sale&apos;"]//div[@name="kanban_manage_reports"]//div//a[2]'
+                   position="replace">
+                <a t-if="journal_type == 'purchase'" type="action" name="%(account.action_account_invoice_report_all_supp)d" groups="account.group_account_readonly,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_vps,access_rights_management.role_vp_of_sales">Bills Analysis</a>
+            </xpath>
+
+            <xpath expr='//t[@t-name="menu"]//div[@t-if="journal_type == &apos;purchase&apos; || journal_type == &apos;sale&apos;"]//div[@name="kanban_manage_new"]'
+                   position="replace">
+                <div class="col-4" groups="account.group_account_invoice,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative" name="kanban_manage_new">
+                    <h5 class="o_kanban_card_manage_title">
+                        <span>New</span>
+                    </h5>
+                    <div>
+                        <a type="object" name="action_create_new">
+                            <span t-if="journal_type == 'sale'">Invoice</span>
+                            <span t-if="journal_type == 'purchase'">Bill</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a type="object" name="action_create_new"  context="{'refund':True}">
+                            <span t-if="journal_type == 'sale'">Credit Note</span>
+                            <span t-if="journal_type == 'purchase'">Refund</span>
+                        </a>
+                    </div>
+                    <div t-if="journal_type == 'sale'">
+                        <widget name="account_file_uploader" title="Upload Invoices" btnClass="file_upload_kanban_action_a"/>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr='//t[@t-name="menu"]//div[@t-if="journal_type == &apos;bank&apos; || journal_type == &apos;cash&apos; || journal_type == &apos;credit&apos;"]//div[2]'
+                   position="replace">
+                <div class="col-4" groups="account.group_account_basic,account.group_account_invoice,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative" name="kanban_manage_new">
+                    <h5 class="o_kanban_card_manage_title">
+                        <span role="separator">New</span>
+                    </h5>
+                    <div name="bank_customer_payment">
+                        <a role="menuitem" type="object" name="create_customer_payment">Customer Payment</a>
+                    </div>
+                    <div>
+                        <a role="menuitem" type="object" name="create_supplier_payment">Vendor Payment</a>
+                    </div>
+                </div>
+            </xpath>
+
+            <xpath expr='//t[@t-name="menu"]//div[@t-if="journal_type == &apos;general&apos; || journal_type == &apos;situation&apos;"]'
+                   position="replace">
+                <div t-if="journal_type == 'general' || journal_type == 'situation'" class="row" groups="account.group_account_user,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative">
+                    <div class="col-4">
+                        <h5 class="o_kanban_card_manage_title">
+                            <span>View</span>
+                        </h5>
+                        <div>
+                            <a type="object" name="open_action" context="{'action_name': 'action_move_journal_line'}">Journal Entries</a>
+                        </div>
+                        <div>
+                            <a type="object" name="open_action" context="{'action_name': 'action_move_journal_line', 'search_default_unposted': 1}">Entries to Review</a>
+                        </div>
+                        <div>
+                            <a type="object" name="open_action" context="{'action_name': 'action_account_moves_all_a'}" groups="base.group_no_one">Journal Items</a>
+                        </div>
+                    </div>
+
+                    <div class="col-4" groups="account.group_account_user,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative" name="kanban_manage_new">
+                        <h5 class="o_kanban_card_manage_title">
+                            <span>New</span>
+                        </h5>
+                        <div>
+                            <a type="object" name="action_create_new">Journal Entry</a>
+                        </div>
+                    </div>
+
+                    <div class="col-4 o_kanban_manage_operations" groups="account.group_account_user,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative">
+                        <h5 class="o_kanban_card_manage_title">
+                            <span>Operations</span>
+                        </h5>
+                        <div>
+                            <a type="object" name="open_action_with_context" context="{'action_name': 'action_validate_account_move', 'search_default_journal': True}">Post All Entries</a>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+
+<!--           TODO : MAY BE GET BETTER IDEA IN DATABASE-->
+<!--            <xpath expr="//div[hasclass('o_kanban_manage_reconciliation')]" position="inside">-->
+<!--                <div groups="access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_vps,access_rights_management.role_vp_of_sales">-->
+<!--                    <a type="action" name="%(account_reports.action_account_report_bank_reconciliation)d">Reconciliation-->
+<!--                        Report-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </xpath>-->
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="account_journal_dashboard_inherit_online_sync_view_roles">
+        <field name="name">account.journal.dashboard.kanban.reports.view.roles</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account_online_synchronization.account_journal_dashboard_inherit_online_sync"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='manual_sync']" position="attributes">
+                <attribute name="groups">account.group_account_user,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative</attribute>
+            </xpath>
+<!--            TODO : check for next sync in v18 it is available or not(better idea in migrated database)-->
+<!--            <xpath expr='//span[@t-if="(record.next_link_synchronization !== undefined)"]' position="attributes">-->
+<!--                <attribute name="groups">-->
+<!--                    account.group_account_user,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative-->
+<!--                </attribute>-->
+<!--            </xpath>-->
+        </field>
+    </record>
+
+<!--    TODO : may be removed better idea in database-->
+<!--    <record model="ir.ui.view" id="journal_dashboard_view_inherit_roles">-->
+<!--        <field name="name">account.journal.dashboard.kanban.inherit.roles</field>-->
+<!--        <field name="model">account.journal</field>-->
+<!--        <field name="inherit_id" ref="account_bank_statement_import.journal_dashboard_view_inherit"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//div[@name='bank_statement_create_button']" position="attributes">-->
+<!--                <attribute name="groups">-->
+<!--                    account.group_account_invoice,access_rights_management.role_management_control,access_rights_management.role_ceo,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative-->
+<!--                </attribute>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    TODO : need to check in V18 better idea after database-->
+<!--    <template id="aged_report_line_template_roles" inherit_id="account_reports.aged_report_line_template">-->
+<!--        <xpath expr="//a[@groups='account.group_account_user']" position="attributes">-->
+<!--            <attribute name="groups">-->
+<!--                account.group_account_user,access_rights_management.role_management_control,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_ceo-->
+<!--            </attribute>-->
+<!--        </xpath>-->
+
+<!--        <xpath expr="//a[hasclass('o_change_expected_date')]" position="attributes">-->
+<!--            <attribute name="groups">-->
+<!--                account.group_account_user,access_rights_management.role_management_control,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_ceo-->
+<!--            </attribute>-->
+<!--        </xpath>-->
+<!--    </template>-->
+
+</odoo>

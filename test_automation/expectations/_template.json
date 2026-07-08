@@ -1,0 +1,20 @@
+{
+  "scenario": "my_feature",
+  "description": "One-line description of the business flow",
+  "modules": ["cap_my_module", "access_rights_management"],
+  "steps": [
+    "step_one",
+    "step_two"
+  ],
+  "full_access": [
+    "President",
+    "Team Manager"
+  ],
+  "blocked": {
+    "HR": {
+      "at": "step_one",
+      "error": "AccessError"
+    }
+  },
+  "notes": "Run matrix, then: python3 test_automation/scripts/report_to_expectations.py --report /tmp/matrix.json --scenario my_feature --write"
+}

@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/home/captivea/.openclaw/workspace/workspace/test_project_workflow.py", line 109, in <module>
+    uid = common.authenticate(DB, USERNAME, PASSWORD, {})
+  File "/usr/lib/python3.13/xmlrpc/client.py", line 1096, in __call__
+    return self.__send(self.__name, args)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/xmlrpc/client.py", line 1435, in __request
+    response = self.__transport.request(
+        self.__host,
+    ...<2 lines>...
+        verbose=self.__verbose
+        )
+  File "/usr/lib/python3.13/xmlrpc/client.py", line 1140, in request
+    return self.single_request(host, handler, request_body, verbose)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/xmlrpc/client.py", line 1170, in single_request
+    raise ProtocolError(
+    ...<3 lines>...
+        )
+xmlrpc.client.ProtocolError: <ProtocolError for aflutter-marxism-creamer.ngrok-free.dev/xmlrpc/2/common: 502 Bad Gateway>
+{
+  "log": []
+}

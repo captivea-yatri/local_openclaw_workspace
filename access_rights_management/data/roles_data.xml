@@ -1,0 +1,676 @@
+<odoo>
+    <data>
+        <record id="role_president_data" model="res.users.role">
+            <field name="name">President</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_system')), (4, ref('account.group_account_manager')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_create_deferred_revenue_time_credit')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_access_close_revenue_time_credit')),
+                   (4, ref('hr_timesheet.group_timesheet_manager')), (4, ref('hr.group_hr_manager')),
+                   (4, ref('hr_recruitment.group_hr_recruitment_manager')), (4, ref('project.group_project_manager')),
+                   (4, ref('sales_team.group_sale_manager')), (4, ref('website.group_website_designer')),
+                   (4, ref('helpdesk.group_helpdesk_manager')), (4, ref('purchase.group_purchase_manager')),
+                   (4, ref('access_rights_management.show_contacts')), (4, ref('access_rights_management.show_sales')),
+                   (4, ref('base.group_no_one')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_access_credit_note')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_create_deferred_revenue')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_access_close_revenue')),
+                   (4, ref('base.group_allow_export')), (4, ref('access_rights_management.show_products')),
+                   (4, ref('access_rights_management.group_access_request')),
+                   (4, ref('access_rights_management.access_goal_finance_info')), (4, ref('base.group_partner_manager')),
+                   (4, ref('cap_quality_issue_log.group_emp_perf_quality_recognizer')),
+                   (4, ref('import_journal_entry.group_import_journal_entry')), (4, ref('mail.group_mail_template_editor')),
+                   (4, ref('ksc_project_go_live_maintainer.group_glcr_direction_approve')),
+                   (4, ref('ksc_project_go_live_maintainer.group_glcr_manager_approve')),
+                   (4, ref('cap_partner.group_can_change_customer_status')),
+                   (4, ref('ksc_project_extended.group_extra_timesheet')),
+                   (4, ref('ksc_sale_project_extended.group_allow_product_minimum_sale_price')),
+                   (4, ref('ksc_project_extended.group_reduce_past_timesheet')),
+                   (4, ref('cap_partner.unlock_customer')),
+                   (4, ref('access_rights_management.show_website')),
+                   (4, ref('cap_hr_employee_extended.access_employee_group')), (4, ref('access_rights_management.access_portal_menu_invoices')),
+                   (4, ref('access_rights_management.access_portal_menu_sales')),
+                   (4, ref('hr_attendance.group_hr_attendance_manager')),
+
+                   (4, ref('appointment.group_appointment_manager')), (4, ref('social.group_social_manager')),
+                   (4, ref('marketing_automation.group_marketing_automation_user')), (4, ref('event.group_event_manager')),
+                   (4, ref('survey.group_survey_manager')),
+
+
+                   (4, ref('fleet.fleet_group_manager')), (4, ref('planning.group_planning_manager')),
+                   (4, ref('lunch.group_lunch_manager')), (4, ref('approvals.group_approval_manager')),
+                   (4, ref('product.group_product_variant')),
+
+                   (4, ref('documents.group_documents_manager')), (4, ref('hr_appraisal.group_hr_appraisal_manager')),
+                   (4, ref('sign.group_sign_manager')), (4, ref('access_rights_management.show_social')),
+                   (4, ref('spreadsheet_dashboard.group_dashboard_manager')),
+
+                   (4, ref('hr_payroll.group_hr_payroll_manager')), (4, ref('ksc_project_extended.group_project_pmm_report')),
+                   (4, ref('cap_domain.operation_quality_manager')),
+                   (4, ref('access_rights_management.group_can_able_to_debug')), (4, ref('analytic.group_analytic_accounting')),
+                   (4, ref('ksc_sale_project_extended.group_modify_line_of_quotation')),
+                   (4, ref('cap_actions.group_action_admin')),]"/>
+        </record>
+
+        <record id="role_vp_of_marketing_data" model="res.users.role">
+            <field name="name">Marketing Director</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('hr_recruitment.group_hr_recruitment_user')),
+                   (4, ref('access_rights_management.show_contacts')), (4, ref('hr.group_hr_user')),
+                   (4, ref('project.group_project_user')), (4, ref('sales_team.group_sale_salesman_all_leads')),
+                   (4, ref('access_rights_management.show_sales')),
+                   (4, ref('website.group_website_designer')), (4, ref('purchase.group_purchase_manager')),
+                   (4, ref('base.group_allow_export')), (4, ref('access_rights_management.show_helpdesk')),
+                   (4, ref('cap_quality_issue_log.group_emp_perf_quality_recognizer')),
+                   (4, ref('access_rights_management.show_products')), (4, ref('access_rights_management.show_website')),
+                   (4, ref('access_rights_management.access_goal_finance_info')), (4, ref('access_rights_management.access_portal_menu_sales')),
+                   (4, ref('cap_hr_employee_extended.access_employee_group')),
+
+                   (4, ref('appointment.group_appointment_manager')), (4, ref('social.group_social_manager')),
+                   (4, ref('marketing_automation.group_marketing_automation_user')), (4, ref('event.group_event_manager')),
+                   (4, ref('survey.group_survey_manager')), (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+
+                   (4, ref('planning.group_planning_manager')), (4, ref('lunch.group_lunch_user')),
+
+                   (4, ref('documents.group_documents_user')), (4, ref('access_rights_management.show_social')),
+                   (4, ref('access_rights_management.group_can_able_to_debug')),
+
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')),
+                   (4, ref('sign.group_sign_user')), (4, ref('cap_actions.group_action_admin'))]"/>
+        </record>
+
+        <record id="role_cfo_data" model="res.users.role">
+            <field name="name">CFO</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('account.group_account_manager')),
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')), (4, ref('hr_recruitment.group_hr_recruitment_user')),
+                   (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('project.group_project_user')), (4, ref('purchase.group_purchase_manager')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('event.group_event_registration_desk')),
+                   (4, ref('access_rights_management.show_products')),
+                   (4, ref('access_rights_management.access_goal_finance_info')), (4, ref('base.group_allow_export')),
+                   (4, ref('cap_quality_issue_log.group_emp_perf_quality_recognizer')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_create_deferred_revenue')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_access_close_revenue')), (4, ref('hr.group_hr_user')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_access_credit_note')),
+                   (4, ref('import_journal_entry.group_import_journal_entry')), (4, ref('cap_hr_employee_extended.access_employee_group')),
+                   (4, ref('access_rights_management.access_portal_menu_invoices')), (4, ref('access_rights_management.access_portal_menu_sales')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_access_close_revenue_time_credit')),
+
+                   (4, ref('event.group_event_user')), (4, ref('product.group_product_variant')),
+
+
+                   (4, ref('planning.group_planning_manager')),
+                   (4, ref('lunch.group_lunch_user')), (4, ref('approvals.group_approval_manager')),
+
+                   (4, ref('sign.group_sign_manager')), (4, ref('hr_payroll.group_hr_payroll_manager')),
+                   (4, ref('ksc_sale_project_extended.group_allow_product_minimum_sale_price')),
+                   (4, ref('access_rights_management.group_can_able_to_debug')), (4, ref('analytic.group_analytic_accounting')),
+                   (4, ref('ksc_auto_invoice.group_security_deposit_configuration')),
+                   (4, ref('cap_actions.group_action_admin')),
+                   (4, ref('hr_attendance.group_hr_attendance_manager'))]"/>
+        </record>
+
+        <record id="role_drh_data" model="res.users.role">
+            <field name="name">DRH</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('hr_recruitment.group_hr_recruitment_user')),
+                   (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('project.group_project_user')), (4, ref('purchase.group_purchase_manager')),
+                   (4, ref('base.group_allow_export')), (4, ref('hr.group_hr_manager')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('access_rights_management.show_products')),
+                   (4, ref('cap_quality_issue_log.group_emp_perf_quality_recognizer')),
+                   (4, ref('access_rights_management.access_goal_finance_info')), (4, ref('cap_hr_employee_extended.access_employee_group')),
+
+                   (4, ref('event.group_event_user')), (4, ref('survey.group_survey_manager')),
+
+                   (4, ref('fleet.fleet_group_manager')), (4, ref('planning.group_planning_manager')),
+                   (4, ref('lunch.group_lunch_user')), (4, ref('approvals.group_approval_manager')),
+                   (4, ref('hr_holidays.group_hr_holidays_manager')),
+
+                   (4, ref('documents.group_documents_user')), (4, ref('hr_appraisal.group_hr_appraisal_manager')),
+                   (4, ref('sign.group_sign_manager')), (4, ref('hr_payroll.group_hr_payroll_manager')),
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')),
+                   (4, ref('ksc_project_extended.group_reduce_past_timesheet')),
+                   (4, ref('access_rights_management.group_can_able_to_debug')),
+                   (4, ref('cap_actions.group_action_admin')),
+                   (4, ref('hr_attendance.group_hr_attendance_manager')),
+                   (4, ref('spreadsheet_dashboard.group_dashboard_manager'))]"/>
+        </record>
+
+        <record id="role_vp_of_quality_and_knowledge_data" model="res.users.role">
+            <field name="name">VP of Quality and Knowledge</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('base.group_allow_export')), (4, ref('access_rights_management.show_sales')),
+                   (4, ref('sales_team.group_sale_salesman_all_leads')), (4, ref('hr.group_hr_user')),
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')), (4, ref('project.group_project_user')),
+                   (4, ref('hr_recruitment.group_hr_recruitment_user')),
+                   (4, ref('cap_quality_issue_log.group_emp_perf_quality_recognizer')),
+                   (4, ref('account.group_account_readonly')), (4, ref('access_rights_management.show_products')),
+                   (4, ref('access_rights_management.access_goal_finance_info')), (4, ref('access_rights_management.show_helpdesk')),
+                   (4, ref('cap_hr_employee_extended.access_employee_group')), (4, ref('access_rights_management.access_portal_menu_sales')),
+                   (4, ref('access_rights_management.group_access_request')),
+
+                   (4, ref('appointment.group_appointment_manager')), (4, ref('event.group_event_user')),
+                   (4, ref('survey.group_survey_manager')),
+
+                   (4, ref('fleet.fleet_group_manager')), (4, ref('planning.group_planning_manager')),
+                   (4, ref('lunch.group_lunch_manager')), (4, ref('approvals.group_approval_manager')),
+                   (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+
+                   (4, ref('hr_appraisal.group_hr_appraisal_manager')),
+                   (4, ref('ksc_project_extended.group_project_pmm_report')), (4, ref('cap_domain.operation_quality_manager')),
+                   (4, ref('access_rights_management.group_can_able_to_debug')), (4, ref('mail.group_mail_template_editor')),
+                   (4, ref('sign.group_sign_user')), (4, ref('cap_actions.group_action_admin'))]"/>
+        </record>
+
+        <record id="role_ceo_data" model="res.users.role">
+            <field name="name">CEO</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('purchase.group_purchase_manager')), (4, ref('access_rights_management.show_helpdesk')),
+                   (4, ref('base.group_allow_export')), (4, ref('hr.group_hr_user')),
+                   (4, ref('access_rights_management.show_sales')),
+                   (4, ref('sales_team.group_sale_salesman_all_leads')), (4, ref('base.group_no_one')),
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')), (4, ref('project.group_project_user')),
+                   (4, ref('hr_recruitment.group_hr_recruitment_user')), (4, ref('import_journal_entry.group_import_journal_entry')),
+                   (4, ref('access_rights_management.show_products')), (4, ref('access_rights_management.access_goal_finance_info')),
+                   (4, ref('access_rights_management.access_portal_menu_sales')), (4, ref('access_rights_management.access_portal_menu_invoices')),
+                   (4, ref('cap_hr_employee_extended.access_employee_group')), (4, ref('access_rights_management.group_access_request')),
+
+                   (4, ref('marketing_automation.group_marketing_automation_user')), (4, ref('event.group_event_user')),
+                   (4, ref('survey.group_survey_user')), (4, ref('social.group_social_manager')),
+
+                   (4, ref('hr_expense.group_hr_expense_user')), (4, ref('planning.group_planning_manager')),
+                   (4, ref('lunch.group_lunch_user')), (4, ref('approvals.group_approval_manager')),
+                   (4, ref('hr_attendance.group_hr_attendance_own_reader')), (4, ref('sign.group_sign_user')),
+
+                   (4, ref('hr_appraisal.group_hr_appraisal_manager')),
+                   (4, ref('maintenance.group_equipment_manager')), (4, ref('access_rights_management.show_social')),
+                   (4, ref('ksc_project_extended.group_project_pmm_report')), (4, ref('fleet.fleet_group_manager')),
+                   (4, ref('access_rights_management.group_can_able_to_debug')), (4, ref('documents.group_documents_user')),
+                   (4, ref('cap_actions.group_action_admin')), (4, ref('spreadsheet_dashboard.group_dashboard_manager'))]"/>
+        </record>
+
+        <record id="role_vp_of_sales_data" model="res.users.role">
+            <field name="name">Sales Manager</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('base.group_allow_export')), (4, ref('hr.group_hr_user')),
+                   (4, ref('base.group_no_one')),
+                   (4, ref('sales_team.group_sale_salesman_all_leads')), (4, ref('access_rights_management.show_sales')),
+                   (4, ref('access_rights_management.show_products')), (4, ref('cap_hr_employee_extended.access_employee_group')),
+                   (4, ref('access_rights_management.access_portal_menu_sales')), (4, ref('access_rights_management.access_portal_menu_invoices')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+
+                   (4, ref('appointment.group_appointment_manager')), (4, ref('social.group_social_manager')),
+                   (4, ref('marketing_automation.group_marketing_automation_user')), (4, ref('event.group_event_user')),
+                   (4, ref('survey.group_survey_manager')),
+
+                   (4, ref('hr_expense.group_hr_expense_team_approver')), (4, ref('planning.group_planning_manager')),
+                   (4, ref('lunch.group_lunch_user')), (4, ref('approvals.group_approval_user')),
+                   (4, ref('hr_holidays.group_hr_holidays_responsible')),
+
+                   (4, ref('hr_appraisal.group_hr_appraisal_user')), (4, ref('access_rights_management.show_social')),
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')), (4, ref('documents.group_documents_user')),
+                   (4, ref('access_rights_management.group_can_able_to_debug')), (4, ref('sign.group_sign_user')),
+                   (4, ref('access_rights_management.group_access_request'))]"/>
+        </record>
+
+        <record id="role_vps_data" model="res.users.role">
+            <field name="name">VPs</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')), (4, ref('hr.group_hr_user')),
+                   (4, ref('base.group_allow_export')), (4, ref('event.group_event_registration_desk')),
+                   (4, ref('base.group_no_one')),
+                   (4, ref('access_rights_management.show_products')), (4, ref('hr_timesheet.group_hr_timesheet_approver')),
+                   (4, ref('access_rights_management.access_goal_finance_info')), (4, ref('cap_hr_employee_extended.access_employee_group')),
+                   (4, ref('access_rights_management.access_portal_menu_sales')), (4, ref('access_rights_management.access_portal_menu_invoices')),
+                   (4, ref('access_rights_management.show_helpdesk')),
+                   (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+
+                   (4, ref('appointment.group_appointment_manager')), (4, ref('event.group_event_user')),
+                   (4, ref('survey.group_survey_manager')),
+
+
+                   (4, ref('planning.group_planning_manager')),
+                   (4, ref('lunch.group_lunch_manager')), (4, ref('approvals.group_approval_manager')),
+
+                   (4, ref('hr_appraisal.group_hr_appraisal_manager')),
+                   (4, ref('access_rights_management.group_can_able_to_debug')), (4, ref('sign.group_sign_user')),
+                   ]"/>
+        </record>
+
+        <record id="role_team_director_data" model="res.users.role">
+            <field name="name">Team Director</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('access_rights_management.group_access_request')),
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')), (4, ref('access_rights_management.show_products')),
+                   (4, ref('hr_attendance.group_hr_attendance_own_reader')), (4, ref('event.group_event_registration_desk')),
+                   (4, ref('ksc_project_go_live_maintainer.group_glcr_manager_approve')),
+                   (4, ref('ksc_project_go_live_maintainer.group_glcr_direction_approve')),
+                   (4, ref('ksc_project_extended.group_project_pmm_report')), (4, ref('hr_holidays.group_hr_holidays_responsible')),
+                   (4, ref('access_rights_management.group_create_delete_project')),
+                   (4, ref('hr_expense.group_hr_expense_team_approver')), (4, ref('base.group_allow_export')),
+                   (4, ref('sign.group_sign_user')),
+                   (4, ref('ksc_project_extended.access_internal_project_quota')), (4, ref('planning.group_planning_manager'))]"/>
+        </record>
+
+        <record id="role_team_manager_data" model="res.users.role">
+            <field name="name">Team Manager</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('hr_timesheet.group_hr_timesheet_approver')),
+                   (4, ref('access_rights_management.show_products')), (4, ref('access_rights_management.group_access_request')),
+                   (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+
+                   (4, ref('event.group_event_user')), (4, ref('base.group_allow_export')),
+
+                   (4, ref('hr_expense.group_hr_expense_team_approver')), (4, ref('lunch.group_lunch_user')),
+                   (4, ref('hr_holidays.group_hr_holidays_responsible')), (4, ref('sign.group_sign_user'))]"/>
+        </record>
+
+        <record id="role_operation_data" model="res.users.role">
+            <field name="name">Operation</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('hr_timesheet.group_hr_timesheet_approver')),
+                   (4, ref('access_rights_management.show_products')), (4, ref('access_rights_management.group_access_request')),
+                   (4, ref('hr_attendance.group_hr_attendance_own_reader')), (4, ref('base.group_allow_export')),
+
+                   (4, ref('event.group_event_user')),
+
+                   (4, ref('lunch.group_lunch_user')), (4, ref('sign.group_sign_user'))]"/>
+        </record>
+
+        <record id="role_operation_on_boarder_data" model="res.users.role">
+            <field name="name">Operation On Boarder</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('hr_timesheet.group_hr_timesheet_approver')),
+                   (4, ref('access_rights_management.show_products')), (4, ref('event.group_event_registration_desk')),
+                   (4, ref('hr_attendance.group_hr_attendance_own_reader')), (4, ref('base.group_allow_export')),
+                   (4, ref('access_rights_management.group_access_request')), (4, ref('sign.group_sign_user'))]"/>
+        </record>
+
+        <record id="role_office_manager_data" model="res.users.role">
+            <field name="name">Office Manager</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+                   (4, ref('access_rights_management.show_products')), (4, ref('base.group_allow_export')),
+                   (4, ref('sign.group_sign_user'))]"/>
+        </record>
+
+        <record id="role_administrative_data" model="res.users.role">
+            <field name="name">Administrative</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('event.group_event_registration_desk')),(4, ref('import_journal_entry.group_import_journal_entry')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_create_deferred_revenue')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_access_close_revenue')),
+                   (4, ref('access_rights_management.show_products')), (4, ref('access_rights_management.access_goal_finance_info')),
+                   (4, ref('cap_hr_employee_extended.access_employee_group')), (4, ref('access_rights_management.access_portal_menu_invoices')),
+                   (4, ref('access_rights_management.access_portal_menu_sales')),
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')), (4, ref('survey.group_survey_user')),
+
+                   (4, ref('lunch.group_lunch_user')), (4, ref('sign.group_sign_user')), (4, ref('documents.group_documents_user')),
+                   (4, ref('hr_holidays.group_hr_holidays_user')), (4, ref('hr_expense.group_hr_expense_user')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_access_close_revenue_time_credit')),
+                   (4, ref('base.group_allow_export')), (4, ref('hr_attendance.group_hr_attendance_manager')),
+                   (4, ref('cap_actions.group_action_user')),
+                   (4, ref('fleet.fleet_group_manager'))]"/>
+        </record>
+
+        <record id="role_administrative_responsible_data" model="res.users.role">
+            <field name="name">Administrative Responsible</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_access_credit_note')),
+                   (4, ref('access_rights_management.show_helpdesk')),(4, ref('event.group_event_registration_desk')),
+                   (4, ref('hr_attendance.group_hr_attendance_manager')), (4, ref('survey.group_survey_user')),
+                   (4, ref('cap_quality_issue_log.group_emp_perf_quality_recognizer')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_create_deferred_revenue')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_access_close_revenue')),
+                   (4, ref('access_rights_management.show_products')), (4, ref('access_rights_management.access_goal_finance_info')),
+                   (4, ref('import_journal_entry.group_import_journal_entry')), (4, ref('cap_hr_employee_extended.access_employee_group')),
+                   (4, ref('access_rights_management.access_portal_menu_sales')), (4, ref('base.group_allow_export')),
+                   (4, ref('access_rights_management.access_portal_menu_invoices')),
+                   (4, ref('hr_payroll.group_hr_payroll_manager')), (4, ref('account.group_account_manager')),
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')), (4, ref('sign.group_sign_user')),
+                   (4, ref('hr_expense.group_hr_expense_manager')), (4, ref('documents.group_documents_user')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_access_close_revenue_time_credit')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_create_deferred_revenue_time_credit')),
+                   (4, ref('cap_actions.group_action_user')), (4, ref('access_rights_management.group_can_able_to_debug')),
+              (4, ref('fleet.fleet_group_manager'))]"/>
+        </record>
+
+        <record id="role_management_control_data" model="res.users.role">
+            <field name="name">Management Control</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')), (4, ref('base.group_no_one')),
+                   (4, ref('hr.group_hr_user')), (4, ref('access_rights_management.show_helpdesk')), (4, ref('event.group_event_registration_desk')),
+                   (4, ref('base.group_allow_export')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_create_deferred_revenue')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_access_close_revenue')),
+                   (4, ref('import_journal_entry.group_import_journal_entry')), (4, ref('access_rights_management.show_products')),
+                   (4, ref('access_rights_management.access_goal_finance_info')), (4, ref('cap_hr_employee_extended.access_employee_group')),
+                   (4, ref('access_rights_management.access_portal_menu_sales')), (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+                   (4, ref('access_rights_management.access_portal_menu_invoices')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_access_close_revenue_time_credit')),
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')), (4, ref('analytic.group_analytic_accounting')),
+                   (4, ref('sign.group_sign_user')),
+                   (4, ref('cap_actions.group_action_user')), ]"/>
+        </record>
+
+        <record id="role_recruiter_data" model="res.users.role">
+            <field name="name">Recruiter</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')),(4, ref('hr_holidays.group_hr_holidays_responsible')), (4, ref('access_rights_management.group_access_request')),
+                   (4, ref('access_rights_management.show_products')), (4, ref('access_rights_management.show_helpdesk')),
+                   (4, ref('cap_quality_issue_log.group_emp_perf_quality_recognizer')), (4, ref('base.group_allow_export')),
+                   (4, ref('hr_attendance.group_hr_attendance_own_reader')), (4, ref('hr_timesheet.group_hr_timesheet_approver')),
+                   (4, ref('sign.group_sign_user')), (4, ref('cap_actions.group_action_user'))]"/>
+        </record>
+
+        <record id="role_sales_cold_data" model="res.users.role">
+            <field name="name">Sales(cold)</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('event.group_event_registration_desk')), (4, ref('access_rights_management.show_helpdesk')),
+                   (4, ref('hr_attendance.group_hr_attendance_own_reader')), (4, ref('base.group_allow_export')),
+                   (4, ref('sign.group_sign_user')), (4, ref('access_rights_management.group_access_request'))]"/>
+        </record>
+
+        <record id="role_sales_cold_team_manager_data" model="res.users.role">
+            <field name="name">Sales Cold Team Manager</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('event.group_event_registration_desk')), (4, ref('access_rights_management.show_helpdesk')),
+                   (4, ref('hr_attendance.group_hr_attendance_own_reader')), (4, ref('hr_holidays.group_hr_holidays_responsible')),
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')), (4, ref('base.group_allow_export')),
+                   (4, ref('sign.group_sign_user')), (4, ref('access_rights_management.group_access_request'))]"/>
+        </record>
+
+        <record id="role_sales_cold_team_director_data" model="res.users.role">
+            <field name="name">Sales Cold Team Director</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('event.group_event_registration_desk')), (4, ref('access_rights_management.show_helpdesk')),
+                   (4, ref('hr_attendance.group_hr_attendance_own_reader')), (4, ref('hr_holidays.group_hr_holidays_responsible')),
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')), (4, ref('base.group_allow_export')),
+                   (4, ref('sign.group_sign_user')), (4, ref('access_rights_management.group_access_request'))]"/>
+        </record>
+
+        <record id="role_sales_hot_data" model="res.users.role">
+            <field name="name">Sales(Hot)</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('event.group_event_registration_desk')),
+                   (4, ref('access_rights_management.show_products')), (4, ref('base.group_allow_export')),
+                   (4, ref('access_rights_management.access_portal_menu_sales')),
+                   (4, ref('access_rights_management.access_portal_menu_invoices')),
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')), (4, ref('documents.group_documents_user')),
+
+                   (4, ref('event.group_event_user')), (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+
+                   (4, ref('planning.group_planning_manager')), (4, ref('lunch.group_lunch_user')),
+                   (4, ref('sign.group_sign_user')), (4, ref('access_rights_management.group_access_request'))]"/>
+        </record>
+
+        <record id="role_webmaster_data" model="res.users.role">
+            <field name="name">Webmaster</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('sales_team.group_sale_salesman')),
+                   (4, ref('website.group_website_designer')), (4, ref('access_rights_management.show_helpdesk')),
+                   (4, ref('event.group_event_registration_desk')), (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+                   (4, ref('access_rights_management.show_website')), (4, ref('access_rights_management.group_can_able_to_debug')),
+                   (4, ref('access_rights_management.group_access_request')), (4, ref('hr_timesheet.group_hr_timesheet_approver')),
+                   (4, ref('base.group_allow_export')),
+                   (4, ref('sign.group_sign_user')), (4, ref('cap_actions.group_action_user'))]"/>
+        </record>
+
+        <record id="role_infographiste_data" model="res.users.role">
+            <field name="name">Infographiste</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('sales_team.group_sale_salesman')),
+                   (4, ref('website.group_website_designer')), (4, ref('access_rights_management.show_helpdesk')),
+                   (4, ref('event.group_event_registration_desk')), (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+                   (4, ref('access_rights_management.show_website')), (4, ref('access_rights_management.group_access_request')),
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')), (4, ref('base.group_allow_export')),
+                   (4, ref('sign.group_sign_user')), (4, ref('cap_actions.group_action_user'))]"/>
+        </record>
+
+        <record id="role_community_manager_data" model="res.users.role">
+            <field name="name">Community Manager</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('event.group_event_registration_desk')),
+                   (4, ref('hr_attendance.group_hr_attendance_own_reader')), (4, ref('base.group_allow_export')),
+
+                   (4, ref('social.group_social_manager')), (4, ref('access_rights_management.show_social')),
+                   (4, ref('marketing_automation.group_marketing_automation_user')),
+
+                   (4, ref('access_rights_management.group_access_request')), (4, ref('sign.group_sign_user')),
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')), (4, ref('cap_actions.group_action_user'))]"/>
+        </record>
+
+        <record id="role_email_manager_data" model="res.users.role">
+            <field name="name">Email Manager</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('sales_team.group_sale_salesman')), (4, ref('website.group_website_designer')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('event.group_event_registration_desk')),
+                   (4, ref('access_rights_management.show_website')), (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+
+                   (4, ref('social.group_social_manager')), (4, ref('access_rights_management.show_social')),
+                   (4, ref('marketing_automation.group_marketing_automation_user')), (4, ref('base.group_allow_export')),
+
+                   (4, ref('access_rights_management.group_access_request')), (4, ref('sign.group_sign_user')),
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')), (4, ref('cap_actions.group_action_user'))]"/>
+        </record>
+
+        <record id="role_marketing_manager_data" model="res.users.role">
+            <field name="name">Marketing Manager</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('website.group_website_designer')), (4, ref('access_rights_management.show_helpdesk')),
+                   (4, ref('sales_team.group_sale_salesman')), (4, ref('event.group_event_registration_desk')),
+                   (4, ref('access_rights_management.show_website')), (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+
+                   (4, ref('social.group_social_manager')), (4, ref('access_rights_management.show_social')),
+                   (4, ref('marketing_automation.group_marketing_automation_user')), (4, ref('base.group_allow_export')),
+
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')), (4, ref('hr_holidays.group_hr_holidays_responsible')),
+                   (4, ref('sign.group_sign_user')), (4, ref('cap_actions.group_action_user'))]"/>
+        </record>
+
+        <record id="role_it_person_data" model="res.users.role">
+            <field name="name">IT Person</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('helpdesk.group_helpdesk_manager')),
+                   (4, ref('base.group_erp_manager')), (4, ref('base.group_partner_manager')),
+                   (4, ref('cap_hr_employee_extended.access_employee_group')), (4, ref('hr.group_hr_manager')),
+
+                   (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+                   (4, ref('access_rights_management.group_can_able_to_debug')), (4, ref('hr_timesheet.group_hr_timesheet_approver')),
+                   (4, ref('sign.group_sign_user')),
+                   (4, ref('cap_actions.group_action_user'))]"/>
+        </record>
+
+
+        <!--        AFTER LIVE-->
+
+        <record id="role_hr_data" model="res.users.role">
+            <field name="name">HR</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.access_goal_finance_info')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('cap_hr_employee_extended.access_employee_group')),
+                   (4, ref('hr_holidays.group_hr_holidays_manager')), (4, ref('hr_appraisal.group_hr_appraisal_manager')),
+
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')),
+                   (4, ref('ksc_project_extended.group_reduce_past_timesheet')), (4, ref('sign.group_sign_user')),
+                   (4, ref('access_rights_management.group_access_request')), (4, ref('base.group_allow_export')),
+                   (4, ref('documents.group_documents_user')),
+                   (4, ref('cap_actions.group_action_viewer')), (4, ref('cap_actions.group_action_user')),
+                   (4, ref('hr_attendance.group_hr_attendance_manager')), (4, ref('fleet.fleet_group_manager')),
+                   (4, ref('approvals.group_approval_user'))]"/>
+        </record>
+
+        <record id="role_hr_responsible_data" model="res.users.role">
+            <field name="name">HR Responsible</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.access_goal_finance_info')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('cap_hr_employee_extended.access_employee_group')),
+                   (4, ref('hr_holidays.group_hr_holidays_manager')), (4, ref('hr_appraisal.group_hr_appraisal_manager')),
+
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')),
+                   (4, ref('ksc_project_extended.group_reduce_past_timesheet')), (4, ref('sign.group_sign_user')),
+                   (4, ref('access_rights_management.group_access_request')), (4, ref('base.group_allow_export')),
+                   (4, ref('documents.group_documents_user')),
+                   (4, ref('cap_actions.group_action_viewer')), (4, ref('cap_actions.group_action_user')),
+                   (4, ref('hr_attendance.group_hr_attendance_manager')), (4, ref('fleet.fleet_group_manager')),
+                   (4, ref('approvals.group_approval_user'))]"/>
+        </record>
+
+        <record id="role_cashflow_manager_data" model="res.users.role">
+            <field name="name">Cashflow Manager</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('base.group_allow_export')),
+                   (4, ref('event.group_event_registration_desk')), (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+                   (4, ref('account.group_account_readonly')), (4, ref('documents.group_documents_user')),
+                   (4, ref('sign.group_sign_user')), (4, ref('cap_actions.group_action_user'))]"/>
+        </record>
+
+        <record id="role_budget_manager_data" model="res.users.role">
+            <field name="name">Budget Manager</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('base.group_allow_export')),
+                   (4, ref('event.group_event_registration_desk')), (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+                   (4, ref('account.group_account_readonly')),
+                   (4, ref('sign.group_sign_user')), (4, ref('cap_actions.group_action_user')),]"/>
+        </record>
+
+        <record id="role_customer_referencer_date" model="res.users.role">
+            <field name="name">Customer Referencer</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+                   (4, ref('website.group_website_designer')), (4, ref('access_rights_management.show_website')),
+                   (4, ref('sales_team.group_sale_salesman')), (4, ref('hr_timesheet.group_hr_timesheet_approver')),
+                   (4, ref('base.group_allow_export')),
+                   (4, ref('sign.group_sign_user')), (4, ref('cap_actions.group_action_user'))]"/>
+        </record>
+
+        <record id="role_legal_date" model="res.users.role">
+            <field name="name">Legal</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('hr_attendance.group_hr_attendance_own_reader')),
+                   (4, ref('access_rights_management.access_goal_finance_info')), (4, ref('account.group_account_readonly')),
+                   (4, ref('event.group_event_registration_desk')), (4, ref('cap_actions.group_action_user')),
+                   (4, ref('sign.group_sign_user')), (4, ref('base.group_allow_export'))]"/>
+        </record>
+
+
+        <record id="can_create_delete_project_data" model="res.users.role">
+            <field name="name">Can Create/Delete Project</field>
+        </record>
+
+        <record id="group_can_synchronize_bank_data" model="res.users.role">
+            <field name="name">Can Synchronize Bank</field>
+
+        </record>
+
+        <record id="role_cfo_for_his_company_data" model="res.users.role">
+            <field name="name">CFO For His Company</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('base.group_user')), (4, ref('account.group_account_manager')),
+                   (4, ref('hr_timesheet.group_hr_timesheet_approver')), (4, ref('hr_recruitment.group_hr_recruitment_user')),
+                   (4, ref('access_rights_management.show_contacts')),
+                   (4, ref('project.group_project_user')), (4, ref('purchase.group_purchase_manager')),
+                   (4, ref('access_rights_management.show_helpdesk')), (4, ref('event.group_event_registration_desk')),
+                   (4, ref('access_rights_management.show_products')),
+                   (4, ref('access_rights_management.access_goal_finance_info')), (4, ref('base.group_allow_export')),
+                   (4, ref('cap_quality_issue_log.group_emp_perf_quality_recognizer')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_create_deferred_revenue')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_access_close_revenue')), (4, ref('hr.group_hr_user')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_access_credit_note')),
+                   (4, ref('import_journal_entry.group_import_journal_entry')), (4, ref('cap_hr_employee_extended.access_employee_group')),
+                   (4, ref('access_rights_management.access_portal_menu_invoices')), (4, ref('access_rights_management.access_portal_menu_sales')),
+
+                   (4, ref('hr_expense.group_hr_expense_manager')), (4, ref('planning.group_planning_manager')),
+                   (4, ref('lunch.group_lunch_user')), (4, ref('approvals.group_approval_manager')),
+                   (4, ref('sign.group_sign_manager')), (4, ref('hr_payroll.group_hr_payroll_manager')),
+                   (4, ref('ksc_sale_project_extended.group_allow_product_minimum_sale_price')),
+                   (4, ref('cap_automatic_deferred_earnings_account.group_access_close_revenue_time_credit')),
+                   (4, ref('ksc_auto_invoice.group_security_deposit_configuration')), ]"/>
+        </record>
+
+        <record id="role_marketing_assistant_data" model="res.users.role">
+            <field name="name">Marketing Assistant</field>
+
+            <field name="implied_ids"
+                   eval="[(4, ref('marketing_automation.group_marketing_automation_user')),
+                   (4, ref('cap_actions.group_action_user'))]"/>
+        </record>
+
+        <record id="group_access_final_dev" model="res.users.role">
+            <field name="name">Can Access Final Developer</field>
+
+        </record>
+
+        <record id="role_can_create_task_on_internal_erp" model="res.users.role">
+            <field name="name">Can Create Task on Internal ERP</field>
+
+        </record>
+
+
+<!-- ############################################################################################################### -->
+
+        <!--   Server Action for Bank Synchronization   -->
+<!--        <record id="account.action_new_bank_setting" model="ir.actions.server">-->
+<!--            <field name="groups_id"-->
+<!--                   eval="[(4, ref('account.group_account_manager')), (4, ref('access_rights_management.group_can_synchronize_bank'))]"/>-->
+<!--        </record>-->
+
+    </data>
+</odoo>

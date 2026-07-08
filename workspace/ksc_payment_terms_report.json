@@ -1,0 +1,27 @@
+{
+  "results": [
+    {
+      "step": "Create payment terms",
+      "status": "PASS",
+      "ids": [
+        81,
+        82
+      ]
+    },
+    {
+      "step": "Duplicate default constraint",
+      "status": "PASS",
+      "detail": "<Fault 2: \"Payment Term: 'Test Term 1' already set as default. \\nIf you want to set Payment Term: 'Dup Default' as default Remove that Payment Term: 'Test Term 1' from default.\">"
+    },
+    {
+      "step": "Company default term",
+      "status": "PASS",
+      "company_payment_term": null
+    },
+    {
+      "step": "Customer created",
+      "status": "PASS",
+      "partner_id": 2280204
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+[
+  {
+    "tc": 1,
+    "module": "res.partner",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 2,
+    "module": "crm.lead",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"You are not allowed to access 'Lead' (crm.lead) records.\\n\\nThis operation is allowed for the following groups:\\n\\t- Consultant/Developer/Consultant\\n\\t- Consultant/Developer/Developer\\n\\t- Sales/Administrator\\n\\t- Administrative Responsible\\n\\t- Can access data in read only mode\\n\\t- Can access opportunities in Read-only mode\\n\\t- CFO\\n\\t- CFO For His Company\\n\\t- Community Manager\\n\\t- Customer Referencer\\n\\t- Email Manager\\n\\t- Infographiste\\n\\t- Management Control\\n\\t- Marketing Manager\\n\\t- Operation\\n\\t- Operation On Boarder\\n\\t- Quality Manager\\n\\t- Sales(cold)\\n\\t- Sales Cold Team Director\\n\\t- Sales Cold Team Manager\\n\\t- Sales(Hot)\\n\\t- Show Sales\\n\\t- Team Director\\n\\t- Team Manager\\n\\t- VPs\\n\\t- Webmaster\\n\\t- Role / Portal\\n\\nContact your administrator to request access if necessary.\">"
+  },
+  {
+    "tc": 3,
+    "module": "sale.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 4,
+    "module": "project.project",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 5,
+    "module": "go.live.change.request",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object go.live.change.request doesn't exist\">"
+  },
+  {
+    "tc": 6,
+    "module": "hr.timesheet",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.timesheet doesn't exist\">"
+  },
+  {
+    "tc": 7,
+    "module": "account.move",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 8,
+    "module": "account.asset",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 9,
+    "module": "purchase.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 10,
+    "module": "hr.employee",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 11,
+    "module": "hr.goal",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.goal doesn't exist\">"
+  },
+  {
+    "tc": 12,
+    "module": "hr.challenge",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.challenge doesn't exist\">"
+  },
+  {
+    "tc": 13,
+    "module": "hr.attendance",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 0 records"
+  },
+  {
+    "tc": 14,
+    "module": "hr.applicant",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"You are not allowed to access 'Applicant' (hr.applicant) records.\\n\\nThis operation is allowed for the following groups:\\n\\t- Recruitment/Interviewer\\n\\t- Recruitment/Officer: Manage all applicants\\n\\t- Administrative\\n\\t- Administrative Responsible\\n\\t- HR\\n\\t- HR Responsible\\n\\t- Management Control\\n\\t- Office Manager\\n\\t- Recruiter\\n\\t- Sales(cold)\\n\\t- Sales Manager\\n\\t- Team Director\\n\\t- Team Manager\\n\\t- VPs\\n\\t- Webmaster\\n\\nContact your administrator to request access if necessary.\">"
+  },
+  {
+    "tc": 15,
+    "module": "helpdesk.ticket",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 16,
+    "module": "website.page",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"You are not allowed to access 'Page' (website.page) records.\\n\\nThis operation is allowed for the following groups:\\n\\t- Website/Editor and Designer\\n\\nContact your administrator to request access if necessary.\">"
+  },
+  {
+    "tc": 17,
+    "module": "marketing.campaign",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"You are not allowed to access 'Marketing Campaign' (marketing.campaign) records.\\n\\nThis operation is allowed for the following groups:\\n\\t- Marketing Automation/User\\n\\nContact your administrator to request access if necessary.\">"
+  },
+  {
+    "tc": 18,
+    "module": "mail.mass_mailing",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object mail.mass_mailing doesn't exist\">"
+  },
+  {
+    "tc": 19,
+    "module": "social.post",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"You are not allowed to access 'Social Post' (social.post) records.\\n\\nThis operation is allowed for the following groups:\\n\\t- Social Marketing/Social Manager\\n\\t- Social Marketing/Social User\\n\\nContact your administrator to request access if necessary.\">"
+  },
+  {
+    "tc": 20,
+    "module": "account.account",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 21,
+    "module": "account.analytic.account",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 22,
+    "module": "Timesheet",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object Timesheet doesn't exist\">"
+  },
+  {
+    "tc": 23,
+    "module": "hr.employee.public",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 24,
+    "module": "gamification.challenge",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 25,
+    "module": "gamification.goal",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 26,
+    "module": "account.journal",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 27,
+    "module": "account.payment",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 28,
+    "module": "account.tax",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 29,
+    "module": "product.template",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 30,
+    "module": "product.product",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 31,
+    "module": "project.task",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 32,
+    "module": "project.project.stage",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 33,
+    "module": "sale.order.line",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 34,
+    "module": "crm.stage",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 35,
+    "module": "crm.lost.reason",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 36,
+    "module": "product.pricelist",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 37,
+    "module": "website",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 38,
+    "module": "helpdesk.team",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 39,
+    "module": "social.media",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"You are not allowed to access 'Social Media' (social.media) records.\\n\\nThis operation is allowed for the following groups:\\n\\t- Social Marketing/Social Manager\\n\\t- Social Marketing/Social User\\n\\nContact your administrator to request access if necessary.\">"
+  },
+  {
+    "tc": 40,
+    "module": "hr.leave",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on hr.leave is not allowed'>"
+  },
+  {
+    "tc": 41,
+    "module": "documents.document",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  }
+]

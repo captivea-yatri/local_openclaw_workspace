@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="lusha_people_enrichment_form_view" model="ir.ui.view">
+        <field name="name">lusha.people.enrichment.form</field>
+        <field name="model">lusha.people.enrichment</field>
+        <field name="arch" type="xml">
+            <form string="Contact Enrichment">
+                <sheet>
+                    <div class="alert alert-info" role="alert">
+                        <p>
+                            <strong>Search &amp; Enrich Contacts</strong> finds a person in Lusha
+                            and reveals email, phone, job title, company, and LinkedIn data.
+                        </p>
+                        <p>This consumes Lusha credits.</p>
+                    </div>
+                    <group>
+                        <group string="Lookup">
+                            <field name="instance_id"/>
+                            <field name="partner_id"/>
+                            <field name="email"/>
+                            <field name="linkedin_url"/>
+                            <field name="lusha_contact_id"/>
+                        </group>
+                        <group string="Person">
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="company_name"/>
+                            <field name="company_domain" placeholder="company.com"/>
+                        </group>
+                    </group>
+                    <group string="Options">
+                        <field name="reveal_emails"/>
+                        <field name="reveal_phones"/>
+                        <field name="apply_overwrite"/>
+                    </group>
+                    <group string="Result" invisible="state == 'draft'">
+                        <field name="state" widget="badge"
+                               decoration-success="state == 'done'"
+                               decoration-danger="state == 'error'"
+                               decoration-warning="state == 'no_match'"/>
+                        <field name="result_message"/>
+                        <field name="enriched_at"/>
+                    </group>
+                    <group string="Enriched Data" invisible="state != 'done'">
+                        <group>
+                            <field name="lusha_contact_id_result"/>
+                            <field name="enriched_email"/>
+                            <field name="email_confidence"/>
+                            <field name="enriched_phone"/>
+                            <field name="enriched_title"/>
+                            <field name="enriched_linkedin_url"/>
+                        </group>
+                        <group>
+                            <field name="enriched_company_name"/>
+                            <field name="enriched_company_domain"/>
+                            <field name="enriched_city"/>
+                            <field name="enriched_country"/>
+                        </group>
+                    </group>
+                    <group string="Debug" invisible="not response_json" groups="base.group_no_one">
+                        <field name="response_json" nolabel="1" colspan="2"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_enrich"
+                            string="Enrich"
+                            type="object"
+                            class="btn-primary"
+                            invisible="state == 'done'"/>
+                    <button name="action_apply_to_partner"
+                            string="Apply to Contact"
+                            type="object"
+                            class="btn-secondary"
+                            invisible="state != 'done' or not partner_id"/>
+                    <button string="Close" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_lusha_people_enrichment" model="ir.actions.act_window">
+        <field name="name">Contact Enrichment</field>
+        <field name="res_model">lusha.people.enrichment</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

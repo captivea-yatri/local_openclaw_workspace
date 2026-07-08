@@ -1,0 +1,5 @@
+{
+  "scenario": "so_link_project_invoice_color",
+  "full_access": ["President", "CEO", "Sales Manager", "Operation", "Team Manager"],
+  "blocked": {"HR": {"at": "create_sale_order", "error": "AccessError"}}
+}

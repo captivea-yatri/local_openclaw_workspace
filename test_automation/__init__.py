@@ -1,0 +1,1 @@
+# Odoo RPC test automation

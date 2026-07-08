@@ -1,0 +1,3 @@
+staging.env
+*.pyc
+__pycache__/

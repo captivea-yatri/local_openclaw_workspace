@@ -1,0 +1,7 @@
+{
+  "scenario": "cap_marketing_language_documents",
+  "description": "Script matrix expectations for cap_marketing_language_documents",
+  "full_access": [],
+  "blocked": {},
+  "notes": "Run run_script_matrix.py, review REPORT rows, then fill full_access and blocked."
+}

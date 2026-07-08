@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-23T04:02:09.594Z",
+  "entries": {
+    "memory:memory/2026-06-11.md:1:8": {
+      "key": "memory:memory/2026-06-11.md:1:8",
+      "path": "memory/2026-06-11.md",
+      "startLine": 1,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "## 2026-06-11 Memory Flush - Added `run_rbac_report.py`: a wrapper that imports `odoo_rbac_tool`, authenticates the user, and prints a readable CRUD‑performance summary for each key model. - Added `run_full_report.py`: executes `qa_odoo_full_test.py`, captures its JSON output, and formats a human‑readable table of all test cases, statuses, and details. - Generated a full QA report in the chat for user `francois.coudreau@captivea.com`, covering read/write/create/delete checks across core Odoo models, button workflow tests, and generic module tests. - Noted observations: read access everywhere, write access mostly granted with a few blocked writes (e.g., `crm.lead`), creation succeeded on man",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.6319818125541238,
+      "maxScore": 0.6319818125541238,
+      "firstRecalledAt": "2026-06-23T04:02:09.594Z",
+      "lastRecalledAt": "2026-06-23T04:02:09.594Z",
+      "queryHashes": [
+        "2269658f8a07"
+      ],
+      "recallDays": [
+        "2026-06-23"
+      ],
+      "conceptTags": [
+        "run-rbac-report.py",
+        "odoo-rbac-tool",
+        "run-full-report.py",
+        "qa-odoo-full-test.py",
+        "francois.coudreau",
+        "captivea.com",
+        "read/write/create/delete",
+        "e.g"
+      ]
+    }
+  }
+}

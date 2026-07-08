@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="helpdesk_ticket_view_form_roles" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.form.roles</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
+        <field name="arch" type="xml">
+            <field name="priority" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+            <xpath expr="//field[@name='stage_id']" position="after">
+                <button string="Create Task on Internal ERP" name="access_rights_management.ir_server_create_task_on_internal_erp" type="action" class="btn-primary"
+                        groups="access_rights_management.group_can_create_task_on_internal_erp"
+                        invisible="team_id != 35"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="helpdesk_team_supervisor" model="ir.ui.view">
+        <field name="name">helpdesk.team.form.supervisor</field>
+        <field name="model">helpdesk.team</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_team_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('o_settings_container')][1]/setting/div[2]" position="after">
+                <br></br>
+                <label for="supervisor_ids"/>
+                <field name="supervisor_ids" widget="many2many_tags" domain="[('share', '=', False)]"
+                       options="{'no_create': True, 'no_create_edit': True}"/>
+                <br></br>
+                <br></br>
+                <label for="creator_ids"/>
+                <field name="creator_ids" widget="many2many_tags" domain="[('share', '=', False)]"
+                       options="{'no_create': True, 'no_create_edit': True}"/>
+                <br></br>
+                <br></br>
+            </xpath>
+            <xpath expr="//div[@id='productivity']" position="inside">
+                <div class="col-lg-6">
+                    <setting class="col-lg-12">
+                        <field name="create_activity"/>
+                    </setting>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

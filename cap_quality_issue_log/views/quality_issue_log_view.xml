@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="form_view_quality_issue_log" model="ir.ui.view">
+        <field name="name">quality.issue.log.form.view</field>
+        <field name="model">quality.issue.log</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="ask_for_review" type="object" string="Ask For Review"
+                            invisible="state != 'enabled' or log_type == 'warning'"/>
+                    <button name="refuse_review" type="object" string="Refuse Review"
+                            invisible="not is_valid_user or state != 'reviewing'" class="btn btn-primary"/>
+                    <button name="accept_review" type="object" string="Accept and disabled quality issue"
+                            invisible="not is_valid_user or state != 'reviewing'" class="btn btn-primary"/>
+                    <field name="state" widget="statusbar" options="{'clickable': 0}" readonly="1"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" name="action_open_approval_req" icon="fa-bullseye" type="object" invisible="state == 'warning'">
+                            <span class="o_stat_text">Approval Request</span>
+                        </button>
+                    </div>
+                    <group>
+                        <field name="is_valid_user" invisible="1"/>
+                        <field name="logged_date" required="1"/>
+                        <field name="employee_id" required="1"/>
+                        <field name="project_id"/>
+                        <field name="timesheet_id"/>
+                        <field name="description" required="1"/>
+                        <field name="log_type" readonly="1"/>
+                        <label for="score_impact" string="Score Impact" />
+                        <div class="oe_inline" name="score_impact">
+                            <field name="score_impact" class="oe_inline" required="1"/>%
+                        </div>
+                        <field name="quality_issue_type" required="1"/>
+                        <field name="role_id" invisible="1"/>
+                        <field name="display_name" invisible="1"/>
+                    </group>
+                </sheet>
+                <div class="o_attachment_preview"/>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+    <record id="tree_view_quality_issue_log" model="ir.ui.view">
+        <field name="name">quality.issue.log.tree.view</field>
+        <field name="model">quality.issue.log</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="logged_date"/>
+                <field name="employee_id"/>
+                <field name="project_id"/>
+                <field name="description"/>
+                <field name="score_impact" sum="Total" string="Score Impact(%)"/>
+                <field name="log_type"/>
+                <field name="quality_issue_type"/>
+                <field name="company_id"/>
+                <field name="role_id" optional="hide"/>
+                <field name="timesheet_id" optional="hide"/>
+            </list>
+        </field>
+    </record>
+    <record id="search_view_quality_issue_log" model="ir.ui.view">
+        <field name="name">quality.issue.log.search.view</field>
+        <field name="model">quality.issue.log</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="employee_id"/>
+                <field name="project_id"/>
+                <field name="description"/>
+                <field name="score_impact"/>
+                <field name="quality_issue_type"/>
+                <group name="group_by">
+                  <filter name="group_by_employee_id" string="Employee" context="{'group_by': 'employee_id'}"/>
+                  <filter name="grou_by_logged_date" string="Log Date" context="{'group_by': 'logged_date'}"/>
+                  <filter name="grou_by_type" string="Type" context="{'group_by': 'log_type'}"/>
+                  <filter name="grou_by_quality_issue_type" string="Quality Issue Type"
+                          context="{'group_by': 'quality_issue_type'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="action_quality_issue_log" model="ir.actions.act_window">
+        <field name="name">Quality Issue Log</field>
+        <field name="res_model">quality.issue.log</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{
+            'tree_view_ref': 'cap_quality_issue_log.tree_view_quality_issue_log',
+            'form_view_ref': 'cap_quality_issue_log.form_view_quality_issue_log'}
+        </field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create New Quality Issue Log
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_quality_issue_log" parent="cap_quality_issue_log.menu_employee_performance_quality"
+              name="All Quality Issue Log" action="action_quality_issue_log" sequence="1"/>
+</odoo>

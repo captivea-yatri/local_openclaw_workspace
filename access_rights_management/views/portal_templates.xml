@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_home_sale_based_on_groups" inherit_id="sale.portal_my_home_sale">
+        <xpath expr="//t[@t-value=&quot;'quotation_count'&quot;]/.." position="attributes">
+            <attribute name="t-if">request.env.user.has_group('base.group_user') or
+            (request.env.user.has_group('base.group_portal') and request.env.user.partner_id.accounting_information)
+            </attribute>
+        </xpath>
+        <xpath expr="//t[@t-value=&quot;'order_count'&quot;]/.." position="attributes">
+            <attribute name="t-if">request.env.user.has_group('base.group_user') or
+            (request.env.user.has_group('base.group_portal') and request.env.user.partner_id.accounting_information)
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_project_custom" inherit_id="project.portal_my_home">
+        <xpath expr="//t[@t-value=&quot;'project_count'&quot;]/.." position="attributes">
+            <attribute name="t-if">request.env.user.has_group('base.group_user') or
+            (request.env.user.has_group('base.group_portal') and request.env.user.partner_id.project_information)
+            </attribute>
+        </xpath>
+        <xpath expr="//t[@t-value=&quot;'task_count'&quot;]/.." position="attributes">
+            <attribute name="t-if">request.env.user.has_group('base.group_user') or
+            (request.env.user.has_group('base.group_portal') and request.env.user.partner_id.project_information)
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_project_session_test" inherit_id="cap_project_test_portal.portal_my_home">
+        <xpath expr="//t[@t-value=&quot;'session_count'&quot;]/.." position="attributes">
+            <attribute name="t-if">request.env.user.has_group('base.group_user') or
+            (request.env.user.has_group('base.group_portal') and request.env.user.partner_id.project_information)
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_invoice_based_on_groups" inherit_id="account.portal_my_home_invoice">
+        <xpath expr="//t[@t-value=&quot;'invoice_count'&quot;]/.." position="attributes">
+            <attribute name="t-if">request.env.user.has_group('base.group_user') or
+            (request.env.user.has_group('base.group_portal') and request.env.user.partner_id.accounting_information)
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_timesheet_custom" name="Show Timesheets" customize_show="True"
+              inherit_id="hr_timesheet.portal_my_home_timesheet">
+        <xpath expr="//t[@t-value=&quot;'timesheet_count'&quot;]/.." position="attributes">
+            <attribute name="t-if">request.env.user.has_group('base.group_user') or
+            (request.env.user.has_group('base.group_portal') and request.env.user.partner_id.project_information)
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_feedback_custom" name="Project Feedback" customize_show="True"
+              inherit_id="cap_project_feedback_web.portal_my_home_feedback">
+        <xpath expr="//t[@t-value=&quot;'feedback_count'&quot;]/.." position="attributes">
+            <attribute name="t-if">request.env.user.has_group('base.group_user') or
+            (request.env.user.has_group('base.group_portal') and request.env.user.partner_id.project_information)
+            </attribute>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_subscription_custom" name="Show Subscriptions" customize_show="True"
+              inherit_id="sale_subscription.portal_my_home_subscription">
+        <xpath expr="//t[@t-value=&quot;'subscription_count'&quot;]/.." position="attributes">
+            <attribute name="t-if">request.env.user.has_group('base.group_user') or
+            (request.env.user.has_group('base.group_portal') and request.env.user.partner_id.accounting_information)
+            </attribute>
+        </xpath>
+    </template>
+
+<!--  ################################################ FOR SALE ORDER SIGN (PORTAL VIEW) ############################################    -->
+
+    <template id="sale_order_portal_template_restricted_inherit"
+              inherit_id="sale.sale_order_portal_template">
+        <xpath expr="//t/t[@t-set='title']" position="replace">
+            <t t-set="title">
+                <h2 t-field="sale_order.amount_untaxed" data-id="total_amount" class="mb-0 text-break"/>
+            </t>
+        </xpath>
+        <xpath expr='//div[hasclass("o_portal_sale_sidebar")]//t[1]//t[3]//div[1]//div[1]//a[1]' position="attributes">
+            <attribute name="t-if">sale_order._has_to_be_signed() and sale_order._has_to_be_signed_only_by_cust()
+            </attribute>
+        </xpath>
+        <xpath expr='//div[@id="quote_content"]//div[@name="sale_order_actions"]//t[1]' position="attributes">
+            <attribute name="t-if">sale_order._has_to_be_signed() and sale_order._has_to_be_signed_only_by_cust()
+            </attribute>
+        </xpath>
+    </template>
+    
+    <template id="portal_my_timesheets_inherit" inherit_id="hr_timesheet.portal_my_timesheets" name="Timesheet Portal - Add ID">
+        <xpath expr="//thead/tr/th[.='Description']" position="before">
+            <th>Task ID</th>
+        </xpath>
+
+        <xpath expr="//td[span[@t-esc='timesheet.name']]" position="before">
+            <td> <span t-esc="timesheet.task_id.id or ''"/></td>
+        </xpath>
+        
+        <xpath expr="//td[span[@t-esc='timesheet.name']]" position="attributes">
+            <attribute name="style">white-space: normal; word-wrap: break-word;</attribute>
+        </xpath>
+    </template>
+
+    <template id="portal_my_timesheets_inherit_colspan" inherit_id="sale_timesheet.portal_my_timesheets_inherit">
+        <xpath expr="//t[@t-elif=&quot;groupby == 'so_line'&quot;]/th" position="attributes">
+            <attribute name="colspan">6</attribute>
+        </xpath>
+    </template>
+</odoo>

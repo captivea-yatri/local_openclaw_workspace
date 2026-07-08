@@ -1,0 +1,1474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record model="ir.module.category" id="access_rights_roles">
+        <field name="name">User Roles</field>
+        <field name="description">Access Rights Based On Roles</field>
+        <field name="sequence">10</field>
+    </record>
+
+
+    <record id="show_contacts" model="res.groups">
+        <field name="name">Show Contacts</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="show_sales" model="res.groups">
+        <field name="name">Show Sales</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="show_challenges" model="res.groups">
+        <field name="name">Show Challenges</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="override_purchase_rights" model="res.groups">
+        <field name="name">Purchase custom</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="show_products" model="res.groups">
+        <field name="name">Show Products(website)</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="show_website" model="res.groups">
+        <field name="name">Show Website</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="access_portal_menu_sales" model="res.groups">
+        <field name="name">Sales(Portal)</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="access_portal_menu_invoices" model="res.groups">
+        <field name="name">Invoices(Portal)</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="show_helpdesk" model="res.groups">
+        <field name="name">Show Helpdesk</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="access_goal_finance_info" model="res.groups">
+        <field name="name">Finance Info</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="group_access_request" model="res.groups">
+        <field name="name">Allow Access Request</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="group_create_delete_project" model="res.groups">
+        <field name="name">Can Create/Delete Project</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="group_can_synchronize_bank" model="res.groups">
+        <field name="name">Can Synchronize Bank</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="show_social" model="res.groups">
+        <field name="name">Show Social</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+
+    <record id="role_it_person" model="res.groups">
+        <field name="name">IT Person</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_marketing_manager" model="res.groups">
+        <field name="name">Marketing Manager</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_email_manager" model="res.groups">
+        <field name="name">Email Manager</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_community_manager" model="res.groups">
+        <field name="name">Community Manager</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_infographiste" model="res.groups">
+        <field name="name">Infographiste</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_webmaster" model="res.groups">
+        <field name="name">Webmaster</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_sales_hot" model="res.groups">
+        <field name="name">Sales(Hot)</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_sales_cold_team_director" model="res.groups">
+        <field name="name">Sales Cold Team Director</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_sales_cold_team_manager" model="res.groups">
+        <field name="name">Sales Cold Team Manager</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_sales_cold" model="res.groups">
+        <field name="name">Sales(cold)</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_recruiter" model="res.groups">
+        <field name="name">Recruiter</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_management_control" model="res.groups">
+        <field name="name">Management Control</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_administrative_responsible" model="res.groups">
+        <field name="name">Administrative Responsible</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_administrative" model="res.groups">
+        <field name="name">Administrative</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_office_manager" model="res.groups">
+        <field name="name">Office Manager</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_operation_on_boarder" model="res.groups">
+        <field name="name">Operation On Boarder</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_operation" model="res.groups">
+        <field name="name">Operation</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_team_manager" model="res.groups">
+        <field name="name">Team Manager</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_team_director" model="res.groups">
+        <field name="name">Team director</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_vps" model="res.groups">
+        <field name="name">VPs</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_vp_of_sales" model="res.groups">
+        <field name="name">VP of Sales</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_ceo" model="res.groups">
+        <field name="name">CEO</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_vp_of_quality_and_knowledge" model="res.groups">
+        <field name="name">VP of Quality and Knowledge</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_drh" model="res.groups">
+        <field name="name">DRH</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_cfo" model="res.groups">
+        <field name="name">CFO</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_vp_of_marketing" model="res.groups">
+        <field name="name">VP of Marketing</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_president" model="res.groups">
+        <field name="name">President</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <!--   ####################### AFTER LIVE (access rights v3) ####################### -->
+
+    <record id="role_hr" model="res.groups">
+        <field name="name">HR</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_hr_responsible" model="res.groups">
+        <field name="name">HR Responsible</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_cashflow_manager" model="res.groups">
+        <field name="name">Cashflow Manager</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_budget_manager" model="res.groups">
+        <field name="name">Budget Manager</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_customer_referencer" model="res.groups">
+        <field name="name">Customer referencer</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_legal" model="res.groups">
+        <field name="name">Legal</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_cfo_for_his_company" model="res.groups">
+        <field name="name">CFO For His Company</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_marketing_assistant" model="res.groups">
+        <field name="name">Marketing Assistant</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="role_access_final_dev" model="res.groups">
+        <field name="name">Can Access Final Developer</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="group_can_able_to_debug" model="res.groups">
+        <field name="name">Can Be Able To Debug</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+    <record id="group_can_create_task_on_internal_erp" model="res.groups">
+        <field name="name">Can Create Task On Internal ERP</field>
+<!--        <field name="category_id" ref="access_rights_roles"/>-->
+    </record>
+
+
+    <!-- ############################################################################################################### -->
+
+    <!--    Record Rules-->
+
+    <record id="access_timesheet_multi_company" model="ir.rule">
+        <field name="name">Timesheet multi-company</field>
+        <field name="model_id" ref="analytic.model_account_analytic_line"/>
+<!--        <field name="groups" eval="[(4, ref('base.group_system')), (4, ref('access_rights_management.role_cfo')),-->
+<!--        (4, ref('access_rights_management.role_vp_of_quality_and_knowledge')), (4, ref('access_rights_management.role_ceo')),-->
+<!--        (4, ref('access_rights_management.role_vp_of_sales')), (4, ref('access_rights_management.role_cashflow_manager')),-->
+<!--        (4, ref('access_rights_management.role_budget_manager')), (4, ref('access_rights_management.role_legal')),-->
+<!--        (4, ref('access_rights_management.role_administrative')), (4, ref('access_rights_management.role_administrative_responsible')),-->
+<!--        (4, ref('access_rights_management.role_management_control')), (4, ref('access_rights_management.role_it_person')),-->
+<!--        (4, ref('access_rights_management.role_drh'))]"/>-->
+        <field name="domain_force">['|',('company_id', '=', False),('company_id', 'in', company_ids)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="access_timesheet_based_on_contacts" model="ir.rule">
+        <field name="name">Timesheets(based on rights of contacts)</field>
+        <field name="model_id" ref="analytic.model_account_analytic_line"/>
+        <field name="groups" eval="[(4, ref('role_sales_hot'))]"/>
+        <field name="domain_force">[('project_id.partner_id.user_id', '=', user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_crm_read_based_on_team" model="ir.rule">
+        <field name="name">CRM Leads(read)</field>
+        <field name="model_id" ref="crm.model_crm_lead"/>
+        <field name="groups" eval="[(4, ref('role_sales_cold')),
+        (4, ref('role_sales_cold_team_manager')), (4, ref('role_sales_cold_team_director')), (4, ref('role_sales_hot'))]"/>
+        <field name="domain_force">['|', '|', ('user_id', '=', user.id),
+            ('user_id.employee_ids.parent_user_id', '=', user.id), ('x_studio_second_salesperson', '=', user.id)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_crm_full_based_on_team" model="ir.rule">
+        <field name="name">CRM Leads(full based on team)</field>
+        <field name="model_id" ref="crm.model_crm_lead"/>
+        <field name="groups" eval="[(4, ref('role_sales_cold')),
+        (4, ref('role_sales_cold_team_manager')), (4, ref('role_sales_cold_team_director')), (4, ref('role_sales_hot'))]"/>
+        <field name="domain_force">['|', ('user_id', '=', user.id),
+            ('user_id.employee_ids.parent_user_id', '=', user.id)]
+        </field>
+        <field name="perm_read" eval="False"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="access_crm_view_Read_based_on_team" model="ir.rule">
+        <field name="name">CRM Leads(read based on team)</field>
+        <field name="model_id" ref="crm.model_crm_lead"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_email_manager'))]"/>
+        <field name="domain_force">[('team_id.favorite_user_ids', '=', user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_crm_view_infographiste_webmaster" model="ir.rule">
+        <field name="name">CRM Leads(Read to qualify)</field>
+        <field name="model_id" ref="crm.model_crm_lead"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_infographiste')), (4, ref('access_rights_management.role_webmaster'))]"/>
+        <field name="domain_force">[('stage_id', '=', 2), ('medium_id', '=', 38)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_crm_read_community_manager" model="ir.rule">
+        <field name="name">CRM Leads(read assign)</field>
+        <field name="model_id" ref="crm.model_crm_lead"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_community_manager'))]"/>
+        <field name="domain_force">['|', ('user_id', '=', user.id), ('x_studio_second_salesperson', '=', user.id)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_crm_full_community_manager" model="ir.rule">
+        <field name="name">CRM Leads(full assign)</field>
+        <field name="model_id" ref="crm.model_crm_lead"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_community_manager'))]"/>
+        <field name="domain_force">[('user_id', '=', user.id)]
+        </field>
+        <field name="perm_read" eval="False"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="access_sales_role_sales_hot" model="ir.rule">
+        <field name="name">Sales(full on assign)</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_sales_hot'))]"/>
+        <field name="domain_force">['|', '|', ('partner_id', '=', 331002), ('partner_id', 'in', company_ids), ('partner_id.user_id', '=', user.id)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="access_sales_role_sales_cold" model="ir.rule">
+        <field name="name">Sales-cold</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_sales_cold'))]"/>
+        <field name="domain_force">[('partner_id.user_id', '=', user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_sales_role_sales_cold_manager" model="ir.rule">
+        <field name="name">Sales(cold manager)</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_sales_cold_team_manager')),
+        (4, ref('access_rights_management.role_sales_cold_team_director'))]"/>
+        <field name="domain_force">['|', ('partner_id.user_id', '=', user.id),
+            ('partner_id.user_id.employee_ids.parent_id', 'in', user.employee_ids.ids)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_sales_orders_only" model="ir.rule">
+        <field name="name">Sale orders(only orders)</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_cashflow_manager')),
+        (4, ref('access_rights_management.role_budget_manager'))]"/>
+        <field name="domain_force">['&amp;', ('state', '=', 'sale'), '|', '|', '|', ('partner_id.status', 'in',
+            ['customer', 'old_customer']), ('partner_id.parent_id.status', 'in', ['customer', 'old_customer']),
+            ('partner_id.supplier_rank', '>', 0), ('partner_id.parent_id.supplier_rank', '>', 0)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_sales_orders_order_cancel" model="ir.rule">
+        <field name="name">Sale orders</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_administrative'))]"/>
+        <field name="domain_force">['&amp;', ('state', 'in', ['sale', 'cancel']), '|', '|', '|', ('partner_id.status', 'in',
+            ['customer', 'old_customer']), ('partner_id.parent_id.status', 'in', ['customer', 'old_customer']),
+            ('partner_id.supplier_rank', '>', 0), ('partner_id.parent_id.supplier_rank', '>', 0)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+<!--    <record id="access_sales_role_administrative_responsible" model="ir.rule">-->
+<!--        <field name="name">Sale orders(administrative responsible)</field>-->
+<!--        <field name="model_id" ref="sale.model_sale_order"/>-->
+<!--        <field name="groups" eval="[(4, ref('access_rights_management.role_administrative_responsible'))]"/>-->
+<!--        <field name="domain_force">[('company_id', 'in', company_ids), '|', '|', '|', ('partner_id.status', 'in', ['customer', 'old_customer',-->
+<!--            'in_progress']), ('partner_id.parent_id.status', 'in', ['customer', 'old_customer', 'in_progress']),-->
+<!--            ('partner_id.supplier_rank', '>', 0), ('partner_id.parent_id.supplier_rank', '>', 0)]-->
+<!--        </field>-->
+<!--        <field name="perm_read" eval="True"/>-->
+<!--        <field name="perm_write" eval="True"/>-->
+<!--        <field name="perm_create" eval="True"/>-->
+<!--        <field name="perm_unlink" eval="False"/>-->
+<!--    </record>-->
+
+    <record id="access_sales_role_management_control" model="ir.rule">
+        <field name="name">Sale orders(management control)</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_management_control'))]"/>
+        <field name="domain_force">['|', '|', '|', ('partner_id.status', 'in',
+            ['customer', 'old_customer']), ('partner_id.parent_id.status', 'in', ['customer', 'old_customer']),
+            ('partner_id.supplier_rank', '>', 0), ('partner_id.parent_id.supplier_rank', '>', 0)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_sale_order_customer_oldcustomer" model="ir.rule">
+        <field name="name">Sale orders(legal)</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_legal'))]"/>
+        <field name="domain_force">['|', '|', '|', ('partner_id', 'in', user.env["res.company"].search([]).filtered(lambda rec:rec.partner_id).partner_id.ids),
+            ('partner_id.status', 'in', ['in_progress', 'customer', 'old_customer']),
+            ('partner_id', 'in', user.env["res.company"].search([]).filtered(lambda rec:rec.partner_id).partner_id.child_ids.ids),
+            ('partner_id.opportunity_ids.stage_id.is_won', '=', True)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+<!--    <record id="access_sale_order_roles_full" model="ir.rule">-->
+<!--        <field name="name">Sale orders(full)</field>-->
+<!--        <field name="model_id" ref="sale.model_sale_order"/>-->
+<!--        <field name="groups" eval="[(4, ref('access_rights_management.role_ceo'))]"/>-->
+<!--        <field name="domain_force">[(1, '=', 1)]</field>-->
+<!--        <field name="perm_read" eval="True"/>-->
+<!--        <field name="perm_write" eval="True"/>-->
+<!--        <field name="perm_create" eval="True"/>-->
+<!--        <field name="perm_unlink" eval="True"/>-->
+<!--    </record>-->
+
+    <record id="access_sol_role_sales_hot" model="ir.rule">
+        <field name="name">Sales order line(full on assign)</field>
+        <field name="model_id" ref="sale.model_sale_order_line"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_sales_hot'))]"/>
+        <field name="domain_force">[(1, '=', 1)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="access_sol_manage_on_custom_group" model="ir.rule">
+        <field name="name">Sale Order Line</field>
+        <field name="model_id" ref="sale.model_sale_order_line"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_vps')),
+        (4, ref('access_rights_management.role_cfo')), (4, ref('access_rights_management.role_operation')),
+        (4, ref('access_rights_management.role_operation_on_boarder')), (4, ref('access_rights_management.role_team_manager')),
+        (4, ref('access_rights_management.role_team_director')), (4, ref('access_rights_management.role_administrative')),
+        (4, ref('access_rights_management.role_marketing_manager')), (4, ref('access_rights_management.role_email_manager')),
+        (4, ref('access_rights_management.role_customer_referencer')), (4, ref('access_rights_management.role_infographiste')),
+        (4, ref('access_rights_management.role_webmaster'))]"/>
+        <field name="domain_force">[(1, '=', 1)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="product_pricelist_rule_main_company" model="ir.rule">
+        <field name="name">product pricelist (CFO for his company)</field>
+        <field name="model_id" ref="product.model_product_pricelist"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_cfo_for_his_company'))]"/>
+        <field name="domain_force">[('company_id', '=', user.company_id.id)]</field>
+        <field name="perm_read" eval="False"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="access_project_role_sales_hot" model="ir.rule">
+        <field name="name">Sales-project(based on sales hot)</field>
+        <field name="model_id" ref="project.model_project_project"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_sales_hot'))]"/>
+        <field name="domain_force">['|', ('project_status_id.code', 'in',
+            ['internal', 'internal_p2p3']), ('partner_id.user_id', '=', user.id)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_task_role_sales_hot" model="ir.rule">
+        <field name="name">Task(based on sales hot)</field>
+        <field name="model_id" ref="project.model_project_task"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_sales_hot'))]"/>
+        <field name="domain_force">['|', ('project_id.project_status_id.code', 'in',
+            ['internal', 'internal_p2p3']), ('partner_id.user_id', '=', user.id)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_block_portal_project" model="ir.rule">
+        <field name="name">Block Portal Project</field>
+        <field name="model_id" ref="project.model_project_project"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_sales_cold')),
+               (4, ref('access_rights_management.role_office_manager'))]"/>
+        <field name="domain_force">[(0, '=', 1)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+<!--    <record id="access_all_project_it_person" model="ir.rule">-->
+<!--        <field name="name">all project</field>-->
+<!--        <field name="model_id" ref="project.model_project_project"/>-->
+<!--        <field name="groups" eval="[(4, ref('access_rights_management.role_it_person'))]"/>-->
+<!--        <field name="domain_force">[(1, '=', 1)]</field>-->
+<!--        <field name="perm_read" eval="True"/>-->
+<!--        <field name="perm_write" eval="False"/>-->
+<!--        <field name="perm_create" eval="False"/>-->
+<!--        <field name="perm_unlink" eval="False"/>-->
+<!--    </record>-->
+
+    <record id="access_block_portal_task" model="ir.rule">
+        <field name="name">Block Portal Task</field>
+        <field name="model_id" ref="project.model_project_task"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_sales_cold')),
+               (4, ref('access_rights_management.role_office_manager'))]"/>
+        <field name="domain_force">[(0, '=', 1)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_invoice_full_assign" model="ir.rule">
+        <field name="name">Invoice(full assign)</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_sales_hot'))]"/>
+        <field name="domain_force">['|', '|', '|', ('partner_id.user_id', '=', user.id),
+            ('partner_id', '=', False),
+            ('partner_id', 'in', user.env['res.company'].search([('partner_id', '!=', False)]).partner_id.ids),
+            ('partner_id.parent_id', 'in', user.env['res.company'].search([('partner_id', '!=',
+            False)]).partner_id.ids)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_contact_role_sales_hot" model="ir.rule">
+        <field name="name">Contact(assign)</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_sales_hot'))]"/>
+        <field name="domain_force">['|', '|', '|', '|', '|', '|', '|', '|', '|', ('id', '=', 2), ('id', 'in', [247730, 331002]),
+            ('is_partner', '=', True), ('opportunity_ids.x_studio_second_salesperson', '=', user.id),
+            ('user_id.employee_ids.parent_id.user_id', '=', user.id), ('parent_id.is_partner', '=', True),
+            ('user_id', '=', user.id), ('id', 'in',
+            user.env["res.users"].search(['|', ('active', '=', True), ('active', '=', False)]).filtered(lambda rec: rec.has_group('base.group_user')).partner_id.ids),
+            ('id', 'in', user.env["res.company"].search([]).filtered(lambda rec:rec.partner_id).partner_id.ids),
+            ('parent_id', 'in', user.env["res.company"].search([]).filtered(lambda rec:rec.partner_id).partner_id.ids)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+<!--    <record id="access_contact_role_sales_cold" model="ir.rule">-->
+<!--        <field name="name">Contact(assign and in progress)</field>-->
+<!--        <field name="model_id" ref="base.model_res_partner"/>-->
+<!--        <field name="groups" eval="[(4, ref('access_rights_management.role_sales_cold'))]"/>-->
+<!--        <field name="domain_force">['|', '|', '|', '|', '&amp;', ('status', '=', 'in_progress'), ('user_id',-->
+<!--            '=', user.id), ('id', '=', 2), ('id', 'in', user.env["res.users"].search([]).filtered(lambda rec:-->
+<!--            rec.has_group('base.group_user')).partner_id.ids), ('id', 'in',-->
+<!--            user.env["res.company"].search([]).filtered(lambda rec:rec.partner_id).partner_id.ids), ('id', 'in',-->
+<!--            user.env["res.users"].search([]).filtered(lambda-->
+<!--            rec:rec.has_group('base.group_user')).partner_id.parent_id.child_ids.ids)]-->
+<!--        </field>-->
+<!--        <field name="perm_read" eval="True"/>-->
+<!--        <field name="perm_write" eval="False"/>-->
+<!--        <field name="perm_create" eval="False"/>-->
+<!--        <field name="perm_unlink" eval="False"/>-->
+<!--    </record>-->
+
+    <record id="access_contact_assigned_to_team" model="ir.rule">
+        <field name="name">Contact(assign to team)</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_sales_cold_team_director')),
+        (4, ref('access_rights_management.role_sales_cold_team_manager')),
+        (4, ref('access_rights_management.role_sales_cold'))]"/>
+        <field name="domain_force">['|', '|', '|', '|', '|', '|', ('id', '=', 2), ('user_id', '=', user.id),
+            ('user_id.employee_ids.parent_id.user_id', '=', user.id), '&amp;', ('opportunity_ids.active', '=', True),
+            ('opportunity_ids.x_studio_second_salesperson', '=', user.id),
+            ('id', 'in', user.env["res.users"].search(['|', ('active', '=', True), ('active', '=', False)]).filtered(lambda rec: rec.has_group('base.group_user')).partner_id.ids),
+            ('id', 'in', user.env["res.users"].search(['|', ('active', '=', True), ('active', '=', False)]).filtered(lambda rec: rec.has_group('base.group_user')).partner_id.parent_id.ids),
+            ('id', 'in', user.env["res.company"].search([]).filtered(lambda rec:rec.partner_id).partner_id.ids)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_contact_assigned_to_team_edit" model="ir.rule">
+        <field name="name">Contact(assign to team - edit)</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_sales_cold_team_director')),
+        (4, ref('access_rights_management.role_sales_cold_team_manager')),
+        (4, ref('access_rights_management.role_sales_cold')), (4, ref('access_rights_management.role_sales_hot'))]"/>
+        <field name="domain_force">['|', '|', ('user_id', '=', user.id),
+            ('user_id.employee_ids.parent_id.user_id', '=', user.id), ('is_partner', '=', True)]
+        </field>
+        <field name="perm_read" eval="False"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_contact_customers_vendors_old_customers" model="ir.rule">
+        <field name="name">Contact(customers, vendors and old customers)</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_management_control')), (4, ref('access_rights_management.role_cashflow_manager')),
+               (4, ref('access_rights_management.role_administrative')), (4, ref('access_rights_management.role_office_manager')),
+               (4, ref('access_rights_management.role_budget_manager'))]"/>
+        <field name="domain_force">['|', '|', '|', '|', '|', '|', ('id', '=', 2),
+            ('parent_id.supplier_rank','>', 0), ('supplier_rank','>', 0), ('status', 'in', ['customer','old_customer']),
+            ('id', 'in', user.env["res.company"].search([]).filtered(lambda rec:rec.partner_id).partner_id.ids),
+            ('id', 'in', user.env["res.users"].search(['|', ('active', '=', True), ('active', '=', False)]).filtered(lambda rec:
+            rec.has_group('base.group_user')).partner_id.ids), ('id', 'in', user.env["hr.job"].search([]).filtered(lambda rec: rec.address_id
+            != False).address_id.ids)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+<!--        TODO : field address_home_id is not anymore in v18 -->
+<!--        '|', ('id', 'in',-->
+<!--            user.env["hr.employee"].search([]).filtered(lambda rec: rec.address_home_id !=-->
+<!--            False).address_home_id.ids), -->
+    </record>
+
+    <record id="access_contact_customers_vendors_old_customers_ar" model="ir.rule">
+        <field name="name">Contact(customers, vendors and old customers) for administrative responsible</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_administrative_responsible'))]"/>
+        <field name="domain_force">[(1, '=', 1)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_contact_internal_user_only" model="ir.rule">
+        <field name="name">Contact(read all)</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_webmaster')), (4, ref('access_rights_management.role_infographiste')),
+               (4, ref('access_rights_management.role_recruiter'))]"/>
+        <field name="domain_force">[(1, '=', 1)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_contact_all" model="ir.rule">
+        <field name="name">Contact(full)</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_vps')), (4, ref('access_rights_management.role_ceo'))]"/>
+        <field name="domain_force">[(1, '=', 1)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="access_contact_only_customer_old_customer" model="ir.rule">
+        <field name="name">Contact(customer and old customer)</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_customer_referencer'))]"/>
+        <field name="domain_force">['|', '|', ('status', 'in', ['customer', 'old_customer']), ('id', 'in',
+            user.env["res.users"].search(['|', ('active', '=', True), ('active', '=', False)]).filtered(lambda rec: rec.has_group('base.group_user')).partner_id.ids),
+            ('id', 'in', user.env["res.company"].search([]).filtered(lambda rec:rec.partner_id).partner_id.ids)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_contact_only_customer_oldcustomer_inprogress" model="ir.rule">
+        <field name="name">Contact(customer, old customer and in progress)</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_legal'))]"/>
+        <field name="domain_force">[(1, '=', 1)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_contact_only_customer_old_customer_edit" model="ir.rule">
+        <field name="name">Contact(customer and old customer - edit)</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_customer_referencer'))]"/>
+        <field name="domain_force">[('status', 'in', ['customer', 'old_customer'])]
+        </field>
+        <field name="perm_read" eval="False"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_contact_published_webmaster" model="ir.rule">
+        <field name="name">Contact(published)</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_webmaster'))]"/>
+        <field name="domain_force">[('is_published', '=', True)]
+        </field>
+        <field name="perm_read" eval="False"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+<!--    <record id="access_contact_internal_user_only_it" model="ir.rule">-->
+<!--        <field name="name">Contact(Vendor)</field>-->
+<!--        <field name="model_id" ref="base.model_res_partner"/>-->
+<!--        <field name="groups"-->
+<!--               eval="[(4, ref('access_rights_management.role_it_person'))]"/>-->
+<!--        <field name="domain_force">['|', '|', '|', ('parent_id.supplier_rank','>', 0), ('supplier_rank','>', 0),-->
+<!--            ('id', 'in', user.env["res.company"].search([]).filtered(lambda rec:rec.partner_id).partner_id.ids), ('id',-->
+<!--            'in', user.env["res.users"].search([]).filtered(lambda rec:-->
+<!--            rec.has_group('base.group_user')).partner_id.ids)]-->
+<!--        </field>-->
+<!--        <field name="perm_read" eval="True"/>-->
+<!--        <field name="perm_write" eval="False"/>-->
+<!--        <field name="perm_create" eval="False"/>-->
+<!--        <field name="perm_unlink" eval="False"/>-->
+<!--    </record>-->
+
+    <record id="crm_rule_personal_lead_role" model="ir.rule">
+        <field name="name">Personal Leads</field>
+        <field ref="crm.model_crm_lead" name="model_id"/>
+        <field name="domain_force">['|',('user_id','=',user.id),('user_id','=',False)]</field>
+        <field name="groups" eval="[(4, ref('access_rights_management.show_sales'))]"/>
+    </record>
+
+    <record id="access_crm_lead_none" model="ir.rule">
+        <field name="name">Lead(None)</field>
+        <field ref="crm.model_crm_lead" name="model_id"/>
+        <field name="domain_force">[(0, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_customer_referencer'))]"/>
+    </record>
+
+    <record id="access_helpdesk_ticket_user_roles" model="ir.rule">
+        <field name="name">Helpdesk Ticket User</field>
+        <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.show_helpdesk'))]"/>
+        <field name="domain_force">['|','|', '|',('message_partner_ids', 'in', [user.partner_id.id]),('create_uid', '=', user.id), ('user_id', '=', user.id),
+            ('team_id.supervisor_ids', '=', user.id)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+<!--    <record id="access_helpdesk_ticket_write_roles" model="ir.rule">-->
+<!--        <field name="name">Helpdesk Ticket Manager</field>-->
+<!--        <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>-->
+<!--        <field name="groups" eval="[(4, ref('access_rights_management.show_helpdesk'))]"/>-->
+<!--        <field name="domain_force">[('team_id.supervisor_ids', '=', user.id)]-->
+<!--        </field>-->
+<!--        <field name="perm_read" eval="True"/>-->
+<!--        <field name="perm_write" eval="True"/>-->
+<!--        <field name="perm_create" eval="False"/>-->
+<!--        <field name="perm_unlink" eval="False"/>-->
+<!--    </record>-->
+
+<!--    <record id="access_helpdesk_ticket_disable_edit" model="ir.rule">-->
+<!--        <field name="name">Helpdesk Ticket(cannot edit)</field>-->
+<!--        <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>-->
+<!--        <field name="groups" eval="[(4, ref('access_rights_management.role_ceo')), (4, ref('access_rights_management.role_vp_of_sales')),-->
+<!--        (4, ref('access_rights_management.role_vps'))]"/>-->
+<!--        <field name="domain_force">[(0, '=', 1)]-->
+<!--        </field>-->
+<!--        <field name="perm_read" eval="False"/>-->
+<!--        <field name="perm_write" eval="True"/>-->
+<!--        <field name="perm_create" eval="False"/>-->
+<!--        <field name="perm_unlink" eval="False"/>-->
+<!--    </record>-->
+
+<!--    <record id="helpdesk_ticket_company_rule_roles" model="ir.rule">-->
+<!--        <field name="name">Ticket Related To Branch</field>-->
+<!--        <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>-->
+<!--        <field name="groups"-->
+<!--               eval="[(4, ref('access_rights_management.role_ceo')), (4, ref('access_rights_management.role_vp_of_sales')),-->
+<!--        (4, ref('access_rights_management.role_vps'))]"/>-->
+<!--        <field name="domain_force">[('company_id', 'in', company_ids)]-->
+<!--        </field>-->
+<!--        <field name="perm_read" eval="True"/>-->
+<!--        <field name="perm_write" eval="False"/>-->
+<!--        <field name="perm_create" eval="True"/>-->
+<!--        <field name="perm_unlink" eval="False"/>-->
+<!--    </record>-->
+
+<!--    <record id="helpdesk_ticket_company_madagascar" model="ir.rule">-->
+<!--        <field name="name">Ticket: Madagascar</field>-->
+<!--        <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>-->
+<!--        <field name="groups"-->
+<!--               eval="[(4, ref('access_rights_management.role_sales_cold')), (4, ref('access_rights_management.role_sales_cold_team_manager')),-->
+<!--        (4, ref('access_rights_management.role_sales_cold_team_director'))]"/>-->
+<!--        <field name="domain_force">[(1, '=', 1)]-->
+<!--        </field>-->
+<!--        <field name="perm_read" eval="True"/>-->
+<!--        <field name="perm_write" eval="True"/>-->
+<!--        <field name="perm_create" eval="True"/>-->
+<!--        <field name="perm_unlink" eval="False"/>-->
+<!--    </record>-->
+
+    <record id="access_po_own_po" model="ir.rule">
+        <field name="name">Purchase Order(own)</field>
+        <field name="model_id" ref="purchase.model_purchase_order"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_marketing_manager')),
+        (4, ref('access_rights_management.role_team_director')), (4, ref('access_rights_management.role_it_person'))]"/>
+        <field name="domain_force">['|', ('user_id', '=', user.id), ('user_id', '=', False)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="access_project_progress_report" model="ir.rule">
+        <field name="name">Project Progress Report</field>
+        <field name="model_id" ref="cap_project_progress_report.model_project_progress"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_sales_hot'))]"/>
+        <field name="domain_force">[('project_id.sale_order_id.user_id', '=', user.id)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="goal_user_visibility_roles" model="ir.rule">
+        <field name="name">User can only see his/her goals or goal from the same challenge in board visibility(roles)
+        </field>
+        <field name="model_id" ref="gamification.model_gamification_goal"/>
+        <field name="groups" eval="[(4, ref('base.group_portal')), (4, ref('role_marketing_manager')),
+            (4, ref('role_email_manager')), (4, ref('role_community_manager')), (4, ref('role_infographiste')),
+            (4, ref('role_webmaster')), (4, ref('role_sales_hot')), (4, ref('role_sales_cold')),
+            (4, ref('role_operation')), (4, ref('role_it_person')), (4, ref('role_customer_referencer'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="domain_force">[
+            '|',
+            ('user_id','=',user.id),
+            '&amp;',
+            ('challenge_id.user_ids','in',user.id),
+            ('challenge_id.visibility_mode','=','ranking')]
+        </field>
+    </record>
+
+    <record id="access_gamification_goal_people_under_me" model="ir.rule">
+        <field name="name">Gamification Goal(people under me)</field>
+        <field name="model_id" ref="gamification.model_gamification_goal"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_sales_cold_team_director')), (4, ref('access_rights_management.role_team_manager')), (4, ref('access_rights_management.role_sales_cold_team_manager')), (4, ref('access_rights_management.role_operation'))]"/>
+        <field name="domain_force">['|', ('user_id', '=', user.id), ('user_id.employee_ids.parent_id.user_id', '=', user.id)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_gamification_goal_td" model="ir.rule">
+        <field name="name">Gamification Goal(for all employee)</field>
+        <field name="model_id" ref="gamification.model_gamification_goal"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_team_director'))]"/>
+        <field name="domain_force">[(1, '=', 1)]
+        </field>
+    </record>
+
+    <record id="access_analytic_account_based_on_contacts" model="ir.rule">
+        <field name="name">Analytic Accounts</field>
+        <field name="model_id" ref="analytic.model_account_analytic_account"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_webmaster')), (4, ref('access_rights_management.role_infographiste')),
+               (4, ref('access_rights_management.role_recruiter'))]"/>
+        <field name="domain_force">['|', '|', '|', '|', ('partner_id', 'in', user.env["res.users"].search([]).filtered(lambda rec:
+            rec.has_group('base.group_user')).partner_id.parent_id.ids), ('partner_id', 'in',
+            user.env["res.users"].search([]).filtered(lambda rec:
+            rec.has_group('base.group_user')).partner_id.ids), ('partner_id', '=', False), ('partner_id.status', 'in', ['customer', 'old_customer']),
+            ('partner_id.parent_id.status', 'in', ['customer', 'old_customer'])]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_analytic_account_based_on_contacts_sale_hot" model="ir.rule">
+        <field name="name">Analytic Accounts(sales hot)</field>
+        <field name="model_id" ref="analytic.model_account_analytic_account"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_sales_hot'))]"/>
+        <field name="domain_force">['|', '|', '|', '|', '|', '|', '|', '|', '|', ('partner_id', '=', False), ('partner_id', '=', 2),
+            ('partner_id.is_partner', '=', True), ('partner_id.parent_id.is_partner', '=', True), ('partner_id', 'in', [247730, 331002]),
+            ('partner_id.user_id', '=', user.id), ('partner_id', 'in', user.env["res.users"].search([]).filtered(lambda
+            rec: rec.has_group('base.group_user')).partner_id.ids), ('partner_id.parent_id.user_id', '=', user.id),
+            ('partner_id', 'in', user.env["res.users"].search([]).filtered(lambda rec:
+            rec.has_group('base.group_user')).partner_id.parent_id.ids), ('partner_id',
+            'in', user.env["res.company"].search([]).filtered(lambda rec:rec.partner_id).partner_id.ids)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_analytic_account_based_on_customer_vendor_old_customer" model="ir.rule">
+        <field name="name">Analytic Accounts(based on customer,vendor and old customer)</field>
+        <field name="model_id" ref="analytic.model_account_analytic_account"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_management_control')), (4, ref('access_rights_management.role_office_manager')),
+               (4, ref('access_rights_management.role_administrative'))]"/>
+        <field name="domain_force">['|', '|', '|', '|', ('partner_id', '=', False), ('partner_id.supplier_rank','>', 0),
+            ('partner_id.status', 'in', ['customer','old_customer']), ('partner_id', 'in',
+            user.env["res.users"].search([]).filtered(lambda rec:
+            rec.has_group('base.group_user')).partner_id.parent_id.ids), ('partner_id', 'in',
+            user.env["res.users"].search([]).filtered(lambda rec: rec.has_group('base.group_user')).partner_id.ids)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_analytic_account_for_sales_cold_group" model="ir.rule">
+        <field name="name">Analytic Accounts(sales cold group)</field>
+        <field name="model_id" ref="analytic.model_account_analytic_account"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_sales_cold')), (4, ref('access_rights_management.role_sales_cold_team_director')),
+               (4, ref('access_rights_management.role_sales_cold_team_manager'))]"/>
+        <field name="domain_force">['|', '|', '|', '|', ('partner_id', 'in',
+            user.env["res.users"].search([]).filtered(lambda rec:
+            rec.has_group('base.group_user')).partner_id.parent_id.ids), ('partner_id', 'in',
+            user.env["res.users"].search([]).filtered(lambda rec:
+            rec.has_group('base.group_user')).partner_id.ids), ('partner_id', '=', False), ('partner_id.user_id', '=',
+            user.id), ('partner_id.user_id.employee_ids.parent_user_id', '=', user.id)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_analytic_account_all_account" model="ir.rule">
+        <field name="name">Analytic Accounts(All)</field>
+        <field name="model_id" ref="analytic.model_account_analytic_account"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_it_person'))]"/>
+        <field name="domain_force">[(1, '=', 1)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_analytic_account_roles_full" model="ir.rule">
+        <field name="name">CFO/CFO For His Company(full)</field>
+        <field name="model_id" ref="analytic.model_account_analytic_account"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_cfo')), (4, ref('access_rights_management.role_cfo_for_his_company'))]"/>
+        <field name="domain_force">[(1, '=', 1)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+<!--    <record id="access_account_move_sales_custom_managed" model="ir.rule">-->
+<!--        <field name="name">Journal Entries</field>-->
+<!--        <field ref="account.model_account_move" name="model_id"/>-->
+<!--        <field name="domain_force">[(1, '=', 1)]</field>-->
+<!--        <field name="groups" eval="[(4, ref('access_rights_management.role_administrative')), (4, ref('access_rights_management.role_ceo')),-->
+<!--        (4, ref('access_rights_management.role_drh')), (4, ref('access_rights_management.role_vp_of_marketing')),-->
+<!--        (4, ref('access_rights_management.role_vp_of_sales'))]"/>-->
+<!--    </record>-->
+
+    <record id="access_journal_item_read" model="ir.rule">
+        <field name="name">Journal Items</field>
+        <field name="model_id" ref="account.model_account_move_line"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_vps')),
+               (4, ref('access_rights_management.role_vp_of_sales'))]"/>
+        <field name="domain_force">[(1, '=', 1)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="access_journal_item_ceo" model="ir.rule">
+        <field name="name">Journal Items</field>
+        <field name="model_id" ref="account.model_account_move_line"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_ceo')),
+               (4, ref('access_rights_management.role_administrative')),
+               (4, ref('access_rights_management.role_management_control'))]"/>
+        <field name="domain_force">[(1, '=', 1)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="access_payment_transaction" model="ir.rule">
+        <field name="name">Payment Transaction</field>
+        <field name="model_id" ref="payment.model_payment_transaction"/>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_management_control')),
+               (4, ref('access_rights_management.role_administrative_responsible')),
+               (4, ref('access_rights_management.role_administrative'))]"/>
+        <field name="domain_force">[(1, '=', 1)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_helpdesk_team" model="ir.rule">
+        <field name="name">Helpdesk User</field>
+        <field name="model_id" ref="helpdesk.model_helpdesk_team"/>
+        <field name="domain_force">['|', '|',
+            ('privacy_visibility', '!=', 'invited_internal'),
+            ('supervisor_ids', '=', user.id), ('creator_ids', '=', user.id)
+            ]
+        </field>
+        <field name="groups" eval="[(4, ref('helpdesk.group_helpdesk_user')),
+            (4, ref('access_rights_management.show_helpdesk'))]"/>
+    </record>
+
+    <record id="access_go_live_change_request_sales_hot" model="ir.rule">
+        <field name="name">Go live change request(sales-hot)</field>
+        <field name="model_id" ref="ksc_project_go_live_maintainer.model_glive_change_request"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_sales_hot'))]"/>
+        <field name="domain_force">[('project_id.partner_id.user_id', '=', user.id)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_all_expense_read" model="ir.rule">
+        <field name="name">All Expense(read)</field>
+        <field name="model_id" ref="hr_expense.model_hr_expense"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_hr')),
+        (4, ref('access_rights_management.role_hr_responsible'))]"/>
+        <field name="domain_force">[(1, '=', 1)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="access_all_expense_report_read" model="ir.rule">
+        <field name="name">All Expense Sheet(read)</field>
+        <field name="model_id" ref="hr_expense.model_hr_expense"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_hr')),
+        (4, ref('access_rights_management.role_hr_responsible'))]"/>
+        <field name="domain_force">[(1, '=', 1)]
+        </field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="marketing_assistant_to_access_mailing_mailing" model="ir.rule">
+        <field name="name">Mailing Mailing</field>
+        <field name="model_id" ref="mass_mailing.model_mailing_mailing"/>
+        <field name="domain_force">['|', ('user_id', '=', user.id),('create_uid', '=', user.id)]</field>
+        <field name="groups" eval="[(4,ref('access_rights_management.role_marketing_assistant'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="marketing_assistant_to_access_marketing_campaign" model="ir.rule">
+        <field name="name">Marketing Campaign</field>
+        <field name="model_id" ref="marketing_automation.model_marketing_campaign"/>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_marketing_assistant'))]"/>
+        <field name="domain_force">['|', ('user_id', '=', user.id),('create_uid', '=', user.id)]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="survey_survey_rule_customer_referencer" model="ir.rule">
+        <field name="name">Survey: Own Survey</field>
+        <field name="model_id" ref="survey.model_survey_survey"/>
+        <field name="domain_force">[('user_id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_customer_referencer'))]"/>
+    </record>
+
+    <record id="survey_user_input_rule_customer_referencer" model="ir.rule">
+        <field name="name">Survey user input: Own Survey</field>
+        <field name="model_id" ref="survey.model_survey_user_input"/>
+        <field name="domain_force">['|', ('survey_id', '=', False), ('survey_id.user_id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('access_rights_management.role_customer_referencer'))]"/>
+    </record>
+
+    <record id="ir_rule_sign_request_for_team_hr" model="ir.rule">
+        <field name="name">sign.request: Team HR</field>
+        <field name="model_id" ref="sign.model_sign_request"/>
+        <field name="domain_force">[('request_item_ids.partner_id', 'in',
+            user.env["hr.employee"].search([]).filtered(lambda rec: rec.partner_id != False).partner_id.ids)]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_hr')), (4, ref('access_rights_management.role_hr_responsible'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+
+<!--    <record id="ir_rule_account_move_multi_company_sales_manager" model="ir.rule">-->
+<!--        <field name="name">multi company sales manager(journal entry)</field>-->
+<!--        <field name="model_id" ref="account.model_account_move"/>-->
+<!--        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]-->
+<!--        </field>-->
+<!--        <field name="groups"-->
+<!--               eval="[(4, ref('access_rights_management.role_vp_of_sales'))]"/>-->
+<!--        <field name="perm_read" eval="True"/>-->
+<!--        <field name="perm_write" eval="False"/>-->
+<!--        <field name="perm_create" eval="False"/>-->
+<!--        <field name="perm_unlink" eval="False"/>-->
+<!--    </record>-->
+
+    <record id="ir_rule_account_move_sales_manager" model="ir.rule">
+        <field name="name">sales manager(journal entry)</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="domain_force">[('move_type', '=', 'out_invoice')]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_vp_of_sales'))]"/>
+        <field name="perm_read" eval="False"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <record id="ir_rule_account_move_journal_entries_all" model="ir.rule">
+        <field name="name">Journal Entries</field>
+        <field name="model_id" ref="account.model_account_move"/>
+        <field name="domain_force">[(1, '=', 1)]
+        </field>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_ceo'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="True"/>
+    </record>
+
+    <record id="ir_rule_applicant_assign_only" model="ir.rule">
+        <field name="name">Applicant (Operation Team)</field>
+        <field name="model_id" ref="hr_recruitment.model_hr_applicant"/>
+        <field name="domain_force">[('interviewer_ids', 'in', [user.id])]</field>
+        <field name="groups"
+               eval="[(4, ref('access_rights_management.role_team_manager')), (4, ref('access_rights_management.role_team_director'))]"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="False"/>
+        <field name="perm_create" eval="False"/>
+        <field name="perm_unlink" eval="False"/>
+    </record>
+
+    <!-- ############################################################################################################### -->
+    <!--    record rule we archived-->
+    <record id="helpdesk.helpdesk_user_rule" model="ir.rule">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record id="crm.crm_rule_personal_lead" model="ir.rule">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record id="purchase.purchase_user_account_move_line_rule" model="ir.rule">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record id="sale.account_invoice_line_rule_see_personal" model="ir.rule">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record id="sale.account_invoice_line_rule_see_all" model="ir.rule">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record id="gamification.goal_user_visibility" model="ir.rule">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record id="sign.ir_rule_sign_request_group_sign_user_signer_follower" model="ir.rule">
+        <field name="domain_force">[('request_item_ids.partner_id', 'in', user.partner_id.ids)]</field>
+    </record>
+
+    <!-- ############################################################################################################### -->
+
+    <record id="helpdesk.helpdesk_ticket_user_rule" model="ir.rule">
+        <field name="groups" eval="[(3, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="project.task_type_manager_rule" model="ir.rule">
+        <field name="groups" eval="[(4,ref('project.group_project_manager')),
+        (4,ref('access_rights_management.role_vp_of_quality_and_knowledge'))]"/>
+    </record>
+
+    <record id="cap_project_test.session_test_rule" model="ir.rule">
+        <field name="groups" eval="[(3, ref('base.group_user'))]"/>
+    </record>
+
+<!--    <record id="hr_contract.group_hr_contract_manager" model="res.groups">-->
+<!--      <field name="implied_ids" eval="[(3, ref('sign.group_sign_manager'))]"/>-->
+<!--    </record>-->
+
+<!--    <record model="ir.rule" id="cap_project_test.session_test_rule">-->
+<!--        <field name="groups"-->
+<!--               eval="[(4, ref('access_rights_management.role_president')),-->
+<!--               (4, ref('access_rights_management.role_vp_of_marketing')), (4, ref('access_rights_management.role_cfo')),-->
+<!--               (4, ref('access_rights_management.role_drh')), (4, ref('access_rights_management.role_vp_of_quality_and_knowledge')),-->
+<!--               (4, ref('access_rights_management.role_ceo')), (4, ref('access_rights_management.role_vp_of_sales')),-->
+<!--               (4, ref('access_rights_management.role_hr')), (4, ref('access_rights_management.role_hr_responsible')),-->
+<!--               (4, ref('access_rights_management.role_legal')), (4, ref('access_rights_management.role_administrative')),-->
+<!--               (4, ref('access_rights_management.role_administrative_responsible')),-->
+<!--               (4, ref('access_rights_management.role_management_control')), (4, ref('access_rights_management.role_sales_hot'))]"/>-->
+<!--        <field name="domain_force">[('project_id.company_id', 'in', company_ids)]</field>-->
+<!--    </record>-->
+
+
+
+
+    <!--    portal user group-->
+
+    <record id="base.group_portal" model="res.groups">
+<!--        <field name="category_id" ref="base.module_category_user_type"/>-->
+        <field name="implied_ids"
+               eval="[(4, ref('access_rights_management.access_portal_menu_invoices')),
+               (4, ref('access_rights_management.access_portal_menu_sales'))]"/>
+    </record>
+
+
+<!--   odoo bug fix: For portal user-->
+<!--####################################################################################################################-->
+    <record model="ir.rule" id="project.project_manager_all_project_tasks_rule">
+        <field name="active" eval="False"/>
+    </record>
+
+<!--    <record model="ir.rule" id="project.task_comp_rule">-->
+<!--        <field name="groups" eval="[(4, ref('project.group_project_manager')), (4, ref('project.group_project_user')),-->
+<!--        (4, ref('access_rights_management.role_vp_of_sales')), (4, ref('base.group_system')),-->
+<!--        (4, ref('access_rights_management.role_legal')), (4, ref('access_rights_management.role_administrative')),-->
+<!--        (4, ref('access_rights_management.role_administrative_responsible')), (4, ref('access_rights_management.role_management_control')),-->
+<!--        (4, ref('access_rights_management.role_customer_referencer')), (4, ref('access_rights_management.role_marketing_manager'))]"/>-->
+<!--    </record>-->
+
+<!--    <record model="ir.rule" id="sale.sale_order_comp_rule">-->
+<!--        <field name="groups" eval="[(4, ref('base.group_system')), (4, ref('sales_team.group_sale_salesman')),-->
+<!--        (4, ref('sales_team.group_sale_salesman_all_leads')), (4, ref('access_rights_management.role_cfo')),-->
+<!--        (4, ref('access_rights_management.role_cfo_for_his_company')), (4, ref('access_rights_management.role_administrative_responsible'))]"/>-->
+<!--    </record>-->
+
+<!--    <record model="ir.rule" id="project.project_comp_rule">-->
+<!--        <field name="groups" eval="[(4, ref('base.group_system')), (4, ref('access_rights_management.role_it_person')),-->
+<!--        (4, ref('project.group_project_user')), (4, ref('access_rights_management.role_vp_of_sales')),-->
+<!--        (4, ref('access_rights_management.role_hr')), (4, ref('access_rights_management.role_hr_responsible')),-->
+<!--        (4, ref('access_rights_management.role_legal')), (4, ref('access_rights_management.role_administrative')),-->
+<!--        (4, ref('access_rights_management.role_administrative_responsible')), (4, ref('access_rights_management.role_management_control')),-->
+<!--        (4, ref('access_rights_management.role_customer_referencer')), (4, ref('access_rights_management.role_marketing_manager'))]"/>-->
+<!--    </record>-->
+
+<!--    <record model="ir.rule" id="account.account_move_comp_rule">-->
+<!--        <field name="groups" eval="[(4, ref('access_rights_management.role_ceo')), (4, ref('account.group_account_readonly')),-->
+<!--        (4, ref('base.group_system')), (4, ref('account.group_account_user')), (4, ref('access_rights_management.role_management_control'))]"/>-->
+<!--    </record>-->
+
+
+    <record model="ir.rule" id="account.account_invoice_rule_portal">
+        <field name="domain_force">
+            [('move_type', 'in', ('out_invoice', 'out_refund', 'in_invoice', 'in_refund')),
+            ('message_partner_ids','child_of',[user.commercial_partner_id.id]), '|', ('company_id', '=', False),
+            ('company_id', 'in', user.company_ids.ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="project.project_project_rule_portal">
+        <field name="domain_force">
+            ['&amp;', ('privacy_visibility', '=', 'portal'), ('message_partner_ids', 'child_of',
+            [user.partner_id.commercial_partner_id.id]), '|', ('company_id', '=', False), ('company_id', 'in',
+            user.company_ids.ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="sale.sale_order_rule_portal">
+        <field name="domain_force">
+            [('message_partner_ids','child_of',[user.commercial_partner_id.id]), ('company_id', 'in',
+            user.company_ids.ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="project.project_task_rule_portal">
+        <field name="domain_force">[('project_id.privacy_visibility', '=', 'portal'), ('active', '=', True), '|',
+            ('project_id.message_partner_ids', 'child_of', [user.partner_id.commercial_partner_id.id]),
+            ('message_partner_ids', 'child_of', [user.partner_id.commercial_partner_id.id]), '|', ('company_id', '=',
+            False), ('company_id', 'in', user.company_ids.ids)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="project.project_task_rule_portal_project_sharing">
+        <field name="domain_force">[('project_id.privacy_visibility', '=', 'portal'), ('active', '=', True), '|',
+            ('project_id.message_partner_ids', 'child_of', [user.partner_id.commercial_partner_id.id]),
+            ('message_partner_ids', 'child_of', [user.partner_id.commercial_partner_id.id]),
+            ('project_id.collaborator_ids.partner_id', 'in', [user.partner_id.id]), '|', ('company_id', '=',
+            False), ('company_id', 'in', user.company_ids.ids)]
+        </field>
+    </record>
+
+<!--    ##################################################################################################################-->
+
+    <record model="ir.rule" id="purchase.purchase_user_account_move_rule">
+        <field name="domain_force">
+            [('move_type', 'in', ('in_invoice', 'in_refund', 'in_receipt'))]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="hr_expense.hr_expense_team_approver_account_move_rule">
+        <field name="domain_force">
+            [('line_ids.expense_id', '!=', False)]
+        </field>
+    </record>
+
+    <record model="ir.rule" id="project_todo.task_edition_rule_internal">
+        <field name="active" eval="False"/>
+    </record>
+
+    <record id="approval_request_parent_approver_rule" model="ir.rule">
+            <field name="name">Approval Request: Parent approver rule</field>
+            <field name="model_id" ref="model_approval_request"/>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="domain_force">[('request_owner_id.employee_ids.parent_id.user_id', '=', user.id)]</field>
+    </record>
+
+    <record id="approval_approver_request_approver_rule" model="ir.rule">
+            <field name="name">Approval Request: Approval approver rule</field>
+            <field name="model_id" ref="approvals.model_approval_approver"/>
+            <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="domain_force">[('request_id.request_owner_id.employee_ids.parent_id.user_id', '=', user.id)]</field>
+    </record>
+
+</odoo>

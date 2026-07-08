@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="cap_view_hr_job" model="ir.ui.view">
+        <field name="name">cap.view.hr.job</field>
+        <field name="model">hr.job</field>
+        <field name="inherit_id" ref="hr.view_hr_job_form"/>
+        <field name="priority">16</field>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="On Boarding Pro-rata">
+                    <field name="onboard_prorata_ids">
+                        <list editable="bottom">
+<!--                            <field name="month_number"/>-->
+                            <field name="target_percentage"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

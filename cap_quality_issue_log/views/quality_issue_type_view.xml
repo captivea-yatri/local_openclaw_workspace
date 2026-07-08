@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="form_view_quality_issue_type" model="ir.ui.view">
+        <field name="name">quality.issue.type.form.view</field>
+        <field name="model">quality.issue.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar" />
+                    <button string="Validate" name="validate_issue_type" class="oe_highlight" type="object"
+                            invisible="state != 'draft'"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" readonly="state != 'draft'" required="1"/>
+                            <field name="quality_category" readonly="state != 'draft'" required="1"/>
+                            <label for="score_impact" string="Score Impact" readonly="state != 'draft'"/>
+                            <div class="oe_inline" name="score_impact" readonly="state != 'draft'">
+                                <field name="score_impact" class="oe_inline" readonly="state != 'draft'" required="1"/>%
+                            </div>
+                        </group>
+                        <group>
+                            <field name="action_performer" readonly="state != 'draft'" required="1"/>
+                            <field name="ir_model_id" required="1" readonly="state != 'draft'"/>
+                            <field name="ir_cron_id" readonly="state != 'draft'"
+                                   invisible="action_performer != 'create_schedule_action' or not ir_cron_id"/>
+                            <field name="base_automation_id"
+                                   readonly="state != 'draft'"
+                                       invisible="action_performer != 'create_automated_action' or not base_automation_id"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="tree_view_quality_issue_type" model="ir.ui.view">
+        <field name="name">quality.issue.type.tree.view</field>
+        <field name="model">quality.issue.type</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="quality_category"/>
+                <field name="score_impact"/>
+            </list>
+        </field>
+    </record>
+    <record id="search_view_quality_issue_type" model="ir.ui.view">
+        <field name="name">quality.issue.type.search.view</field>
+        <field name="model">quality.issue.type</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="quality_category"/>
+                <field name="score_impact"/>
+            </search>
+        </field>
+    </record>
+    <record id="action_quality_issue_type" model="ir.actions.act_window">
+        <field name="name">Quality Issue Type</field>
+        <field name="res_model">quality.issue.type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create New Quality Issue Type
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_quality_issue_type" parent="cap_quality_issue_log.menu_employee_performance_quality"
+              groups="cap_quality_issue_log.group_emp_perf_quality_recognizer"
+              name="Quality issue Type" action="action_quality_issue_type" sequence="3"/>
+</odoo>

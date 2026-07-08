@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_partner_form_ocean_enrichment" model="ir.ui.view">
+        <field name="name">res.partner.form.ocean.enrichment</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_ocean_enrich_person"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-magic"
+                        title="Enrich with Ocean.io">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">Ocean Lookup</span>
+                    </div>
+                </button>
+                <button name="action_ocean_enrich_company"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-building"
+                        title="Enrich company with Ocean.io">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">Ocean Company</span>
+                    </div>
+                </button>
+            </xpath>
+            <xpath expr="//page[@name='internal_notes']" position="before">
+                <page string="Ocean.io" name="ocean">
+                    <group>
+                        <field name="ocean_person_id" readonly="1"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

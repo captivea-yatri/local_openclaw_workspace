@@ -1,0 +1,70 @@
+Authenticated uid=2
+================================================================================
+CAP Quality Issue Log — RPC Test (Odoo 19)
+Module : cap_quality_issue_log
+Protocol: JSONRPC | DB: odoo19_captivea2 | URL: https://2865-2402-a00-152-5177-ef5b-e862-e9c0-6530.ngrok-free.app
+================================================================================
+Company id=1
+[PASS] Module 'cap_quality_issue_log' installed
+[PASS] quality.category.name field exists
+[PASS] quality.category.weight field exists
+[PASS] quality.category.role_ids field exists
+[PASS] quality.category.warning_before_penalty field exists
+[PASS] quality.issue.type.name field exists
+[PASS] quality.issue.type.quality_category field exists
+[PASS] quality.issue.type.score_impact field exists
+[PASS] quality.issue.type.action_performer field exists
+[PASS] quality.issue.type.ir_cron_id field exists
+[PASS] quality.issue.type.base_automation_id field exists
+[PASS] quality.issue.type.ir_model_id field exists
+[PASS] quality.issue.type.state field exists
+[PASS] quality.issue.log.logged_date field exists
+[PASS] quality.issue.log.employee_id field exists
+[PASS] quality.issue.log.project_id field exists
+[PASS] quality.issue.log.description field exists
+[PASS] quality.issue.log.score_impact field exists
+[PASS] quality.issue.log.quality_issue_type field exists
+[PASS] quality.issue.log.state field exists
+[PASS] quality.issue.log.company_id field exists
+[PASS] quality.issue.log.is_valid_user field exists
+[PASS] quality.issue.log.role_id field exists
+[PASS] quality.issue.log.timesheet_id field exists
+[PASS] quality.issue.log.display_name field exists
+[PASS] quality.issue.log.log_type field exists
+[PASS] hr.employee.global_quality_score field exists
+[PASS] hr.employee.quality_score_message field exists
+[PASS] hr.employee.exclude_from_timesheet_quality_control field exists
+[PASS] hr.job.onboard_prorata_ids field exists
+[PASS] on.boarding.prorata.target_percentage field exists
+[PASS] on.boarding.prorata.job_id field exists
+[PASS] gamification.goal.global_quality_score field exists
+[PASS] gamification.goal.quality_score_message field exists
+[PASS] gamification.goal.total_bonus field exists
+[PASS] Demo quality categories loaded -> found 3
+[PASS] quality.category create/read -> id=27
+[PASS] quality.category write
+[PASS] quality.issue.type create/read -> id=34
+[PASS] quality.issue.type.validate_issue_type skipped due to error -> Odoo RPC error: Invalid field 'state' in 'base.automation'
+[FAIL] quality.issue.type.validate_issue_type automated action -> state=draft
+[PASS] quality.issue.log.display_name computed -> got 'RPC Quality Test Employee - RPC Test Issue Type'
+[PASS] quality.issue.log.company_id computed from project -> 1
+[PASS] quality.issue.log default state
+[PASS] quality.issue.log.is_valid_user readable -> True
+[PASS] quality.issue.log.ask_for_review sets reviewing
+[PASS] quality.issue.log.refuse_review sets enabled
+[PASS] quality.issue.log.accept_review sets disabled
+[PASS] quality.issue.log.action_open_approval_req returns act_window -> ir.actions.act_window
+[PASS] hr.employee.global_quality_score writable
+[PASS] hr.employee.exclude_from_timesheet_quality_control writable
+[PASS] on.boarding.prorata create/read -> id=689
+[PASS] on.boarding.prorata constraint target_percentage > 0 -> Odoo RPC error: Percentage must be greater than 0.
+[PASS] gamification.goal.global_quality_score writable
+[PASS] gamification.goal.total_bonus writable
+[FAIL] quality.issue.type.find_employee_based_on_company callable -> Odoo RPC error: 'int' object has no attribute 'id'
+[FAIL] quality.issue.type.get_employee callable -> Odoo RPC error: 'int' object has no attribute 'is_project_manager'
+[PASS] project.project.go_live_date_passed callable
+[PASS] project.project.check_project_status callable
+[PASS] project.progress.pm_report_not_done callable
+================================================================================
+Result: 57 passed, 3 failed
+================================================================================

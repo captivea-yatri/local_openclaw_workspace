@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Cron to run every 10 minutes -->
+    <record id="ir_cron_apollo_sync" model="ir.cron">
+        <field name="name">Apollo contacts sync</field>
+        <field name="model_id" ref="model_apollo_sync"/>
+        <field name="state">code</field>
+        <field name="code">model.action_sync()</field>
+        <field name="interval_number">10</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field name="doall" eval="False"/>
+        <field name="active" eval="True"/>
+    </record>
+</odoo>

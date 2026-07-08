@@ -1,0 +1,172 @@
+<odoo>
+    <record id="view_order_form_roles" model="ir.ui.view">
+        <field name="name">sale.order.form.roles</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <button name="action_view_invoice" position="replace">
+                <button name="action_view_invoice"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-pencil-square-o"
+                        groups="!access_rights_management.role_vp_of_marketing,!access_rights_management.role_sales_cold,!access_rights_management.role_sales_cold_team_manager,!access_rights_management.role_sales_cold_team_director,!access_rights_management.role_team_manager,!access_rights_management.role_operation,!access_rights_management.role_operation_on_boarder"
+                        invisible="invoice_count == 0">
+                        <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                    </button>
+            </button>
+<!--            TODO : need to check may be removed  remove after database test-->
+<!--            <field name="project_account_id" position="attributes">-->
+<!--                <attribute name="groups">!access_rights_management.role_vp_of_marketing,!access_rights_management.role_sales_cold,!access_rights_management.role_sales_cold_team_manager,!access_rights_management.role_sales_cold_team_director,!access_rights_management.role_team_manager,!access_rights_management.role_operation,!access_rights_management.role_operation_on_boarder</attribute>-->
+<!--            </field>-->
+            <button id='create_invoice' position="replace">
+                <button id="create_invoice" name="%(sale.action_view_sale_advance_payment_inv)d" string="Create Invoice"
+                    type="action" class="btn-primary" data-hotkey="q"
+                    groups="!access_rights_management.role_vp_of_marketing,!access_rights_management.role_sales_cold,!access_rights_management.role_sales_cold_team_manager,!access_rights_management.role_sales_cold_team_director,!access_rights_management.role_team_manager,!access_rights_management.role_operation,!access_rights_management.role_operation_on_boarder"
+                    invisible="invoice_status != 'to invoice'"/>
+            </button>
+            <button id="create_invoice_percentage" position="replace">
+                <button id="create_invoice_percentage" name="%(sale.action_view_sale_advance_payment_inv)d" string="Create Invoice"
+                    type="action" context="{'default_advance_payment_method': 'percentage'}" data-hotkey="q"
+                        groups="!access_rights_management.role_vp_of_marketing,!access_rights_management.role_sales_cold,!access_rights_management.role_sales_cold_team_manager,!access_rights_management.role_sales_cold_team_director,!access_rights_management.role_team_manager,!access_rights_management.role_operation,!access_rights_management.role_operation_on_boarder"
+                    invisible="invoice_status != 'no' or state != 'sale'"/>
+            </button>
+            <xpath expr='//button[@name="action_quotation_send"][2]' position="replace">
+                <button name="action_quotation_send" type="object" string="Send PRO-FORMA Invoice"
+                    groups="sale.group_proforma_sales,!access_rights_management.role_vp_of_marketing,!access_rights_management.role_sales_cold,!access_rights_management.role_sales_cold_team_manager,!access_rights_management.role_sales_cold_team_director,!access_rights_management.role_team_manager,!access_rights_management.role_operation,!access_rights_management.role_operation_on_boarder" class="btn-primary"
+                    invisible="state != 'draft' or invoice_count &gt;= 1" context="{'proforma': True, 'validate_analytic': True}"/>
+            </xpath>
+            <xpath expr='//button[@name="action_quotation_send"][3]' position="replace">
+                <button name="action_quotation_send" type="object" string="Send PRO-FORMA Invoice" groups="sale.group_proforma_sales,!access_rights_management.role_vp_of_marketing,!access_rights_management.role_sales_cold,!access_rights_management.role_sales_cold_team_manager,!access_rights_management.role_sales_cold_team_director,!access_rights_management.role_team_manager,!access_rights_management.role_operation,!access_rights_management.role_operation_on_boarder" invisible="state == 'draft' or invoice_count &gt;= 1" context="{'proforma': True, 'validate_analytic': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_order_form_inherit_sale_project_custom" model="ir.ui.view">
+        <field name="name">sale.order.form.sale.project.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_project.view_order_form_inherit_sale_project"/>
+        <field name="arch" type="xml">
+            <xpath expr='//button[@name="action_view_project_ids"]' position="replace">
+                <button type="object" name="action_view_project_ids" class="oe_stat_button"
+                        icon="fa-puzzle-piece" invisible="not show_project_button"
+                        groups="project.group_project_user,access_rights_management.role_sales_hot,access_rights_management.role_management_control,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_vps,access_rights_management.role_vp_of_sales,access_rights_management.role_team_manager,access_rights_management.role_team_director,access_rights_management.role_operation,access_rights_management.role_operation_on_boarder,access_rights_management.role_legal">
+                    <field name="project_count" widget="statinfo" string="Projects"/>
+                </button>
+            </xpath>
+            <xpath expr="//button[@name='action_view_milestone']" position="replace">
+                <button class="oe_stat_button" name="action_view_milestone" type="object" icon="fa-check-square-o"
+                        invisible="not is_product_milestone or not project_ids or state == 'draft'"
+                        groups="access_rights_management.role_sales_hot,project.group_project_user,access_rights_management.role_management_control,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_vps,access_rights_management.role_vp_of_sales,access_rights_management.role_team_manager,access_rights_management.role_team_director,access_rights_management.role_operation,access_rights_management.role_operation_on_boarder,access_rights_management.role_legal">
+                    <field name="milestone_count" widget="statinfo" string="Milestones"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_order_form_inherit_sale_timesheet_custom1" model="ir.ui.view">
+        <field name="name">sale.order.form.sale.timesheet.custom1</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_timesheet.view_order_form_inherit_sale_timesheet"/>
+        <field name="arch" type="xml">
+            <field name="timesheet_count" invisible="1"/>
+            <xpath expr='//button[@name="action_view_timesheet"]' position="replace">
+                <button type="object"
+                        name="action_view_timesheet"
+                        class="oe_stat_button"
+                        icon="fa-clock-o"
+                        invisible="timesheet_count == 0"
+                        groups="access_rights_management.role_sales_hot,hr_timesheet.group_hr_timesheet_user,access_rights_management.role_management_control,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_vps,access_rights_management.role_vp_of_sales,access_rights_management.role_cashflow_manager,access_rights_management.role_budget_manager,access_rights_management.role_legal">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="timesheet_total_duration" class="mr4" widget="statinfo" nolabel="1"/>
+                            <field name="timesheet_encode_uom_id" options="{'no_open': True}"/>
+                        </span>
+                        <span class="o_stat_text">Recorded</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_order_form_inherit_sale_task_custom" model="ir.ui.view">
+        <field name="name">sale.order.form.sale.task.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale_project.view_order_form_inherit_sale_project"/>
+        <field name="arch" type="xml">
+            <xpath expr='//button[@name="action_view_task"]' position="replace">
+                <button type="object" name="action_view_task" class="oe_stat_button" icon="fa-tasks"
+                        invisible="tasks_count == 0"
+                        groups="access_rights_management.role_sales_hot,project.group_project_user,access_rights_management.role_management_control,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_vps,access_rights_management.role_vp_of_sales,access_rights_management.role_team_manager,access_rights_management.role_team_director,access_rights_management.role_operation,access_rights_management.role_operation_on_boarder,access_rights_management.role_legal">
+                    <field name="tasks_count" widget="statinfo" string="Tasks"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+<!--     TODO : deferred revenue-->
+<!--    <record id="view_sale_order_deferred_earning_form_roles" model="ir.ui.view">-->
+<!--        <field name="name">sale.order.deferred.earning.form.roles</field>-->
+<!--        <field name="model">sale.order</field>-->
+<!--        <field name="inherit_id" ref="cap_automatic_deferred_earnings_account.view_sale_order_deferred_earning_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr='//button[@name="action_open_deferred_revenue"]' position="attributes">-->
+<!--                <attribute name="groups">-->
+<!--                    access_rights_management.role_management_control,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_vps,access_rights_management.role_vp_of_sales,access_rights_management.role_ceo,access_rights_management.role_cfo,access_rights_management.role_cfo_for_his_company,account.group_account_readonly,account.group_account_invoice-->
+<!--                </attribute>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+    <record id="view_sale_order_form_inherit_project_ksc_custom" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.custom</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="ksc_sale_project_extended.view_sale_order_form_inherit_project_ksc"/>
+        <field name="arch" type="xml">
+            <button name="%(ksc_sale_project_extended.action_link_po_so_view_form)d" position="replace">
+                <button name="%(ksc_sale_project_extended.action_link_po_so_view_form)d"
+                        string="Create/Link Project"
+                        invisible="linked_project or state != 'sale'"
+                        type="action"
+                        groups="access_rights_management.group_create_delete_project,access_rights_management.role_vp_of_quality_and_knowledge,access_rights_management.role_president"
+                        class="btn-primary"/>
+            </button>
+        </field>
+    </record>
+
+    <record id="view_sale_order_form_inherit_change_product" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr='//field[@name="order_line"]/list/field[@name="company_id"]' position="after">
+                <button name="action_open_wizard" type="object" string="Change Product"
+                        invisible="state != 'sale'"
+                        groups="access_rights_management.role_administrative_responsible,access_rights_management.role_cfo,access_rights_management.role_president"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_sale_order_form_inherit_change_product_ksc" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="ksc_sale_project_extended.view_sale_order_form_inherit_project_ksc"/>
+        <field name="arch" type="xml">
+            <xpath expr='//field[@name="order_line"][2]/list/field[@name="company_id"]' position="after">
+                <button name="action_open_wizard"
+                        string="Change Product" type="object"
+                        invisible="state != 'sale'"
+                        groups="access_rights_management.role_administrative_responsible,access_rights_management.role_cfo,access_rights_management.role_president"/>
+            </xpath>
+            <xpath expr="//page[@name='rate_increase_information']" position="attributes">
+                <attribute name="groups">access_rights_management.role_president,access_rights_management.role_administrative_responsible,access_rights_management.role_sales_hot,access_rights_management.role_administrative,sales_team.group_sale_salesman</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale.action_accrued_revenue_entry" model="ir.actions.act_window">
+        <field name="groups_id"
+               eval="[(4, ref('account.group_account_user')), (4, ref('access_rights_management.role_management_control')),
+               (4, ref('access_rights_management.role_administrative_responsible')),
+               (4, ref('access_rights_management.role_administrative'))]"/>
+    </record>
+</odoo>

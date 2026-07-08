@@ -1,0 +1,7 @@
+{
+  "scenario": "hr_gamification_workflow",
+  "description": "Script matrix expectations for hr_gamification_workflow",
+  "full_access": [],
+  "blocked": {},
+  "notes": "Run run_script_matrix.py, review REPORT rows, then fill full_access and blocked."
+}

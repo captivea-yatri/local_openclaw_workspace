@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_partner_form_lusha_enrichment" model="ir.ui.view">
+        <field name="name">res.partner.form.lusha.enrichment</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_lusha_enrich_person"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-magic"
+                        title="Enrich with Lusha">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">Lusha Enrich</span>
+                    </div>
+                </button>
+            </xpath>
+            <xpath expr="//page[@name='internal_notes']" position="before">
+                <page string="Lusha" name="lusha">
+                    <group>
+                        <field name="lusha_contact_id" readonly="1"/>
+                        <field name="lusha_company_id" readonly="1"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

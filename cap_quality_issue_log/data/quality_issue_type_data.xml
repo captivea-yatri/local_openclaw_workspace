@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <!--   Scheduled Action for Employee Timesheet Issue Type   -->
+        <record forcecreate="True" id="ir_cron_employee_timesheet_log" model="ir.cron">
+            <field name="name">No Employee Timesheet Fill Log</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="state">code</field>
+            <field name="code">
+# LUL TODO check this comment
+# The context key 'last_sync_hours' allows specifying the minimum delay between consecutive syncs.
+# Indeed, in case there are many users / events to sync, the cron might time out. In this case, the
+# solution is to force the last_sync_hours to the expected synchronization interval expected. This
+# will avoid the synchronization of users that succeeded in the previous failing cron.
+today = datetime.date.today()
+date_last_week = today + dateutil.relativedelta.relativedelta(days=-7)
+
+employee_ids = model.search([('exclude_from_timesheet_quality_control', '=', False)])
+timesheet_ids = env['account.analytic.line'].search([('date', '>=', date_last_week), ('date', '&lt;', today)])
+cron_id = env.ref('cap_quality_issue_log.ir_cron_employee_timesheet_log')
+issue_type = env['quality.issue.type'].search([('ir_cron_id', '=', cron_id.id)])
+for employee in employee_ids:
+    holidays_ids = env['resource.calendar.leaves'].search([('resource_id', '=', False), ('calendar_id', '=', employee.resource_calendar_id.id), ('date_from', '&lt;', today), ('date_from', '>=', date_last_week)])
+    crnt_emp_timesheet_ids = timesheet_ids.filtered(lambda timesheet: timesheet.employee_id.id == employee.id)
+    leave_ids = env['hr.leave'].search([('employee_id', '=', employee.id), ('state', '=', 'validate'), ('date_from', '>=', date_last_week), ('date_to', '&lt;=', today)])
+    date_to_check = date_last_week
+    while date_to_check &lt; today:
+        if date_to_check.weekday() in [0, 1, 2, 3, 4]:
+            holiday_id = holidays_ids.filtered(lambda holiday: holiday.date_from.date() >= date_to_check and holiday.date_to.date() &lt;= date_to_check)
+            leave_id = leave_ids.filtered(lambda leave: leave.request_date_from >= date_to_check and leave.request_date_to &lt;= date_to_check)
+            same_day_timesheet_ids = timesheet_ids.filtered(lambda timesheet: timesheet.date == date_to_check and timesheet.employee_id.id == employee.id)
+            if not holiday_id:
+                if not leave_id or (leave_id and leave_id.request_unit_half):
+                    if not same_day_timesheet_ids or (same_day_timesheet_ids and sum(tm.unit_amount for tm in same_day_timesheet_ids) &lt; 1):
+                        issue_log_ids = env['quality.issue.log'].search([('logged_date', '=', date_to_check), ('employee_id', '=', employee.id), ('quality_issue_type', '=', issue_type.id)])
+                        if not issue_log_ids:
+                            vals = {'logged_date': date_to_check,
+                            'employee_id': employee.id,
+                            'description': 'There is no timesheet logged.',
+                            'score_impact': issue_type.score_impact,
+                            'quality_issue_type': issue_type.id
+                            }
+                            env['quality.issue.log'].create(vals)
+        date_to_check = date_to_check + dateutil.relativedelta.relativedelta(days=+1)
+            </field>
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+        </record>
+
+        <!--   Issue Type Employee Timesheet   -->
+        <record id="quality_issue_type_employee_timesheet" model="quality.issue.type">
+            <field name="name">Employee Timesheet</field>
+            <field name="action_performer">create_schedule_action</field>
+            <field name="quality_category" ref="cap_quality_issue_log.quality_category_timesheet"/>
+            <field name="ir_model_id" ref="hr.model_hr_employee"/>
+            <field name="score_impact">5</field>
+            <field name="state">in_progress</field>
+            <field name="ir_cron_id" ref="ir_cron_employee_timesheet_log"/>
+        </record>
+<!-- ############################################################################################################### -->
+
+         <!--   Server Action for Below Automated Action   -->
+        <record id="ir_server_customer_lost" model="ir.actions.server">
+            <field name="name">Customer Lost</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="state">code</field>
+            <field name="code">
+#Retrieve the automation rule
+automation_id = env.ref('cap_quality_issue_log.base_automation_customer_lost')
+#Retrieve the quality issue type linked to the automation rule
+issue_type = env['quality.issue.type'].search([('base_automation_id', '=', automation_id.id)])
+#Iterate over affected customer (partner) records
+for rec in records:
+    #Retrieve active projects linked to the customer with assigned project managers
+    project_ids = env['project.project'].search([('partner_id', '=', rec.id), ('user_id', '!=', False)])
+    #Process each relevant project
+    for project_id in project_ids:
+        domain = [('project_id', '=', project_id.id)]
+        msg = '{} Customer Lost'.format(str(project_id.name))
+        type = 'penalty'
+        #Handle project manager role
+        if project_id.user_id:
+            employee_id = issue_type.find_employee_based_on_company(project_id.user_id)
+            role_id = env['planning.role'].search([('is_project_manager', '=', True)])
+            #Search and create quality issue log if applicable
+            issue_type.search_and_create_issue_log(domain, employee_id, role_id, msg, project_id, type)
+        #Handle business analyst roles
+        if project_id.business_analyst_ids:
+            for business_analyst_id in project_id.business_analyst_ids:
+                employee_id = issue_type.find_employee_based_on_company(business_analyst_id)
+                role_id = env['planning.role'].search([('is_business_analyst', '=', True)])
+                #Search and create quality issue log if applicable
+                issue_type.search_and_create_issue_log(domain, employee_id, role_id, msg, project_id, type)
+        #Handle developer roles
+        if project_id.developers_ids:
+            for developers_id in project_id.developers_ids:
+                employee_id = issue_type.find_employee_based_on_company(developers_id)
+                role_id = env['planning.role'].search([('is_developer', '=', True)])
+                #Search and create quality issue log if applicable
+                issue_type.search_and_create_issue_log(domain, employee_id, role_id, msg, project_id, type)
+        #Handle configurator roles
+        if project_id.configurators_ids:
+            for configurators_id in project_id.configurators_ids:
+                employee_id = issue_type.find_employee_based_on_company(configurators_id)
+                role_id = env['planning.role'].search([('is_configurator', '=', True)])
+                #Search and create quality issue log if applicable
+                issue_type.search_and_create_issue_log(domain, employee_id, role_id, msg, project_id, type)
+        #Handle architect roles
+        if project_id.architect_ids:
+            for architect_id in project_id.architect_ids:
+                employee_id = issue_type.find_employee_based_on_company(architect_id)
+                role_id = env['planning.role'].search([('is_architect', '=', True)])
+                #Search and create quality issue log if applicable
+                issue_type.search_and_create_issue_log(domain, employee_id, role_id, msg, project_id, type)
+            </field>
+        </record>
+
+        <!--   Automated Action Customer Lost Issue Type   -->
+        <record id="base_automation_customer_lost" model="base.automation">
+            <field name="name">Customer Lost</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="trigger">on_create_or_write</field>
+            <field name="filter_pre_domain">[('status', '=', 'customer')]</field>
+            <field name="filter_domain">[('status', '=', 'old_customer')]</field>
+            <field name="trigger_field_ids" eval="[(4, ref('cap_partner.field_res_partner__status'))]"/>
+            <field name="action_server_ids" eval="[(4, ref('cap_quality_issue_log.ir_server_customer_lost'))]"/>
+        </record>
+
+        <!--   Issue Type Customer Lost    -->
+        <record id="quality_issue_type_customer_lost" model="quality.issue.type">
+            <field name="name">Customer Lost</field>
+            <field name="action_performer">create_automated_action</field>
+            <field name="quality_category" ref="cap_quality_issue_log.quality_category_retention"/>
+            <field name="ir_model_id" ref="base.model_res_partner"/>
+            <field name="score_impact">10</field>
+            <field name="state">in_progress</field>
+            <field name="base_automation_id" ref="base_automation_customer_lost"/>
+        </record>
+<!-- ############################################################################################################### -->
+
+        <!--   Server Action for Below Automated Action   -->
+        <record id="ir_server_go_live_date_change_request" model="ir.actions.server">
+            <field name="name">Go Live Date Change Request</field>
+            <field name="model_id" ref="ksc_project_go_live_maintainer.model_glive_change_request"/>
+            <field name="state">code</field>
+            <field name="code">
+#Retrieve the automation rule
+automation_id = env.ref('cap_quality_issue_log.base_automation_go_live_date_change_request')
+#Retrieve the quality issue type linked to the automation rule
+issue_type = env['quality.issue.type'].search([('base_automation_id', '=', automation_id.id)])
+#Retrieve the quality category linked to the issue type
+quality_category = issue_type.quality_category
+#Iterate over the triggered records
+for rec in records:
+    #Validate conditions for approved late go-live date change request
+    if rec.state == 'direction_approved' and rec.reason == 'in_late' and rec.project_id.user_id and rec.project_id.on_hold_reason == False and rec.project_id.exclude_for_go_live == False and (rec.project_id.project_status_id == False or rec.project_id.project_status_id.code not in ['dead', 'duplicate', 'internal', 'internal_p2p3']):
+        domain = [('project_id', '=', rec.project_id.id), ('logged_date', '=', datetime.date.today())]
+        msg = 'Go live date change request for : {}  is approved.'.format(rec.project_id.name)
+        type = 'penalty'
+        #Process issue logs based on configured planning roles
+        if quality_category.role_ids:
+            for role_id in quality_category.role_ids:
+                #Validate planning role and create issue log if applicable
+                issue_type.check_planning_role(rec.project_id, role_id, domain, msg, type, is_from_auto=True)
+        #Fallback to project manager role if no roles are configured
+        else:
+            employee_id = issue_type.find_employee_based_on_company(rec.project_id.user_id)
+            role_id = env['planning.role'].search([('is_project_manager', '=', True)])
+            #Search and create quality issue log
+            issue_type.search_and_create_issue_log(domain, employee_id, role_id, msg, rec.project_id, type, is_from_auto=True)
+            </field>
+        </record>
+
+        <!--   Automated Action for Go Live Date Change Request Issue Type   -->
+        <record id="base_automation_go_live_date_change_request" model="base.automation">
+            <field name="name">Go Live Date Change Request</field>
+            <field name="model_id" ref="ksc_project_go_live_maintainer.model_glive_change_request" />
+            <field name="trigger">on_create_or_write</field>
+            <field name="trigger_field_ids" eval="[(4, ref('ksc_project_go_live_maintainer.field_glive_change_request__state'))]"/>
+            <field name="action_server_ids" eval="[(4, ref('cap_quality_issue_log.ir_server_go_live_date_change_request'))]"/>
+        </record>
+
+        <!--   Issue Type Go Live Date Change Request   -->
+        <record id="quality_issue_type_go_live_date_change_request" model="quality.issue.type">
+            <field name="name">Go Live Date Change Request</field>
+            <field name="action_performer">create_automated_action</field>
+            <field name="quality_category" ref="cap_quality_issue_log.quality_category_go_live_date"/>
+            <field name="ir_model_id" ref="ksc_project_go_live_maintainer.model_glive_change_request"/>
+            <field name="score_impact">15</field>
+            <field name="state">in_progress</field>
+            <field name="base_automation_id" ref="base_automation_go_live_date_change_request"/>
+        </record>
+<!-- ############################################################################################################### -->
+
+        <!--   Scheduled Action for Employee go live date passed Type   -->
+        <record forcecreate="True" id="ir_cron_go_live_date_passed" model="ir.cron">
+            <field name="name">Go Live Date Passed</field>
+            <field name="model_id" ref="project.model_project_project"/>
+            <field name="state">code</field>
+            <field name="code">model.go_live_date_passed()</field>
+            <field name="user_id" ref="base.user_root" />
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+        </record>
+
+        <!--   Issue Type Go Live Date Passed   -->
+        <record id="quality_issue_type_go_live_date_passed" model="quality.issue.type">
+            <field name="name">Go Live Date Passed</field>
+            <field name="action_performer">create_schedule_action</field>
+            <field name="quality_category" ref="cap_quality_issue_log.quality_category_go_live_date"/>
+            <field name="ir_model_id" ref="project.model_project_project"/>
+            <field name="score_impact">40</field>
+            <field name="state">in_progress</field>
+            <field name="ir_cron_id" ref="ir_cron_go_live_date_passed"/>
+        </record>
+<!-- ############################################################################################################### -->
+    </data>
+</odoo>

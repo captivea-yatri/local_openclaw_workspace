@@ -1,0 +1,7 @@
+{
+  "scenario": "cap_single_employee_multi_company",
+  "description": "Script matrix expectations for cap_single_employee_multi_company",
+  "full_access": [],
+  "blocked": {},
+  "notes": "Run run_script_matrix.py, review REPORT rows, then fill full_access and blocked."
+}

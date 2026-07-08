@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--    TODO : need to check in v18 may be in database-->
+<!--    <record id="timesheet_view_form_inherit_so_line_roles" model="ir.ui.view">-->
+<!--        <field name="name">account.analytic.line.form.soline</field>-->
+<!--        <field name="model">account.analytic.line</field>-->
+<!--        <field name="inherit_id" ref="sale_timesheet_enterprise.timesheet_view_form_so_line_inherit"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//field[@name='so_line']" position="after">-->
+<!--                <field name="allow_billable" invisible="1"/>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//field[@name='so_line']" position="attributes">-->
+<!--                <attribute name="attrs">{'required': [('allow_billable', '=', True)]}</attribute>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    <record id="timesheet_view_form_inherit_soline_roles" model="ir.ui.view">-->
+<!--        <field name="name">account.analytic.line.form</field>-->
+<!--        <field name="model">account.analytic.line</field>-->
+<!--        <field name="inherit_id" ref="timesheet_grid.timesheet_view_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//field[@name='project_id']" position="after">-->
+<!--                <field name="partner_id" invisible="1"/>-->
+<!--                <field name="allow_billable" invisible="1"/>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//field[@name='task_id']" position="after">-->
+<!--                <field name="so_line" groups="!sales_team.group_sale_salesman"-->
+<!--                       attrs="{'required': [('allow_billable', '=', True)]}"-->
+<!--                       domain="[('x_studio_service_tracking', '!=', 'no'), ('is_service','=',True), ('is_expense','=',False), ('state','in',['sale', 'done']), ('order_partner_id', 'parent_of', partner_id)]"/>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+    <record id="timesheet_form_view_sale_order_smart_button" model="ir.ui.view">
+        <field name="name">timesheet.form.view.sale.order.inherit</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_line_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet" position="before">
+                <div class="oe_button_box" name="button_box">
+                        <button name="action_sale_order_from_timesheet" type="object" class="oe_stat_button" icon="fa-dollar" invisible="not order_id">
+                            <div class="o_stat_info">
+                                <span class="o_stat_text">Sales Order</span>
+                            </div>
+                        </button>
+                    </div>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="task_view_form_inherit_so_line_roles" model="ir.ui.view">
+        <field name="name">project.task.form.soline</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="sale_timesheet.project_task_view_form_inherit_sale_timesheet"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='so_line'][1]" position="attributes">
+                <attribute name="attrs">{'required': [('parent.allow_billable', '=', True)],
+                    'invisible': [('id','=',1)], 'column_invisible': [('parent.allow_billable','=',False)]}
+                </attribute>
+            </xpath>
+            <xpath expr="//field[@name='so_line'][2]" position="attributes">
+                <attribute name="attrs">{'required': [('parent.allow_billable', '=', True)],
+                    'invisible': [('id','=',1)], 'column_invisible': [('parent.allow_billable','=',False)]}
+                </attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="timesheet_view_search_roles" model="ir.ui.view">
+        <field name="name">account.analytic.line.search.roles</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="sale_timesheet.timesheet_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_id']" position="attributes">
+                <attribute name="groups">sales_team.group_sale_salesman,access_rights_management.show_sales,access_rights_management.role_operation,access_rights_management.role_operation_on_boarder,access_rights_management.role_team_manager,access_rights_management.role_team_director,access_rights_management.role_management_control,access_rights_management.role_administrative,access_rights_management.role_administrative_responsible</attribute>
+            </xpath>
+<!--            TODO : need to check in v18-->
+<!--            <xpath expr="//field[@name='so_line']" position="attributes">-->
+<!--                <attribute name="groups">-->
+<!--                    sales_team.group_sale_salesman,access_rights_management.show_sales,access_rights_management.role_operation,access_rights_management.role_operation_on_boarder,access_rights_management.role_team_manager,access_rights_management.role_team_director,access_rights_management.role_management_control,access_rights_management.role_administrative,access_rights_management.role_administrative_responsible-->
+<!--                </attribute>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//filter[@name='groupby_sale_order']" position="attributes">-->
+<!--                <attribute name="groups">-->
+<!--                    sales_team.group_sale_salesman,access_rights_management.show_sales,access_rights_management.role_operation,access_rights_management.role_operation_on_boarder,access_rights_management.role_team_manager,access_rights_management.role_team_director,access_rights_management.role_management_control,access_rights_management.role_administrative,access_rights_management.role_administrative_responsible-->
+<!--                </attribute>-->
+<!--            </xpath>-->
+            <xpath expr="//filter[@name='groupby_sale_order_item']" position="attributes">
+                <attribute name="groups">sales_team.group_sale_salesman,access_rights_management.show_sales,access_rights_management.role_operation,access_rights_management.role_operation_on_boarder,access_rights_management.role_team_manager,access_rights_management.role_team_director,access_rights_management.role_management_control,access_rights_management.role_administrative,access_rights_management.role_administrative_responsible</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

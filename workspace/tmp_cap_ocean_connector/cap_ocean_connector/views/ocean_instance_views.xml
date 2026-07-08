@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ocean_instance_tree_view" model="ir.ui.view">
+        <field name="name">ocean.instance.tree</field>
+        <field name="model">ocean.instance</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="connection_status" widget="badge"
+                       decoration-success="connection_status == 'connected'"
+                       decoration-danger="connection_status == 'failed'"
+                       decoration-muted="connection_status == 'unknown'"/>
+                <field name="credit_recurrent"/>
+                <field name="last_connection_test"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="ocean_instance_form_view" model="ir.ui.view">
+        <field name="name">ocean.instance.form</field>
+        <field name="model">ocean.instance</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_test_connection"
+                            string="Test Connection"
+                            type="object"
+                            class="oe_highlight"/>
+                    <button name="action_refresh_webhook_url"
+                            string="Refresh Webhook URL"
+                            type="object"
+                            class="btn-secondary"
+                            invisible="1"/>
+                    <button name="action_test_webhook_remote"
+                            string="Test Webhook (Public URL)"
+                            type="object"
+                            class="btn-secondary"/>
+                    <button name="action_open_people_enrichment"
+                            string="People Lookup"
+                            type="object"
+                            class="btn-secondary"/>
+                    <button name="action_open_lead_prospect"
+                            string="Lead Prospecting"
+                            type="object"
+                            class="btn-secondary"/>
+                    <button name="action_open_company_enrichment"
+                            string="Company Enrichment"
+                            type="object"
+                            class="btn-secondary"/>
+                </header>
+                <sheet>
+                    <field name="active" invisible="1"/>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_webhook_logs"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-exchange"
+                                invisible="webhook_log_count == 0">
+                            <field name="webhook_log_count" widget="statinfo" string="Webhooks"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Ocean.io Production"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="General">
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="connection_status" readonly="1"/>
+                            <field name="last_connection_test" readonly="1"/>
+                            <field name="connection_message" readonly="1" invisible="not connection_message"/>
+                        </group>
+                        <group string="Webhook (Ocean.io webhookUrl)">
+                            <field name="public_base_url"
+                                   placeholder="https://abc123.ngrok-free.app"/>
+                            <field name="webhook_url" readonly="1"/>
+                            <field name="webhook_secret" password="True" readonly="1"/>
+                            <field name="database" readonly="1" groups="base.group_no_one"/>
+                        </group>
+                        <group string="API">
+                            <field name="api_base_url" readonly="1"/>
+                            <field name="api_token" password="True"/>
+                        </group>
+                    </group>
+                    <group string="Credits" invisible="connection_status != 'connected'">
+                        <group>
+                            <field name="credit_recurrent" readonly="1"/>
+                            <field name="credit_one_time" readonly="1"/>
+                            <field name="email_credit_recurrent" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="daily_rate_limit_left" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <div class="alert alert-info" role="alert">
+                            <p>
+                                Ocean.io authenticates REST requests with an API token sent in the
+                                <code>X-Api-Token</code> request header.
+                            </p>
+                            <p>
+                                Generate a token in Ocean.io under
+                                <strong>Account Settings → API Tokens</strong>.
+                            </p>
+                            <p>
+                                <strong>Webhook URL (auto)</strong> — built on save per
+                                <a href="https://app.ocean.io/docs/getting-started/webhooks" target="_blank">Ocean.io webhooks docs</a>:
+                            </p>
+                            <p>
+                                <code>https://your-domain/webhooks/ocean?secret=...&amp;db=...</code>
+                            </p>
+                            <p>
+                                Ocean.io requires a public <strong>HTTPS</strong> URL. This value is sent
+                                automatically as <code>webhookUrl</code> when you use Reveal Emails, Reveal
+                                Phones, or batch enrich.
+                            </p>
+                            <p><strong>Local development (ngrok):</strong></p>
+                            <ol>
+                                <li>Run <code>ngrok http 8069</code> (your Odoo port).</li>
+                                <li>Paste the ngrok HTTPS URL in <strong>Public HTTPS URL</strong> and save.</li>
+                                <li><strong>Webhook URL (auto)</strong> is filled in immediately.</li>
+                                <li>Click <strong>Test Webhook (Public URL)</strong> — check Webhook Logs for a ping.</li>
+                            </ol>
+                            <p>
+                                <strong>Production:</strong> leave Public HTTPS URL empty if
+                                <em>web.base.url</em> is already <code>https://your-domain</code>.
+                            </p>
+                            <p>
+                                On People Lookup, link an <strong>Odoo Contact</strong> before reveal —
+                                results arrive via webhook in 1–10 minutes.
+                            </p>
+                        </div>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ocean_instance" model="ir.actions.act_window">
+        <field name="name">Ocean.io Instances</field>
+        <field name="res_model">ocean.instance</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create an Ocean.io instance and connect Odoo with your API token.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="ocean_main_menu"
+              name="Ocean.io"
+              sequence="46"/>
+
+    <menuitem id="menu_ocean_lead_prospect"
+              name="Lead Prospecting"
+              parent="ocean_main_menu"
+              action="action_ocean_lead_prospect"
+              sequence="15"/>
+
+    <menuitem id="menu_ocean_people_enrichment"
+              name="People Lookup"
+              parent="ocean_main_menu"
+              action="action_ocean_people_enrichment"
+              sequence="20"/>
+
+    <menuitem id="menu_ocean_company_enrichment"
+              name="Company Enrichment"
+              parent="ocean_main_menu"
+              action="action_ocean_company_enrichment"
+              sequence="25"/>
+
+    <menuitem id="menu_ocean_instance"
+              name="Configuration"
+              parent="ocean_main_menu"
+              action="action_ocean_instance"
+              sequence="10"
+              groups="base.group_system"/>
+
+    <menuitem id="menu_ocean_webhook_log"
+              name="Webhook Logs"
+              parent="ocean_main_menu"
+              action="action_ocean_webhook_log"
+              sequence="30"
+              groups="base.group_system"/>
+</odoo>

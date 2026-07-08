@@ -1,0 +1,31 @@
+[
+  {
+    "tc": 10,
+    "module": "res.partner",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 59,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault You are not allowed to create 'Contact' (res.partner) records.\n\nThis operation is allowed for the following groups:\n\t- Contact/Creation\n\t- Purchase/Administrator\n\t- Recruitment/Officer: Manage all applicants\n\t- Sales/Administrator\n\t- Administrative Responsible\n\t- HR\n\t- HR Responsible\n\t- IT Person\n\t- Marketing Manager\n\t- Operation\n\t- Operation On Boarder\n\t- Quality Manager\n\t- Sales(cold)\n\t- Sales Cold Team Director\n\t- Sales Cold Team Manager\n\t- Sales(Hot)\n\t- Sales Manager\n\t- Show Sales\n\t- Team Director\n\t- Team Manager\n\t- VPs\n\nContact your administrator to request access if necessary."
+  },
+  {
+    "tc": 60,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 61,
+    "module": "crm.lead",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"You are not allowed to access 'Lead' (crm.lead) records.\\n\\nThis operation is allowed for the following groups:\\n\\t- Consultant/Developer/Consultant\\n\\t- Consultant/Developer/Developer\\n\\t- Sales/Administrator\\n\\t- Administrative Responsible\\n\\t- Can access data in read only mode\\n\\t- Can access opportunities in Read-only mode\\n\\t- CFO\\n\\t- CFO For His Company\\n\\t- Community Manager\\n\\t- Customer Referencer\\n\\t- Email Manager\\n\\t- Infographiste\\n\\t- Management Control\\n\\t- Marketing Manager\\n\\t- Operation\\n\\t- Operation On Boarder\\n\\t- Quality Manager\\n\\t- Sales(cold)\\n\\t- Sales Cold Team Director\\n\\t- Sales Cold Team Manager\\n\\t- Sales(Hot)\\n\\t- Show Sales\\n\\t- Team Director\\n\\t- Team Manager\\n\\t- VPs\\n\\t- Webmaster\\n\\t- Role / Portal\\n\\nContact your administrator to request access if necessary.\">"
+  }
+  ... (remaining entries omitted for brevity) 
+]

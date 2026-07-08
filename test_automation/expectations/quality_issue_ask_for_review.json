@@ -1,0 +1,26 @@
+{
+  "scenario": "quality_issue_ask_for_review",
+  "description": "Employee clicks Ask For Review; manager gets To-Do on quality.issue.log (no approval.request in current code)",
+  "modules": [
+    "cap_quality_issue_log",
+    "access_rights_management",
+    "hr"
+  ],
+  "steps": [
+    "setup_quality_log",
+    "ask_for_review",
+    "assert_state_reviewing",
+    "assert_manager_todo_on_qil",
+    "assert_no_approval_request"
+  ],
+  "full_access": [
+    "Team Manager",
+    "President",
+    "CEO",
+    "Sales Manager",
+    "HR",
+    "HR Responsible"
+  ],
+  "blocked": {},
+  "notes": "Tester acts as employee. Manager gets legacy To-Do on QIL only. approval.request workflow is not created by ask_for_review today — see test_quality_issue_approval_rpc.py for that path."
+}

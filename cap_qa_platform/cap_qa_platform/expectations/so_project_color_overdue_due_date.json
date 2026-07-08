@@ -1,0 +1,24 @@
+{
+  "scenario": "so_project_color_overdue_due_date",
+  "description": "Create SO, link project, set invoice due 3 days ago, assert project color orange (ksc_project_extended).",
+  "modules": [
+    "ksc_project_extended",
+    "ksc_sale_project_extended",
+    "cap_offer",
+    "sale"
+  ],
+  "full_access": [
+    "President",
+    "CEO",
+    "Sales Manager",
+    "Operation",
+    "Team Manager"
+  ],
+  "blocked": {
+    "HR": {
+      "at": "create_sale_order",
+      "error": "AccessError"
+    }
+  },
+  "notes": "Uses link_so_project wizard and compute_project_color_remaining_hours. Expect color=2 (orange) within payment grace period."
+}

@@ -1,0 +1,1010 @@
+[
+  {
+    "tc": 10,
+    "module": "res.partner",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 59,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=2338419"
+  },
+  {
+    "tc": 59,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=2338419"
+  },
+  {
+    "tc": 60,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 61,
+    "module": "crm.lead",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on crm.lead is not allowed'>"
+  },
+  {
+    "tc": 62,
+    "module": "crm.lead",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on crm.lead is not allowed'>"
+  },
+  {
+    "tc": 63,
+    "module": "crm.lead",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault RPC call on crm.lead is not allowed"
+  },
+  {
+    "tc": 64,
+    "module": "crm.lead",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 65,
+    "module": "sale.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 66,
+    "module": "sale.order",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 66,
+    "module": "sale.order",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'note': 'QA edit note'}"
+  },
+  {
+    "tc": 67,
+    "module": "sale.order",
+    "action": "Create (missing field)",
+    "status": "PASS",
+    "detail": "Expected error: The operation cannot be completed: Missing required value for the field 'Customer' (partner_id).\nModel: 'Sales Order' (sale.order)\n- create/update: a mandatory field is not set\n- delete: another model requires the record being deleted, you can archive it instead\n"
+  },
+  {
+    "tc": 68,
+    "module": "sale.order",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 69,
+    "module": "project.project",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 0 records"
+  },
+  {
+    "tc": 70,
+    "module": "project.project",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 0 records"
+  },
+  {
+    "tc": 71,
+    "module": "project.project",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault Vous n'\u00eates pas autoris\u00e9 \u00e0 cr\u00e9er des enregistrements 'Project' (project.project).\n\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\n\t- Project/Administrator\n\t- Can Create/Delete Project\n\t- Super Admin Project\n\t- Team Director\n\t- VP of Quality and Knowledge\n\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire."
+  },
+  {
+    "tc": 72,
+    "module": "project.project",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 73,
+    "module": "project.task",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 0 records"
+  },
+  {
+    "tc": 74,
+    "module": "project.task",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 0 records"
+  },
+  {
+    "tc": 75,
+    "module": "project.task",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault Oups ! On dirait que vous \u00eates tomb\u00e9 sur des enregistrements top secrets.\n\nD\u00e9sol\u00e9, odoo-fernet$gAAAAABqH_WBkJ7ZAmbjET5-9Zf7pfyJSO9sIR3jfjwTEFUzJNZ5D8dNeibEQXl5trdRypUkA8bC-Y1L5NPv1OqEV3qgMs4jmQg82ocelZOnD4JFAx_zj_M= (id=2567) n'a pas d'acc\u00e8s 'lire' \u00e0 :\n- Projet (project.project)\n\nSi vous avez vraiment besoin d'un acc\u00e8s, vous pouvez peut-\u00eatre convaincre votre sympathique administrateur en lui offrant des cookies maison.\n\nIl semble s'agir d'un probl\u00e8me concernant plusieurs entreprises. Vous n'avez cependant pas acc\u00e8s \u00e0 l'entreprise concern\u00e9e pour acc\u00e9der \u00e0 ces donn\u00e9es."
+  },
+  {
+    "tc": 76,
+    "module": "project.task",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 77,
+    "module": "account.analytic.line",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on account.analytic.line is not allowed'>"
+  },
+  {
+    "tc": 78,
+    "module": "account.analytic.line",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on account.analytic.line is not allowed'>"
+  },
+  {
+    "tc": 79,
+    "module": "account.analytic.line",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault RPC call on account.analytic.line is not allowed"
+  },
+  {
+    "tc": 80,
+    "module": "account.analytic.line",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 81,
+    "module": "account.move",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on account.move is not allowed'>"
+  },
+  {
+    "tc": 82,
+    "module": "account.move",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on account.move is not allowed'>"
+  },
+  {
+    "tc": 83,
+    "module": "account.move",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault RPC call on account.move is not allowed"
+  },
+  {
+    "tc": 84,
+    "module": "account.move",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 85,
+    "module": "account.asset",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Asset/Revenue Recognition' (account.asset).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Accounting/Bookkeeper\\n\\t- Accounting/Bookkeeper\\n\\t- Accounting/Invoicing\\n\\t- Accounting/Read-only\\n\\t- Administrative\\n\\t- CEO\\n\\t- Management Control\\n\\t- Sales Manager\\n\\t- VPs\\n\\t- Facturation (copie)\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 86,
+    "module": "account.asset",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Asset/Revenue Recognition' (account.asset).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Accounting/Bookkeeper\\n\\t- Accounting/Bookkeeper\\n\\t- Accounting/Invoicing\\n\\t- Accounting/Read-only\\n\\t- Administrative\\n\\t- CEO\\n\\t- Management Control\\n\\t- Sales Manager\\n\\t- VPs\\n\\t- Facturation (copie)\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 87,
+    "module": "account.asset",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault Vous n'\u00eates pas autoris\u00e9 \u00e0 cr\u00e9er des enregistrements 'Asset/Revenue Recognition' (account.asset).\n\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\n\t- Accounting/Bookkeeper\n\t- Accounting/Bookkeeper\n\t- Accounting/Invoicing\n\t- Administrative\n\t- Management Control\n\t- Facturation (copie)\n\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire."
+  },
+  {
+    "tc": 88,
+    "module": "account.asset",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 89,
+    "module": "purchase.order",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Purchase Order' (purchase.order).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Accounting/Invoicing\\n\\t- Accounting/Read-only\\n\\t- Purchase/Administrator\\n\\t- Purchase/User\\n\\t- Administrative\\n\\t- Administrative Responsible\\n\\t- IT Person\\n\\t- Marketing Manager\\n\\t- Office Manager\\n\\t- Sales Manager\\n\\t- Team Director\\n\\t- VP of Quality and Knowledge\\n\\t- VPs\\n\\t- Role / Portal\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 90,
+    "module": "purchase.order",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Purchase Order' (purchase.order).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Accounting/Invoicing\\n\\t- Accounting/Read-only\\n\\t- Purchase/Administrator\\n\\t- Purchase/User\\n\\t- Administrative\\n\\t- Administrative Responsible\\n\\t- IT Person\\n\\t- Marketing Manager\\n\\t- Office Manager\\n\\t- Sales Manager\\n\\t- Team Director\\n\\t- VP of Quality and Knowledge\\n\\t- VPs\\n\\t- Role / Portal\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 91,
+    "module": "purchase.order",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault Vous n'\u00eates pas autoris\u00e9 \u00e0 cr\u00e9er des enregistrements 'Purchase Order' (purchase.order).\n\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\n\t- Purchase/Administrator\n\t- Purchase/User\n\t- Administrative\n\t- Administrative Responsible\n\t- IT Person\n\t- Marketing Manager\n\t- Office Manager\n\t- Sales Manager\n\t- Team Director\n\t- VP of Quality and Knowledge\n\t- VPs\n\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire."
+  },
+  {
+    "tc": 92,
+    "module": "purchase.order",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 93,
+    "module": "hr.employee",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on hr.employee is not allowed'>"
+  },
+  {
+    "tc": 94,
+    "module": "hr.employee",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on hr.employee is not allowed'>"
+  },
+  {
+    "tc": 95,
+    "module": "hr.employee",
+    "action": "Create",
+    "status": "FAIL",
+    "detail": "Fault RPC call on hr.employee is not allowed"
+  },
+  {
+    "tc": 96,
+    "module": "hr.employee",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 117,
+    "module": "helpdesk.ticket",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 118,
+    "module": "helpdesk.ticket",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 118,
+    "module": "helpdesk.ticket",
+    "action": "Write",
+    "status": "PASS",
+    "detail": "Wrote {'description': 'QA edit'}"
+  },
+  {
+    "tc": 119,
+    "module": "helpdesk.ticket",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=11340"
+  },
+  {
+    "tc": 119,
+    "module": "helpdesk.ticket",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=11340"
+  },
+  {
+    "tc": 120,
+    "module": "helpdesk.ticket",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=1"
+  },
+  {
+    "tc": 202,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=2338424"
+  },
+  {
+    "tc": 202,
+    "module": "sale.order",
+    "action": "Button Confirm",
+    "status": "PASS",
+    "detail": "Order 8772 confirmed"
+  },
+  {
+    "tc": 202,
+    "module": "sale.order",
+    "action": "Button Confirm",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 supprimer les enregistrements 'Sales Order' (sale.order).\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Sales/Administrator\\n\\t- Cancel Sale Order\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 202,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=2338424"
+  },
+  {
+    "tc": 203,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=2338425"
+  },
+  {
+    "tc": 203,
+    "module": "sale.order",
+    "action": "Post Invoice",
+    "status": "FAIL",
+    "detail": "<Fault 1: 'Traceback (most recent call last):\\n  File \"/home/odoo/workspace/odoo/addons/rpc/controllers/xmlrpc.py\", line 162, in xmlrpc_2\\n    response = self._xmlrpc(service)\\n  File \"/home/odoo/workspace/odoo/addons/rpc/controllers/xmlrpc.py\", line 134, in _xmlrpc\\n    result = dispatch_rpc(service, method, params)\\n  File \"/home/odoo/workspace/odoo/odoo/http.py\", line 446, in dispatch_rpc\\n    return dispatch(method, params)\\n  File \"/home/odoo/workspace/odoo/odoo/service/model.py\", line 133, in dispatch\\n    res = execute_cr(cr, uid, model, method_, args, kw)\\n  File \"/home/odoo/workspace/Odoo-Captivea-for-dev/rpc_helper/patch.py\", line 19, in protected__execute_cr\\n    return protected__execute_cr._orig__execute_cr(cr, uid, obj, method, *args, **kw)\\n  File \"/home/odoo/workspace/odoo/odoo/service/model.py\", line 150, in execute_cr\\n    result = retrying(partial(call_kw, recs, method, args, kw), env)\\n  File \"/home/odoo/workspace/odoo/odoo/service/model.py\", line 188, in retrying\\n    result = func()\\n  File \"/home/odoo/workspace/odoo/odoo/service/model.py\", line 79, in call_kw\\n    method = get_public_method(model, name)\\n  File \"/home/odoo/workspace/odoo/odoo/service/model.py\", line 60, in get_public_method\\n    raise AttributeError(f\"The method \\'{model._name}.{name}\\' does not exist\")  # noqa: TRY004\\nAttributeError: The method \\'sale.order.action_invoice_create\\' does not exist\\n'>"
+  },
+  {
+    "tc": 203,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=2338425"
+  },
+  {
+    "tc": 204,
+    "module": "res.partner",
+    "action": "Create",
+    "status": "PASS",
+    "detail": "Created id=2338426"
+  },
+  {
+    "tc": 204,
+    "module": "helpdesk.ticket",
+    "action": "Assign Ticket",
+    "status": "PASS",
+    "detail": "Assigned ticket 11341 to user 2567"
+  },
+  {
+    "tc": 204,
+    "module": "helpdesk.ticket",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=11341"
+  },
+  {
+    "tc": 204,
+    "module": "res.partner",
+    "action": "Delete",
+    "status": "SKIPPED",
+    "detail": "Skipped deletion of id=2338426"
+  },
+  {
+    "tc": 300,
+    "module": "go.live.change.request",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object go.live.change.request doesn't exist\">"
+  },
+  {
+    "tc": 300,
+    "module": "go.live.change.request",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 301,
+    "module": "hr.timesheet",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.timesheet doesn't exist\">"
+  },
+  {
+    "tc": 301,
+    "module": "hr.timesheet",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 302,
+    "module": "hr.goal",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.goal doesn't exist\">"
+  },
+  {
+    "tc": 302,
+    "module": "hr.goal",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 303,
+    "module": "hr.challenge",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.challenge doesn't exist\">"
+  },
+  {
+    "tc": 303,
+    "module": "hr.challenge",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 304,
+    "module": "hr.attendance",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 0 records"
+  },
+  {
+    "tc": 304,
+    "module": "hr.attendance",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 305,
+    "module": "hr.applicant",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 305,
+    "module": "hr.applicant",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 306,
+    "module": "website.page",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Page' (website.page).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Website/Editor and Designer\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 306,
+    "module": "website.page",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 307,
+    "module": "marketing.campaign",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Marketing Campaign' (marketing.campaign).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 307,
+    "module": "marketing.campaign",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 308,
+    "module": "mail.mass_mailing",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object mail.mass_mailing doesn't exist\">"
+  },
+  {
+    "tc": 308,
+    "module": "mail.mass_mailing",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 309,
+    "module": "social.post",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Social Post' (social.post).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Social Marketing/Social Manager\\n\\t- Social Marketing/Social User\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 309,
+    "module": "social.post",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 310,
+    "module": "account.account",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 310,
+    "module": "account.account",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 311,
+    "module": "account.analytic.account",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 311,
+    "module": "account.analytic.account",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 312,
+    "module": "Timesheet",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object Timesheet doesn't exist\">"
+  },
+  {
+    "tc": 312,
+    "module": "Timesheet",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 313,
+    "module": "hr.applicant",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 313,
+    "module": "hr.applicant",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 314,
+    "module": "hr.employee.public",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 314,
+    "module": "hr.employee.public",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 315,
+    "module": "gamification.challenge",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 315,
+    "module": "gamification.challenge",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 316,
+    "module": "gamification.goal",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 1 records"
+  },
+  {
+    "tc": 316,
+    "module": "gamification.goal",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 317,
+    "module": "account.journal",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Journal' (account.journal).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Accounting/Administrator\\n\\t- Accounting/Invoicing\\n\\t- Accounting/Read-only\\n\\t- Expenses/Team Approver\\n\\t- Purchase/Administrator\\n\\t- Purchase/User\\n\\t- Sales/User: Own Documents Only\\n\\t- Sales(Hot)\\n\\t- Facturation (copie)\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 317,
+    "module": "account.journal",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 318,
+    "module": "account.payment",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on account.payment is not allowed'>"
+  },
+  {
+    "tc": 318,
+    "module": "account.payment",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 319,
+    "module": "account.tax",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 319,
+    "module": "account.tax",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 320,
+    "module": "product.template",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 320,
+    "module": "product.template",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 321,
+    "module": "product.product",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 321,
+    "module": "product.product",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 322,
+    "module": "project.project.stage",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 4 records"
+  },
+  {
+    "tc": 322,
+    "module": "project.project.stage",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 323,
+    "module": "sale.order.line",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 323,
+    "module": "sale.order.line",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 324,
+    "module": "crm.stage",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 324,
+    "module": "crm.stage",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 325,
+    "module": "crm.lost.reason",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 325,
+    "module": "crm.lost.reason",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 326,
+    "module": "product.pricelist",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 326,
+    "module": "product.pricelist",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 327,
+    "module": "website",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 4 records"
+  },
+  {
+    "tc": 327,
+    "module": "website",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 328,
+    "module": "helpdesk.team",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 3 records"
+  },
+  {
+    "tc": 328,
+    "module": "helpdesk.team",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 329,
+    "module": "social.media",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Social Media' (social.media).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Social Marketing/Social Manager\\n\\t- Social Marketing/Social User\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 329,
+    "module": "social.media",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 330,
+    "module": "hr.attendance",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 0 records"
+  },
+  {
+    "tc": 330,
+    "module": "hr.attendance",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 331,
+    "module": "go.live.change.request",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object go.live.change.request doesn't exist\">"
+  },
+  {
+    "tc": 331,
+    "module": "go.live.change.request",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 332,
+    "module": "hr.leave",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: 'RPC call on hr.leave is not allowed'>"
+  },
+  {
+    "tc": 332,
+    "module": "hr.leave",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 333,
+    "module": "documents.document",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 333,
+    "module": "documents.document",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 334,
+    "module": "go.live.change.request",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object go.live.change.request doesn't exist\">"
+  },
+  {
+    "tc": 334,
+    "module": "go.live.change.request",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 335,
+    "module": "hr.goal",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.goal doesn't exist\">"
+  },
+  {
+    "tc": 335,
+    "module": "hr.goal",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 336,
+    "module": "hr.challenge",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object hr.challenge doesn't exist\">"
+  },
+  {
+    "tc": 336,
+    "module": "hr.challenge",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 337,
+    "module": "hr.attendance",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 0 records"
+  },
+  {
+    "tc": 337,
+    "module": "hr.attendance",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 338,
+    "module": "hr.applicant",
+    "action": "Read",
+    "status": "PASS",
+    "detail": "Found 5 records"
+  },
+  {
+    "tc": 338,
+    "module": "hr.applicant",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 339,
+    "module": "website.page",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Page' (website.page).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Website/Editor and Designer\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 339,
+    "module": "website.page",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 340,
+    "module": "marketing.campaign",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Marketing Campaign' (marketing.campaign).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 340,
+    "module": "marketing.campaign",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 341,
+    "module": "mail.mass_mailing",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 2: \"Object mail.mass_mailing doesn't exist\">"
+  },
+  {
+    "tc": 341,
+    "module": "mail.mass_mailing",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 342,
+    "module": "social.post",
+    "action": "Read",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Social Post' (social.post).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Social Marketing/Social Manager\\n\\t- Social Marketing/Social User\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  },
+  {
+    "tc": 342,
+    "module": "social.post",
+    "action": "Generic test",
+    "status": "FAIL",
+    "detail": "<Fault 4: \"Vous n'\u00eates pas autoris\u00e9 \u00e0 acc\u00e9der aux enregistrements 'Fields' (ir.model.fields).'\\n\\nCette op\u00e9ration est autoris\u00e9e pour les groupes suivants :\\n\\t- Marketing Automation/User\\n\\t- Marketing Director\\n\\t- Access Rights\\n\\nContactez votre administrateur pour demander l'acc\u00e8s si n\u00e9cessaire.\">"
+  }
+]

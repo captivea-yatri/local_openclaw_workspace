@@ -1,0 +1,12 @@
+<odoo>
+    <record id="view_res_users_public_tree" model="ir.ui.view">
+        <field name="name">res.users.public.tree</field>
+        <field name="model">res.users.public</field>
+        <field name="arch" type="xml">
+            <tree string="Users (public)" >
+                <field name="login"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

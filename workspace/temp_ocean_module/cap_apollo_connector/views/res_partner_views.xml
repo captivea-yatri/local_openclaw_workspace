@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_partner_form_apollo_enrichment" model="ir.ui.view">
+        <field name="name">res.partner.form.apollo.enrichment</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_apollo_enrich_person"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-magic"
+                        title="Enrich with Apollo">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">Apollo Enrich</span>
+                    </div>
+                </button>
+            </xpath>
+            <xpath expr="//page[@name='internal_notes']" position="before">
+                <page string="Apollo.io" name="apollo">
+                    <group>
+                        <field name="apollo_person_id" readonly="1"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

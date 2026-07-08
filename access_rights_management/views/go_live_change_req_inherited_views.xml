@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_glive_change_request_form_inherited_roles" model="ir.ui.view">
+        <field name="name">glive.change.request.form.inherited.roles</field>
+        <field name="model">glive.change.request</field>
+        <field name="inherit_id" ref="ksc_project_go_live_maintainer.view_glive_change_request_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='approve_manager_approval'][1]" position="replace">
+                <button name="approve_manager_approval"
+                        invisible="state != 'requested' or glcr_steps == '1'"
+                        groups="access_rights_management.role_president,access_rights_management.role_vp_of_quality_and_knowledge,access_rights_management.role_vps,access_rights_management.role_team_director,access_rights_management.role_operation,access_rights_management.role_operation_on_boarder,access_rights_management.role_ceo"
+                        string="Approve" type="object" class="btn-primary"/>
+            </xpath>
+            <xpath expr="//button[@name='approve_manager_approval'][2]" position="replace">
+                <button name="approve_manager_approval"
+                        invisible="state != 'requested' or glcr_steps == '2'"
+                        groups="access_rights_management.role_president,access_rights_management.role_vp_of_quality_and_knowledge,access_rights_management.role_vps,access_rights_management.role_team_director,access_rights_management.role_operation,access_rights_management.role_operation_on_boarder,access_rights_management.role_ceo,access_rights_management.role_team_manager"
+                        string="Validate" type="object" class="btn-primary"/>
+            </xpath>
+            <button name="direction_applied_manager_approval" position="replace">
+                <button name="direction_applied_manager_approval"
+                        invisible="state != 'manager_approved' or glcr_steps != '2'"
+                        groups="access_rights_management.role_president,access_rights_management.role_vp_of_quality_and_knowledge,access_rights_management.role_vps,access_rights_management.role_team_director,access_rights_management.role_operation,access_rights_management.role_operation_on_boarder,access_rights_management.role_ceo,access_rights_management.role_team_manager"
+                        string="Validate" type="object" class="btn-primary"/>
+            </button>
+        </field>
+    </record>
+</odoo>

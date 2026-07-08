@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_data_merge_model_from_access_form" model="ir.ui.view">
+        <field name="name">Deduplication Model Form Inherited</field>
+        <field name="model">data_merge.model</field>
+        <field name="inherit_id" ref="data_cleaning.view_data_merge_model_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for=&quot;create_threshold&quot;]" position="replace"/>
+            <xpath expr="//div[@groups='base.group_no_one']" position="replace"/>
+            <xpath expr="//field[@name='active']" position="before">
+                <label for="create_threshold"/>
+                <div>
+                    <field name="create_threshold" class="oe_inline"/>
+                    <span class="oe_inline">%</span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,52 @@
+QA Report – pierrick.lubin@captivea.com
+
+Role: Sales (Hot) + Modify line of quotation
+
+--- Overall Summary ---
+Total test cases executed: 48
+PASS: 5
+FAIL: 26
+BLOCKED: 1
+SKIPPED (deletion intentionally omitted): 16
+
+--- Per-Model Details ---
+
+res.partner
+TC | Action | Status | Detail
+10 | Read | FAIL | <Fault 2: 'RPC call on res.partner is not allowed'>
+59 | Create | FAIL | Fault RPC call on res.partner is not allowed
+60 | Delete | SKIPPED | Skipped deletion of id=1
+202 | Create | FAIL | Fault RPC call on res.partner is not allowed
+203 | Create | FAIL | Fault RPC call on res.partner is not allowed
+204 | Create | FAIL | Fault RPC call on res.partner is not allowed
+
+crm.lead
+61 | Read | FAIL | <Fault 2: 'RPC call on crm.lead is not allowed'>
+62 | Read | FAIL | <Fault 2: 'RPC call on crm.lead is not allowed'>
+63 | Create | FAIL | Fault RPC call on crm.lead is not allowed
+64 | Delete | SKIPPED | Skipped deletion of id=1
+
+sale.order
+65 | Read | PASS | Found 5 records
+66 | Read | PASS | Found 5 records
+66 | Write | PASS | Wrote {'note': 'QA edit note'}
+67 | Create (missing field) | PASS | Expected error: The operation cannot be completed: Missing required value for the field 'Customer' (partner_id).
+68 | Delete | SKIPPED | Skipped deletion of id=1
+
+project.project
+69 | Read | FAIL | <Fault 2: 'RPC call on project.project is not allowed'>
+70 | Read | FAIL | <Fault 2: 'RPC call on project.project is not allowed'>
+71 | Create | FAIL | Fault RPC call on project.project is not allowed
+72 | Delete | SKIPPED | Skipped deletion of id=1
+
+project.task
+73 | Read | FAIL | <Fault 2: 'RPC call on project.task is not allowed'>
+74 | Read | FAIL | <Fault 2: 'RPC call on project.task is not allowed'>
+75 | Create | FAIL | Fault RPC call on project.task is not allowed
+76 | Delete | SKIPPED | Skipped deletion of id=1
+
+account.analytic.line
+77 | Read | FAIL | <Fault 2: 'RPC call on account.analytic.line is not allowed'>
+78 | Read | FAIL | <Fault 2: 'RPC call on account.analytic.line is not allowed'>
+79 | Create | FAIL | Fault RPC call on account.analytic.line is not allowed
+80 |

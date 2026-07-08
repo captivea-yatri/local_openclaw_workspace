@@ -1,0 +1,23 @@
+{
+  "President": {
+    "Contacts": {"Access":"Admin","CRUD":["C","R","U","D"]},
+    "CRM": {"Access":"Admin","CRUD":["C","R","U","D"]},
+    "Sales": {"Access":"Admin","CRUD":["C","R","U","D"]},
+    "Project": {"Access":"Admin","CRUD":["C","R","U","D"]},
+    "Go Live Change Request": {"Access":"Admin","CRUD":["C","R","U","D"]},
+    "Timesheet": {"Access":"Admin","CRUD":["C","R","U","D"]},
+    "Accounting": {"Access":"Hybrid","CRUD":["C","R","U","D"]},
+    "Asset": {"Access":"Read","CRUD":["R"]},
+    "Purchase": {"Access":"Create","CRUD":["C"]},
+    "Employee": {"Access":"Admin","CRUD":["C","R","U","D"]},
+    "Goal": {"Access":"Admin","CRUD":["C","R","U","D"]},
+    "Challenge": {"Access":"Admin","CRUD":["C","R","U","D"]},
+    "Attendance": {"Access":"User","CRUD":["C","R","U","D"]},
+    "Recruitment": {"Access":"Admin","CRUD":["C","R","U","D"]},
+    "Helpdesk": {"Access":"Custom","CRUD":["C","R","U","D"]},
+    "Website": {"Access":"None","CRUD":["R"]},
+    "Marketing Automation": {"Access":"Admin","CRUD":["C","R","U","D"]},
+    "Email Marketing": {"Access":"Admin","CRUD":["C","R","U","D"]},
+    "Social Marketing": {"Access":"Admin","CRUD":["C","R","U","D"]}
+  }
+}

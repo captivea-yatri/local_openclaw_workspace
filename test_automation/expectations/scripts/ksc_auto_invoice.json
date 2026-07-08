@@ -1,0 +1,7 @@
+{
+  "scenario": "ksc_auto_invoice",
+  "description": "Script matrix expectations for ksc_auto_invoice",
+  "full_access": [],
+  "blocked": {},
+  "notes": "Run run_script_matrix.py, review REPORT rows, then fill full_access and blocked."
+}

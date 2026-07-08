@@ -1,0 +1,20 @@
+{
+  "scenario": "so_cancel_old_customer",
+  "description": "Confirm SO, link project, cancel SO, partner becomes old_customer",
+  "full_access": [
+    "President",
+    "CEO",
+    "Sales Manager",
+    "Team Manager",
+    "Team Director",
+    "Operation",
+    "Operation On Boarder",
+    "VPs",
+    "Can Create/Delete Project"
+  ],
+  "blocked": {
+    "HR": {"at": "create_sale_order", "error": "AccessError"},
+    "Recruiter": {"at": "create_sale_order", "error": "AccessError"},
+    "Administrative": {"at": "create_sale_order", "error": "AccessError"}
+  }
+}

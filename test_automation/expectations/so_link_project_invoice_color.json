@@ -1,0 +1,37 @@
+{
+  "scenario": "so_link_project_invoice_color",
+  "description": "After SO confirm + link project, project color reflects invoice due date (ksc_project_extended)",
+  "modules": [
+    "ksc_sale_project_extended",
+    "ksc_project_extended",
+    "cap_offer",
+    "access_rights_management",
+    "base_user_role"
+  ],
+  "steps": [
+    "create_partner",
+    "use_existing_partner",
+    "create_sale_order",
+    "action_confirm",
+    "link_so_project",
+    "ensure_posted_invoice",
+    "assert_color_orange_due_soon",
+    "assert_color_green_far_due"
+  ],
+  "color_rules": {
+    "orange": { "color": 2, "due_within_days": 5, "test_due_days": 3 },
+    "green": { "color": 10, "test_due_days": 30 },
+    "red": { "color": 1, "note": "overdue beyond grace — add assert_color_red scenario step if needed" }
+  },
+  "full_access": [
+    "President",
+    "CEO",
+    "Sales Manager",
+    "Operation",
+    "Team Manager"
+  ],
+  "blocked": {
+    "HR": { "at": "create_sale_order", "error": "AccessError" }
+  },
+  "quality_log_count": null
+}

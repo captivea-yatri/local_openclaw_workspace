@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ocean_lead_prospect_form_view" model="ir.ui.view">
+        <field name="name">ocean.lead.prospect.form</field>
+        <field name="model">ocean.lead.prospect</field>
+        <field name="arch" type="xml">
+            <form string="Ocean.io Lead Prospecting">
+                <sheet>
+                    <div class="alert alert-info" role="alert">
+                        <p>
+                            <strong>Search</strong> Ocean.io for decision-makers using lookalike or
+                            target domains, then <strong>Create CRM Leads</strong> in Odoo.
+                        </p>
+                        <p>
+                            Use <strong>Reveal Emails</strong> for prospects without email
+                            (async webhook, consumes email credits).
+                        </p>
+                    </div>
+                    <group>
+                        <group string="People Filters">
+                            <field name="instance_id"/>
+                            <field name="seniorities" placeholder="VP, C-Level, Director"/>
+                            <field name="departments" placeholder="Sales"/>
+                            <field name="job_title_keywords" placeholder="Sales, Revenue"/>
+                        </group>
+                        <group string="Company Filters">
+                            <field name="lookalike_domains" placeholder="customer1.com, customer2.com"/>
+                            <field name="include_domains" placeholder="target1.com, target2.com"/>
+                            <field name="company_sizes" placeholder="51-200, 201-500"/>
+                            <field name="size"/>
+                            <field name="people_per_company"/>
+                            <field name="reveal_emails"/>
+                        </group>
+                    </group>
+                    <group invisible="not result_message">
+                        <field name="total_entries"/>
+                        <field name="result_message"/>
+                    </group>
+                    <group invisible="not line_ids">
+                        <field name="line_ids" nolabel="1" colspan="2">
+                            <list editable="top" create="false" delete="false">
+                                <field name="selected"
+                                       widget="boolean_toggle"
+                                       readonly="state in ('existing_lead', 'lead_created')"/>
+                                <field name="display_name" readonly="1"/>
+                                <field name="title" readonly="1"/>
+                                <field name="organization_name" readonly="1"/>
+                                <field name="email" readonly="1"/>
+                                <field name="phone" readonly="1"/>
+                                <field name="state" widget="badge" readonly="1"
+                                       decoration-success="state == 'lead_created'"
+                                       decoration-warning="state == 'existing_lead'"
+                                       decoration-danger="state == 'error'"
+                                       decoration-muted="state == 'search'"/>
+                                <field name="ocean_person_id" readonly="1"/>
+                                <button name="action_open_crm_lead"
+                                        type="object"
+                                        string="Open Lead"
+                                        class="btn-link"
+                                        invisible="not crm_lead_id and not existing_lead_id"/>
+                            </list>
+                        </field>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_search_prospects"
+                            string="Search"
+                            type="object"
+                            class="btn-primary"/>
+                    <button name="action_reveal_emails_selected"
+                            string="Reveal Emails"
+                            type="object"
+                            class="btn-secondary"
+                            invisible="not line_ids"/>
+                    <button name="action_create_crm_leads"
+                            string="Create CRM Leads"
+                            type="object"
+                            class="btn-secondary"
+                            invisible="not line_ids"/>
+                    <button string="Close" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ocean_lead_prospect" model="ir.actions.act_window">
+        <field name="name">Lead Prospecting</field>
+        <field name="res_model">ocean.lead.prospect</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_crm_ocean_lead_prospect"
+              name="Ocean.io Prospecting"
+              parent="crm.crm_menu_root"
+              action="action_ocean_lead_prospect"
+              sequence="7"
+              groups="sales_team.group_sale_salesman"/>
+</odoo>

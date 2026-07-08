@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_apollo_instance_manager,access_apollo_instance_manager,model_apollo_instance,base.group_system,1,1,1,1
+access_apollo_people_enrichment_user,access_apollo_people_enrichment_user,model_apollo_people_enrichment,base.group_user,1,1,1,1
+access_apollo_contact_search_user,access_apollo_contact_search_user,model_apollo_contact_search,base.group_user,1,1,1,1

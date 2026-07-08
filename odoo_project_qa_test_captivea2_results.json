@@ -1,0 +1,177 @@
+[
+  {
+    "tc": "0.1.1",
+    "module": "cap_partner",
+    "action": "Install Check",
+    "status": "PASS",
+    "detail": "Module state: installed"
+  },
+  {
+    "tc": "0.1.2",
+    "module": "ksc_sale_project_extended",
+    "action": "Install Check",
+    "status": "PASS",
+    "detail": "Module state: installed"
+  },
+  {
+    "tc": "0.1.3",
+    "module": "ksc_project_extended",
+    "action": "Install Check",
+    "status": "PASS",
+    "detail": "Module state: installed"
+  },
+  {
+    "tc": "0.1.4",
+    "module": "cap_domain",
+    "action": "Install Check",
+    "status": "PASS",
+    "detail": "Module state: installed"
+  },
+  {
+    "tc": "0.1.5",
+    "module": "cap_requirements",
+    "action": "Install Check",
+    "status": "PASS",
+    "detail": "Module state: installed"
+  },
+  {
+    "tc": "0.1.6",
+    "module": "ksc_project_go_live_maintainer",
+    "action": "Install Check",
+    "status": "PASS",
+    "detail": "Module state: installed"
+  },
+  {
+    "tc": "0.1.7",
+    "module": "cap_project_feedback",
+    "action": "Install Check",
+    "status": "PASS",
+    "detail": "Module state: installed"
+  },
+  {
+    "tc": "0.1.8",
+    "module": "cap_project_test",
+    "action": "Install Check",
+    "status": "PASS",
+    "detail": "Module state: installed"
+  },
+  {
+    "tc": "0.1.9",
+    "module": "cap_project_progress_report",
+    "action": "Install Check",
+    "status": "PASS",
+    "detail": "Module state: installed"
+  },
+  {
+    "tc": "0.1.10",
+    "module": "cap_quality_issue_log",
+    "action": "Install Check",
+    "status": "PASS",
+    "detail": "Module state: installed"
+  },
+  {
+    "tc": "0.1.11",
+    "module": "access_rights_management",
+    "action": "Install Check",
+    "status": "PASS",
+    "detail": "Module state: installed"
+  },
+  {
+    "tc": "0.1.12",
+    "module": "ksc_emp_customer_access",
+    "action": "Install Check",
+    "status": "PASS",
+    "detail": "Module state: installed"
+  },
+  {
+    "tc": "0.2",
+    "module": "res.users",
+    "action": "Read Users",
+    "status": "PASS",
+    "detail": "Found 10022 users (count only)"
+  },
+  {
+    "tc": "0.3",
+    "module": "res.partner",
+    "action": "Check Partners",
+    "status": "PASS",
+    "detail": "Found 866216 partners"
+  },
+  {
+    "tc": "0.3",
+    "module": "project.project",
+    "action": "Check Projects",
+    "status": "PASS",
+    "detail": "Found 913 projects"
+  },
+  {
+    "tc": "1.01",
+    "module": "project.project",
+    "action": "Search Projects",
+    "status": "PASS",
+    "detail": "Found 10 projects. Sample: ['AAM Competition - SO886', 'HIFI international - SO4263 - Projet ERP', 'Corzic Group Inc. - SO3857']"
+  },
+  {
+    "tc": "1.01a",
+    "module": "project.project",
+    "action": "Filter by Name",
+    "status": "INFO",
+    "detail": "No projects matching 'QA Project' found (may need to create test data)"
+  },
+  {
+    "tc": "1.02",
+    "module": "project.status",
+    "action": "Check Status Field",
+    "status": "PASS",
+    "detail": "Project status field points to project.status. Sample statuses: ['Analysis', 'Pre-Live Configuration', 'Live', 'Dead', 'Duplicate', 'Internal', 'Internal P2 P3']"
+  },
+  {
+    "tc": "1.03",
+    "module": "project.project",
+    "action": "Basic Grouping Test",
+    "status": "PASS",
+    "detail": "Retrieved 5 projects with user_id for grouping test"
+  },
+  {
+    "tc": "2.01",
+    "module": "project.project",
+    "action": "Access Project Data",
+    "status": "PASS",
+    "detail": "Successfully read project: AAM Competition - SO886"
+  },
+  {
+    "tc": "2.02.user_id",
+    "module": "project.project",
+    "action": "Check Project Manager",
+    "status": "PASS",
+    "detail": "Field exists: user_id (many2one)"
+  },
+  {
+    "tc": "2.02.x_studio_go_live_date",
+    "module": "project.project",
+    "action": "Check Go-Live Date",
+    "status": "PASS",
+    "detail": "Field exists: x_studio_go_live_date (date)"
+  },
+  {
+    "tc": "2.02.x_studio_remaining_hours",
+    "module": "project.project",
+    "action": "Check Remaining Hours",
+    "status": "PASS",
+    "detail": "Field exists: x_studio_remaining_hours (float)"
+  },
+  {
+    "tc": "2.02.on_hold_reason",
+    "module": "project.project",
+    "action": "Check On Hold Reason",
+    "status": "PASS",
+    "detail": "Field exists: on_hold_reason (selection)"
+  },
+  {
+    "tc": "2.03",
+    "module": "project.project",
+    "action": "Kanban Access Test",
+    "status": "PASS",
+    "detail": "Can access project data for kanban view"
+  }
+]

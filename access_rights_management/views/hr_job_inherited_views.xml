@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_hr_job_kanban_roles" model="ir.ui.view">
+        <field name="name">hr.job.kanban.roles</field>
+        <field name="model">hr.job</field>
+        <field name="inherit_id" ref="hr_recruitment.view_hr_job_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='kanban_boxes']" position="attributes">
+                <attribute name="groups">hr_recruitment.group_hr_recruitment_user,access_rights_management.role_recruiter,access_rights_management.role_management_control,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_office_manager,access_rights_management.role_team_manager,access_rights_management.role_team_director,access_rights_management.role_vps,access_rights_management.role_vp_of_sales</attribute>
+            </xpath>
+            <xpath expr="//t[@t-name='menu']" position="attributes">
+                <attribute name="groups">hr_recruitment.group_hr_recruitment_user,access_rights_management.role_recruiter,access_rights_management.role_vp_of_sales</attribute>
+            </xpath>
+<!--            TODO : need to check in v18 better with database-->
+<!--            <xpath expr="//div[hasclass('o_kanban_manage_button_section')]" position="attributes">-->
+<!--                <attribute name="groups">hr_recruitment.group_hr_recruitment_user,access_rights_management.role_recruiter,access_rights_management.role_management_control,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_office_manager,access_rights_management.role_team_manager,access_rights_management.role_team_director,access_rights_management.role_vps,access_rights_management.role_vp_of_sales-->
+<!--                </attribute>-->
+<!--            </xpath>-->
+        </field>
+    </record>
+</odoo>

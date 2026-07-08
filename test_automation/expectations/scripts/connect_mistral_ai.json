@@ -1,0 +1,7 @@
+{
+  "scenario": "connect_mistral_ai",
+  "description": "Script matrix expectations for connect_mistral_ai",
+  "full_access": [],
+  "blocked": {},
+  "notes": "Run run_script_matrix.py, review REPORT rows, then fill full_access and blocked."
+}

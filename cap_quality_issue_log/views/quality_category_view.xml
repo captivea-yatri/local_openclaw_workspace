@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="form_view_quality_category" model="ir.ui.view">
+        <field name="name">quality.category.form.view</field>
+        <field name="model">quality.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" style="width:50%" required="1"/>
+                        <field name="weight" class="oe_inline" required="1"/>
+                        <field name="role_ids" widget="many2many_tags" options="{'no_create': True, 'no_create_edit':True}"/>
+                        <field name="warning_before_penalty"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="tree_view_quality_category" model="ir.ui.view">
+        <field name="name">quality.category.tree.view</field>
+        <field name="model">quality.category</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="role_ids" widget="many2many_tags"/>
+                <field name="weight" sum="Total" string="Weight"/>
+                <field name="warning_before_penalty"/>
+            </list>
+        </field>
+    </record>
+    <record id="search_view_quality_category" model="ir.ui.view">
+        <field name="name">quality.category.search.view</field>
+        <field name="model">quality.category</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="weight"/>
+                <field name="role_ids"/>
+                <field name="warning_before_penalty"/>
+            </search>
+        </field>
+    </record>
+    <record id="action_quality_category" model="ir.actions.act_window">
+        <field name="name">Quality Category</field>
+        <field name="res_model">quality.category</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Quality Category
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_employee_performance_quality" parent="hr.menu_hr_root" name="Employee Performance Quality"
+              sequence="5"/>
+
+    <menuitem id="menu_quality_category" parent="cap_quality_issue_log.menu_employee_performance_quality"
+              groups="cap_quality_issue_log.group_emp_perf_quality_recognizer"
+              name="Quality Category" action="action_quality_category" sequence="2"/>
+</odoo>

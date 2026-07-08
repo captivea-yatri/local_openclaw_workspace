@@ -1,0 +1,129 @@
+{
+  "log": [
+    {
+      "step": "auth",
+      "status": "PASS",
+      "detail": "uid=2"
+    },
+    {
+      "step": "create_partner",
+      "status": "PASS",
+      "detail": "partner_id=2166303 (existing)"
+    },
+    {
+      "step": "fetch_product",
+      "status": "PASS",
+      "detail": "product_id=3019"
+    },
+    {
+      "step": "load_so",
+      "status": "PASS",
+      "detail": "Found SO 6286"
+    },
+    {
+      "step": "confirm_sales_order",
+      "status": "FAIL",
+      "detail": "<Fault 2: 'Some orders are not in a state requiring confirmation.'>"
+    },
+    {
+      "step": "find_project",
+      "status": "PASS",
+      "detail": "project_id=2763"
+    },
+    {
+      "step": "status_new",
+      "status": "PASS",
+      "detail": "Set status to Newly created project"
+    },
+    {
+      "step": "status_analysis",
+      "status": "PASS",
+      "detail": "Set status to Requirement gathering"
+    },
+    {
+      "step": "status_pre_live",
+      "status": "PASS",
+      "detail": "Set status to Development & configuration stage"
+    },
+    {
+      "step": "status_go_live",
+      "status": "PASS",
+      "detail": "Set status to Go\u2011Live"
+    },
+    {
+      "step": "status_live_custom",
+      "status": "PASS",
+      "detail": "Set status to Live (On\u2011going customization)"
+    },
+    {
+      "step": "status_live_support",
+      "status": "PASS",
+      "detail": "Set status to Live (Support)"
+    },
+    {
+      "step": "status_closed",
+      "status": "PASS",
+      "detail": "Set status to Project Closed"
+    },
+    {
+      "step": "status_on_hold",
+      "status": "PASS",
+      "detail": "Set status to Project On\u2011Hold"
+    },
+    {
+      "step": "create_invoice",
+      "status": "PASS",
+      "detail": "invoice_id=335897"
+    },
+    {
+      "step": "post_invoice",
+      "status": "FAIL",
+      "detail": "<Fault 1: 'Traceback (most recent call last):\\n  File \"/home/odoo/workspace/odoo/addons/rpc/controllers/xmlrpc.py\", line 162, in xmlrpc_2\\n    response = self._xmlrpc(service)\\n  File \"/home/odoo/workspace/odoo/addons/rpc/controllers/xmlrpc.py\", line 134, in _xmlrpc\\n    result = dispatch_rpc(service, method, params)\\n  File \"/home/odoo/workspace/odoo/odoo/http.py\", line 446, in dispatch_rpc\\n    return dispatch(method, params)\\n  File \"/home/odoo/workspace/odoo/odoo/service/model.py\", line 133, in dispatch\\n    res = execute_cr(cr, uid, model, method_, args, kw)\\n  File \"/home/odoo/workspace/Odoo-Captivea-for-dev/rpc_helper/patch.py\", line 19, in protected__execute_cr\\n    return protected__execute_cr._orig__execute_cr(cr, uid, obj, method, *args, **kw)\\n  File \"/home/odoo/workspace/odoo/odoo/service/model.py\", line 150, in execute_cr\\n    result = retrying(partial(call_kw, recs, method, args, kw), env)\\n  File \"/home/odoo/workspace/odoo/odoo/service/model.py\", line 188, in retrying\\n    result = func()\\n  File \"/home/odoo/workspace/odoo/odoo/service/model.py\", line 97, in call_kw\\n    result = method(recs, *args, **kwargs)\\n  File \"/home/odoo/workspace/custom_addons/access_rights_management/models/account_move.py\", line 26, in action_post\\n    variable_cost_products = list({\\n  File \"/home/odoo/workspace/custom_addons/access_rights_management/models/account_move.py\", line 29, in <setcomp>\\n    if line.product_id.product_variable_cost\\nAttributeError: \\'product.product\\' object has no attribute \\'product_variable_cost\\'\\n'>"
+    },
+    {
+      "step": "set_due_future",
+      "status": "PASS",
+      "detail": "due=2026-06-14, colour=10"
+    },
+    {
+      "step": "set_due_near",
+      "status": "PASS",
+      "detail": "due=2026-06-07, colour=2"
+    },
+    {
+      "step": "set_due_past",
+      "status": "PASS",
+      "detail": "due=2026-06-02, colour=1"
+    },
+    {
+      "step": "timesheet_blocked",
+      "status": "PASS",
+      "detail": "Expected error: <Fault 2: 'Timesheet logging is not possible due to a missing intercompany configuration. \\nPlease contact to the CEO for further guidance.'>"
+    },
+    {
+      "step": "set_colour_yellow",
+      "status": "PASS",
+      "detail": "Project colour forced to yellow for timesheet test"
+    },
+    {
+      "step": "timesheet_allowed",
+      "status": "FAIL",
+      "detail": "<Fault 2: 'Timesheet logging is not possible due to a missing intercompany configuration. \\nPlease contact to the CEO for further guidance.'>"
+    },
+    {
+      "step": "late_auth",
+      "status": "PASS",
+      "detail": "Field x_late_authorization not present; skipped"
+    },
+    {
+      "step": "create_requirement",
+      "status": "FAIL",
+      "detail": "<Fault 4: \"Uh-oh! Looks like you have stumbled upon some top-secret records.\\n\\nSorry, odoo-fernet$gAAAAABp8c8kAV0dj3_AMNz7qw0_GLpd5PiZrBOItD5Omo9gnbUSk1ysXvvsZUnq_-QK7LGuX3x4WmN33_J8CUTXMhIYVScblA== (id=2) doesn't have 'create' access to:\\n- Project Domain Information (project.domain)\\n\\nIf you really, really need access, perhaps you can win over your friendly administrator with a batch of freshly baked cookies.\">"
+    },
+    {
+      "step": "task_from_requirement",
+      "status": "FAIL",
+      "detail": "<Fault 2: 'Invalid language code: odoo-fernet$gAAAAABp8eThY6aTlAZOXgYyj3exyoVE_tsAc4XveLWU8_-_yOYpPCw5a7F7S3EW-9s0yZHILyG1OiG3U8MuWOZDBZauQ5OpEA=='>"
+    }
+  ]
+}

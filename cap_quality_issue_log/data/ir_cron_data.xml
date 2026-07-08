@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--   Scheduled Action for Calculate Global Quality Score  -->
+    <record forcecreate="True" id="ir_cron_cal_global_quality_score" model="ir.cron">
+        <field name="name">Calculate Global Quality Score</field>
+        <field name="model_id" ref="cap_quality_issue_log.model_quality_issue_log"/>
+        <field name="state">code</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="user_id" ref="base.user_root" />
+        <field name="code">
+project_ids = env['project.project'].search(['|', ('project_status_id', '=', False), ('project_status_id.code', 'not in', ['dead', 'duplicate', 'internal', 'internal_p2p3'])])
+employee_ids = env['hr.employee'].search(
+    [('exclude_from_timesheet_quality_control', '=', False)])
+today = datetime.date.today()
+firstday_of_the_month = today.replace(day=1)
+quality_category_ids = env['quality.category'].search([])
+for employee_id in employee_ids:
+    quality_issue_log_ids = env['quality.issue.log'].search(
+        [('create_date', '>=', firstday_of_the_month), ('state', '=', 'enabled'), ('employee_id', '=', employee_id.id)])
+    goal_id = env['gamification.goal'].search(
+        [('user_id', '=', employee_id.user_id.id), ('start_date', '&lt;=', today),
+         ('end_date', '>=', today), ('state', '!=', 'canceled')], limit=1)
+
+    quality_data = []
+    list_of_quality_category_id = []
+    weight = 0
+    quality_score = 0
+
+    for quality_category_id in quality_category_ids:
+        categ_quality_score = 100
+        for issue_type in quality_issue_log_ids.quality_issue_type.filtered(
+                lambda type: type.quality_category.id == quality_category_id.id):
+            issue_score_impact = sum(iss.score_impact for iss in quality_issue_log_ids.filtered(
+                lambda issue: issue.quality_issue_type.id == issue_type.id))
+            categ_quality_score -= issue_score_impact
+
+        if categ_quality_score > 0:
+            quality_category_id.check_role(employee_id, project_ids, quality_data, categ_quality_score, list_of_quality_category_id, weight, quality_score)
+        else:
+            quality_category_id.check_role(employee_id, project_ids, quality_data, 0, list_of_quality_category_id, weight, quality_score)
+
+    message = ""
+    for data in quality_data:
+        weight += data.get('weight')
+        quality_score += data.get('quality_score')
+        if data.get('message'):
+            message += data.get('message')
+    if weight > 0:
+        if goal_id:
+            goal_id.write(
+                {'quality_score_message': message, 'global_quality_score': (quality_score / weight) * 100})
+        employee_id.write(
+            {'quality_score_message': message, 'global_quality_score': (quality_score / weight) * 100})
+    else:
+        if goal_id:
+            goal_id.write(
+                {'quality_score_message': False, 'global_quality_score': 0.0})
+        employee_id.write({'quality_score_message': False, 'global_quality_score': 0.0})
+        </field>
+    </record>
+</odoo>

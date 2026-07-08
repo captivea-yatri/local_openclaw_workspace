@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ocean_webhook_log_tree_view" model="ir.ui.view">
+        <field name="name">ocean.webhook.log.tree</field>
+        <field name="model">ocean.webhook.log</field>
+        <field name="arch" type="xml">
+            <list create="false" edit="false" delete="false">
+                <field name="create_date"/>
+                <field name="instance_id"/>
+                <field name="webhook_token"/>
+                <field name="payload_type"/>
+                <field name="http_status"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'processed'"
+                       decoration-danger="state == 'error'"
+                       decoration-muted="state == 'received'"/>
+                <field name="records_updated"/>
+                <field name="message"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="ocean_webhook_log_form_view" model="ir.ui.view">
+        <field name="name">ocean.webhook.log.form</field>
+        <field name="model">ocean.webhook.log</field>
+        <field name="arch" type="xml">
+            <form create="false" edit="false" delete="false">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="instance_id"/>
+                            <field name="payload_type"/>
+                            <field name="state"/>
+                            <field name="records_updated"/>
+                        </group>
+                        <group>
+                            <field name="create_date"/>
+                            <field name="message"/>
+                        </group>
+                    </group>
+                    <group string="Payload">
+                        <field name="payload_json" nolabel="1" colspan="2"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ocean_webhook_log" model="ir.actions.act_window">
+        <field name="name">Webhook Logs</field>
+        <field name="res_model">ocean.webhook.log</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

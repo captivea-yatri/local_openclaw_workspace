@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Odoo RBAC QA Report</title>
+<style>
+body {font-family: Arial, sans-serif; margin: 20px;}
+h1, h2 {color: #2c3e50;}
+table {border-collapse: collapse; width: 100%; margin-top: 10px;}
+th, td {border: 1px solid #ddd; padding: 8px;}
+th {background-color: #f2f2f2; text-align: left;}
+tr:nth-child(even) {background-color: #fafafa;}
+</style>
+</head>
+<body>
+<h1>Odoo 19 Staging – RBAC QA Report</h1>
+<p><strong>User:</strong> helene.dogimont@captivea.com</p>
+<p><strong>Roles:</strong> CEO, DRH, Administrative Responsible, CFO, Unlock Customer, Modify Quotation Line, Allow Change Min Sales Price</p>
+<h2>Summary</h2>
+<table>
+<tr><th>Category</th><th>Passed</th><th>Blocked / Failed</th><th>Remarks</th></tr>
+<tr><td>Read</td><td>33</td><td>0</td><td>All reads succeeded.</td></tr>
+<tr><td>Write</td><td>6</td><td>16 blocked</td><td>Writes blocked on most business‑critical models.</td></tr>
+<tr><td>Create</td><td>9</td><td>18 blocked, 2 failed</td><td>Creation works for basic records only.</td></tr>
+<tr><td>Delete</td><td>2</td><td>23 blocked</td><td>Deletions largely restricted.</td></tr>
+<tr><td>Special actions</td><td>2</td><td>1 failed (invoice)</td><td>Confirm works; invoicing method missing.</td></tr>
+</table>
+<h2>Key Permission Gaps</h2>
+<ul>
+<li><strong>Accounting (account.move)</strong>: Read/Write/Create/Delete all blocked – missing Accounting groups.</li>
+<li><strong>Project & Task</strong>: Create fails – missing Project/Administrator.</li>
+<li><strong>Assets</strong>: All actions blocked – missing Accounting/Bookkeeper or Invoicing.</li>
+<li><strong>HR Employee</strong>: Write blocked – missing HR Manager.</li>
+<li><strong>Timesheets</strong>: Write/Create/Delete blocked – missing Timesheet groups.</li>
+</ul>
+<h2>Full Test Output</h2>
+<p>The detailed JSON results are attached as <code>full_test_output.json</code>. You can open it to see each test case, module, action, status and error details.</p>
+<h2>Next Steps</h2>
+<ol>
+<li>Add the required groups (Accounting/Administrator, Project/Administrator, HR Manager, Timesheet groups, etc.) to the user.</li>
+<li>Rerun the QA script to verify that the blocked actions now pass.</li>
+<li>If you need visual screenshots of the UI, a browser automation tool is required. Once available, we can capture screenshots for each failed step and embed them here.</li>
+</ol>
+</body>
+</html>

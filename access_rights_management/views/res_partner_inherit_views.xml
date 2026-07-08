@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_partner_form_crm_inherited_custom" model="ir.ui.view">
+        <field name="name">view.res.partner.form.crm.inherited.custom</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="crm.view_partners_form_crm1"/>
+        <field name="arch" type="xml">
+            <button name="action_view_opportunity" position="replace">
+                <button class="oe_stat_button o_res_partner_tip_opp" type="object"
+                        name="action_view_opportunity"
+                        icon="fa-star"
+                        groups="access_rights_management.role_sales_hot,access_rights_management.role_marketing_manager,access_rights_management.role_email_manager,access_rights_management.role_community_manager,access_rights_management.role_sales_cold_team_director,access_rights_management.role_sales_cold_team_manager,access_rights_management.role_sales_cold,access_rights_management.show_sales,access_rights_management.role_vps,access_rights_management.role_cfo,access_rights_management.role_cfo_for_his_company"
+                        context="{'default_partner_id': id, 'default_type':'opportunity'}">
+                    <field string="Opportunities" name="opportunity_count" widget="statinfo"/>
+                </button>
+            </button>
+        </field>
+    </record>
+
+    <record id="view_res_partner_form_sales_inherited_custom" model="ir.ui.view">
+        <field name="name">view.res.partner.form.sale.inherited.custom</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="sale.res_partner_view_buttons"/>
+        <field name="arch" type="xml">
+            <button name="action_view_sale_order" position="replace">
+                <button class="oe_stat_button" type="object" name="action_view_sale_order"
+                    groups="access_rights_management.role_sales_hot,access_rights_management.show_sales,access_rights_management.role_management_control,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_vps,access_rights_management.role_cfo,access_rights_management.role_cfo_for_his_company,access_rights_management.role_sales_cold,access_rights_management.role_sales_cold_team_manager,access_rights_management.role_sales_cold_team_director,access_rights_management.role_legal"
+                    icon="fa-usd">
+                    <field string="Sales" name="sale_order_count" widget="statinfo"/>
+                </button>
+            </button>
+        </field>
+    </record>
+
+    <record id="view_res_partner_form_invoice_inherited_custom" model="ir.ui.view">
+        <field name="name">view.res.partner.form.invoice.inherited.custom</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.partner_view_buttons"/>
+        <field name="arch" type="xml">
+            <button name="action_view_partner_invoices" position="replace">
+                <button type="object" class="oe_stat_button" icon="fa-pencil-square-o" name="action_view_partner_invoices"
+                        groups="access_rights_management.role_sales_hot,account.group_account_invoice,account.group_account_readonly,access_rights_management.show_sales,access_rights_management.role_management_control,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_vps,!access_rights_management.role_vp_of_marketing"
+                        context="{'default_partner_id': id}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="currency_id" invisible="1"/>
+                                <field name="total_invoiced" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                            </span>
+                            <span class="o_stat_text">Invoiced</span>
+                        </div>
+                    </button>
+            </button>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="res_partner_view_inherit_sale_subscription_role">
+        <field name="name">partner.view.button.subscriptions_count.role</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="sale_subscription.res_partner_view_inherit_sale_subscription"/>
+        <field name="arch" type="xml">
+            <button name="open_related_subscription" position="attributes">
+                <attribute name="groups">access_rights_management.show_sales</attribute>
+            </button>
+        </field>
+    </record>
+
+<!--    <record model="ir.ui.view" id="res_partner_view_inherit_is_partner">-->
+<!--        <field name="name">res.partner.view.inherit.ispartner</field>-->
+<!--        <field name="model">res.partner</field>-->
+<!--        <field name="inherit_id" ref="base.view_partner_form"/>-->
+<!--        <field name="priority" eval="999"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <field name="category_id" position="after">-->
+<!--                <field name="is_partner" invisible="not is_company"/>-->
+<!--                <field name="is_portal_user" invisible="1"/>-->
+<!--            </field>-->
+<!--            <xpath expr="//notebook" position="inside">-->
+<!--                <page name="portal_access_info" string="Portal Access Info" invisible="not is_portal_user">-->
+<!--                    <group>-->
+<!--                        <group>-->
+<!--                            <field name="accounting_information"/>-->
+<!--                            <field name="project_information"/>-->
+<!--                        </group>-->
+<!--                        <group>-->
+<!--                            <field name="user_allowed_company_ids" string="Allowed Companies for user"-->
+<!--                                   widget="many2many_tags" options="{'no_create': True, 'no_create_edit': True}"/>-->
+<!--                        </group>-->
+<!--                    </group>-->
+<!--                </page>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//field[@name='child_ids']/form[1]//field[@name='lang']" position="before">-->
+<!--                <group>-->
+<!--                    <group>-->
+<!--                        <field name="is_portal_user" invisible="1"/>-->
+<!--                        <field name="accounting_information" invisible="not is_portal_user"/>-->
+<!--                        <field name="project_information" invisible="not is_portal_user"/>-->
+<!--                    </group>-->
+<!--                    <group>-->
+<!--                        <field name="user_allowed_company_ids" string="Allowed Companies for user"-->
+<!--                               widget="many2many_tags" invisible="not is_portal_user"-->
+<!--                               options="{'no_create': True, 'no_create_edit': True}"/>-->
+<!--                    </group>-->
+<!--                </group>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+
+    <record id="view_task_partner_info_form_roles" model="ir.ui.view">
+        <field name="name">res.partner.task.buttons.roles</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="project.view_task_partner_info_form"/>
+        <field name="arch" type="xml">
+            <xpath expr='//button[@name="action_view_tasks"]' position="attributes">
+                <attribute name="groups">project.group_project_user,access_rights_management.role_sales_hot,access_rights_management.role_management_control,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_operation_on_boarder,access_rights_management.role_operation,access_rights_management.role_team_manager,access_rights_management.role_team_director,access_rights_management.role_vps,access_rights_management.role_vp_of_sales,access_rights_management.role_legal</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="res_partner_view_form_roles">
+        <field name="name">res.partner.view.form.roles</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account_followup.res_partner_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr='//button[@name="open_customer_statement"]' position="attributes">
+                <attribute name="groups">access_rights_management.role_management_control,account.group_account_invoice,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_vps</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_form_project" model="ir.ui.view">
+        <field name="name">cap.view.partner.form.project</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="cap_partner.cap_view_partner_form_01"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_view_projects']" position="replace">
+                <button class="oe_stat_button" type="object"
+                        name="action_view_projects"
+                        icon="fa-puzzle-piece"
+                        groups="access_rights_management.role_sales_hot,access_rights_management.role_management_control,access_rights_management.role_administrative_responsible,access_rights_management.role_administrative,access_rights_management.role_operation_on_boarder,access_rights_management.role_operation,access_rights_management.role_team_manager,access_rights_management.role_team_director,access_rights_management.role_vps,access_rights_management.role_vp_of_sales,access_rights_management.role_ceo,access_rights_management.role_vp_of_quality_and_knowledge,access_rights_management.role_drh,access_rights_management.role_cfo,access_rights_management.role_cfo_for_his_company,access_rights_management.role_vp_of_marketing,access_rights_management.role_president,access_rights_management.role_legal,access_rights_management.role_community_manager,access_rights_management.role_email_manager,access_rights_management.role_marketing_manager,access_rights_management.role_customer_referencer,access_rights_management.role_it_person">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="project_count"/>
+                        </span>
+                        <span class="o_stat_text">Project</span>
+                    </div>
+                </button>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_property_form_roles" model="ir.ui.view">
+        <field name="name">cap.view.partner.form.roles</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='accounting']" position="attributes">
+                <attribute name="groups">account.group_account_invoice,account.group_account_readonly,access_rights_management.role_ceo</attribute>
+            </xpath>
+            <xpath expr="//group[@id='invoice_send_settings']" position="attributes">
+                <attribute name="groups">account.group_account_invoice,account.group_account_readonly,access_rights_management.role_ceo</attribute>
+            </xpath>
+            <xpath expr="//group[@name='accounting_entries']" position="attributes">
+                <attribute name="groups">account.group_account_invoice,account.group_account_readonly,access_rights_management.role_ceo</attribute>
+            </xpath>
+            <xpath expr="//group[@name='credit_limits']" position="attributes">
+                <attribute name="groups">account.group_account_invoice,account.group_account_readonly,access_rights_management.role_ceo</attribute>
+            </xpath>
+            <xpath expr="//group[@name='accounting_automation']" position="attributes">
+                <attribute name="groups">account.group_account_invoice,account.group_account_readonly,access_rights_management.role_ceo</attribute>
+            </xpath>
+            <xpath expr="//group[@name='banks']" position="attributes">
+                <attribute name="groups">account.group_account_invoice,account.group_account_readonly,access_rights_management.role_ceo</attribute>
+            </xpath>
+            <xpath expr="//field[@name='autopost_bills']" position="attributes">
+                <attribute name="groups">account.group_account_invoice,account.group_account_readonly,access_rights_management.role_ceo</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_property_form_followup_roles" model="ir.ui.view">
+        <field name="name">res.partner.property.form.followup.roles</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account_followup.view_partner_property_form_followup"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='invoice_followups']" position="attributes">
+                <attribute name="groups">account.group_account_invoice,access_rights_management.role_ceo</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

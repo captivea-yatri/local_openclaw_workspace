@@ -1,0 +1,248 @@
+{
+  "account.account": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "account.analytic.account": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "timesheet.analytic.account": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "hr.applicant": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "account.asset": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "res.partner": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "hr.employee": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "hr.employee.public": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "gamification.challenge": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "gamification.goal": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "gamification.goal_finance_information": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "x_target_adjustment": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "account.journal": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "account.move": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "account.payment": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "account.tax": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "crm.lead": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "product.template": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "product.product": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "project.project": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "project.task": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "project.project.stage": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "sale.order": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "sale.order.line": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "crm.stage": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "crm.lost.reason": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "product.pricelist": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "website": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "helpdesk.ticket": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "helpdesk.team": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "purchase.order": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "po.comment": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "social.post": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "mail.mass_mailing": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "marketing.campaign": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "hr.attendance": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "go.live.change.request": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "sign": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "payroll": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "hr.leave": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  },
+  "ir.attachment": {
+    "status": "model_not_found",
+    "details": {
+      "__fault__": "<Fault 2: \"Object search doesn't exist\">"
+    }
+  }
+}

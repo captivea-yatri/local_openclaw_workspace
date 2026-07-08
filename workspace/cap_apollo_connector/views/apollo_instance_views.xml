@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="apollo_instance_tree_view" model="ir.ui.view">
+        <field name="name">apollo.instance.tree</field>
+        <field name="model">apollo.instance</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="connection_status" widget="badge"
+                       decoration-success="connection_status == 'connected'"
+                       decoration-danger="connection_status == 'failed'"
+                       decoration-muted="connection_status == 'unknown'"/>
+                <field name="is_master_key"/>
+                <field name="last_connection_test"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="apollo_instance_form_view" model="ir.ui.view">
+        <field name="name">apollo.instance.form</field>
+        <field name="model">apollo.instance</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_test_connection"
+                            string="Test Connection"
+                            type="object"
+                            class="oe_highlight"/>
+                    <button name="action_open_people_enrichment"
+                            string="People Enrichment"
+                            type="object"
+                            class="btn-secondary"/>
+                </header>
+                <sheet>
+                    <field name="active" invisible="1"/>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Apollo Production"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="General">
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="connection_status" readonly="1"/>
+                            <field name="last_connection_test" readonly="1"/>
+                            <field name="connection_message" readonly="1" invisible="not connection_message"/>
+                        </group>
+                        <group string="Authentication">
+                            <field name="api_base_url" readonly="1"/>
+                            <field name="api_key" password="True"/>
+                            <field name="is_master_key"/>
+                            <field name="enrichment_webhook_url"
+                                   placeholder="https://your-odoo.com/apollo/webhook/..."/>
+                        </group>
+                    </group>
+                    <group>
+                        <div class="alert alert-info" role="alert">
+                            <p>
+                                Apollo authenticates REST requests with an API key sent in the
+                                <code>x-api-key</code> request header.
+                            </p>
+                            <p>
+                                Create a key in Apollo under
+                                <strong>Settings &gt; Integrations &gt; Apollo API &gt; API Keys</strong>.
+                                Toggle <strong>Set as master key</strong> if you need endpoints
+                                that require elevated access.
+                            </p>
+                            <p>
+                                OAuth 2.0 is available for Apollo marketplace partners only.
+                                This module uses API key authentication for direct Apollo accounts.
+                            </p>
+                        </div>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_apollo_instance" model="ir.actions.act_window">
+        <field name="name">Apollo Instances</field>
+        <field name="res_model">apollo.instance</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create an Apollo instance and connect Odoo with your API key.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="apollo_main_menu"
+              name="Apollo.io"
+              sequence="45"
+              groups="base.group_system"/>
+
+    <menuitem id="menu_apollo_people_enrichment"
+              name="People Enrichment"
+              parent="apollo_main_menu"
+              action="action_apollo_people_enrichment"
+              sequence="20"/>
+
+    <menuitem id="menu_apollo_instance"
+              name="Configuration"
+              parent="apollo_main_menu"
+              action="action_apollo_instance"
+              sequence="10"
+              groups="base.group_system"/>
+</odoo>

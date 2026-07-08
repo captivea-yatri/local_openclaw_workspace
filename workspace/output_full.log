@@ -1,0 +1,79 @@
+{
+  "log": [
+    {
+      "step": "auth",
+      "status": "PASS",
+      "detail": "uid=2"
+    },
+    {
+      "step": "create_partner",
+      "status": "PASS",
+      "detail": "partner_id=2338267"
+    },
+    {
+      "step": "fetch_product",
+      "status": "PASS",
+      "detail": "service product_id=2002"
+    },
+    {
+      "step": "load_so",
+      "status": "PASS",
+      "detail": "Found SO 8666"
+    },
+    {
+      "step": "confirm_sales_order",
+      "status": "FAIL",
+      "detail": "<Fault 1: 'Traceback (most recent call last):\\n  File \"/home/odoo/workspace/odoo/addons/rpc/controllers/xmlrpc.py\", line 162, in xmlrpc_2\\n    response = self._xmlrpc(service)\\n  File \"/home/odoo/workspace/odoo/addons/rpc/controllers/xmlrpc.py\", line 134, in _xmlrpc\\n    result = dispatch_rpc(service, method, params)\\n  File \"/home/odoo/workspace/odoo/odoo/http.py\", line 446, in dispatch_rpc\\n    return dispatch(method, params)\\n  File \"/home/odoo/workspace/odoo/odoo/service/model.py\", line 133, in dispatch\\n    res = execute_cr(cr, uid, model, method_, args, kw)\\n  File \"/home/odoo/workspace/Odoo-Captivea-for-dev/rpc_helper/patch.py\", line 19, in protected__execute_cr\\n    return protected__execute_cr._orig__execute_cr(cr, uid, obj, method, *args, **kw)\\n  File \"/home/odoo/workspace/odoo/odoo/service/model.py\", line 150, in execute_cr\\n    result = retrying(partial(call_kw, recs, method, args, kw), env)\\n  File \"/home/odoo/workspace/odoo/odoo/service/model.py\", line 190, in retrying\\n    env.cr.flush()  # submit the changes to the database\\n  File \"/home/odoo/workspace/odoo/odoo/sql_db.py\", line 182, in flush\\n    self.transaction.flush()\\n  File \"/home/odoo/workspace/odoo/odoo/orm/environments.py\", line 592, in flush\\n    self.default_env.flush_all()\\n  File \"/home/odoo/workspace/odoo/odoo/orm/environments.py\", line 383, in flush_all\\n    self._recompute_all()\\n  File \"/home/odoo/workspace/odoo/odoo/orm/environments.py\", line 376, in _recompute_all\\n    self[field.model_name]._recompute_field(field)\\n  File \"/home/odoo/workspace/odoo/odoo/orm/models.py\", line 6958, in _recompute_field\\n    field.recompute(records)\\n  File \"/home/odoo/workspace/odoo/odoo/orm/fields.py\", line 1883, in recompute\\n    apply_except_missing(recursive_compute, records)\\n  File \"/home/odoo/workspace/odoo/odoo/orm/fields.py\", line 1861, in apply_except_missing\\n    func(records)\\n  File \"/home/odoo/workspace/odoo/odoo/orm/fields.py\", line 1881, in recursive_compute\\n    self.compute_value(record)\\n  File \"/home/odoo/workspace/odoo/odoo/orm/fields.py\", line 1915, in compute_value\\n    records._compute_field_value(self)\\n  File \"/home/odoo/workspace/odoo/addons/base_automation/models/base_automation.py\", line 928, in _compute_field_value\\n    pre = {a: a.with_context(changed_fields=changed_fields)._filter_pre(records) for a in automations}\\n  File \"/home/odoo/workspace/odoo/addons/base_automation/models/base_automation.py\", line 928, in <dictcomp>\\n    pre = {a: a.with_context(changed_fields=changed_fields)._filter_pre(records) for a in automations}\\n  File \"/home/odoo/workspace/odoo/addons/base_automation/models/base_automation.py\", line 747, in _filter_pre\\n    records = records.with_context(changed_fields=()).sudo().filtered_domain(domain).sudo(records.env.su)\\n  File \"/home/odoo/workspace/odoo/odoo/orm/models.py\", line 6258, in filtered_domain\\n    return self.browse(rec_id for rec_id, rec in zip(self._ids, self) if predicate(rec))\\n  File \"/home/odoo/workspace/odoo/odoo/orm/models.py\", line 5895, in browse\\n    ids = tuple(ids)\\n  File \"/home/odoo/workspace/odoo/odoo/orm/models.py\", line 6258, in <genexpr>\\n    return self.browse(rec_id for rec_id, rec in zip(self._ids, self) if predicate(rec))\\n  File \"/home/odoo/workspace/odoo/odoo/orm/fields.py\", line 1414, in <lambda>\\n    return lambda rec: getter(rec) in value\\n  File \"/home/odoo/workspace/odoo/odoo/orm/fields.py\", line 1667, in __get__\\n    self.recompute(record)\\n  File \"/home/odoo/workspace/odoo/odoo/orm/fields.py\", line 1891, in recompute\\n    apply_except_missing(self.compute_value, recs)\\n  File \"/home/odoo/workspace/odoo/odoo/orm/fields.py\", line 1861, in apply_except_missing\\n    func(records)\\n  File \"/home/odoo/workspace/odoo/odoo/orm/fields.py\", line 1915, in compute_value\\n    records._compute_field_value(self)\\n  File \"/home/odoo/workspace/odoo/addons/base_automation/models/base_automation.py\", line 935, in _compute_field_value\\n    _compute_field_value.origin(self, field)\\n  File \"/home/odoo/workspace/odoo/addons/mail/models/mail_thread.py\", line 484, in _compute_field_value\\n    return super()._compute_field_value(field)\\n  File \"/home/odoo/workspace/odoo/odoo/orm/models.py\", line 4952, in _compute_field_value\\n    determine(field.compute, self)\\n  File \"/home/odoo/workspace/odoo/odoo/orm/fields.py\", line 81, in determine\\n    return needle(*args)\\n  File \"/home/odoo/workspace/Odoo-Captivea-for-dev/ksc_team_integration/models/res_partner.py\", line 141, in _compute_customer_status\\n    res = super(Partner, self)._compute_customer_status()\\n  File \"/home/odoo/workspace/Odoo-Captivea-for-dev/ksc_git_integration/models/res_partner.py\", line 24, in _compute_customer_status\\n    res = super(Partner, self)._compute_customer_status()\\n  File \"/home/odoo/workspace/custom_addons/cap_partner/models/res_partner.py\", line 341, in _compute_customer_status\\n    partner_id.with_context(update_status=True)._set_customer_status_child(status, customer_since_date,\\n  File \"/home/odoo/workspace/custom_addons/cap_partner/models/res_partner.py\", line 363, in _set_customer_status_child\\n    all_partners.with_context(not_execute_customer_status=True).write(update_vals)\\n  File \"/home/odoo/workspace/odoo/addons/base_automation/models/base_automation.py\", line 896, in write\\n    write.origin(self.with_env(automations.env), vals, **kw)\\n  File \"/home/odoo/workspace/custom_addons/access_rights_management/models/res_partner.py\", line 121, in write\\n    res = super(ResPartner, self).write(vals)\\n  File \"/home/odoo/workspace/custom_addons/ksc_emp_customer_access/models/res_partner.py\", line 110, in write\\n    matching_offer = sale_order.company_id.offer_ids.filtered(\\n  File \"/home/odoo/workspace/odoo/odoo/orm/models.py\", line 6213, in filtered\\n    return self.browse(rec_id for rec_id, rec in zip(self._ids, self) if func(rec))\\n  File \"/home/odoo/workspace/odoo/odoo/orm/models.py\", line 5895, in browse\\n    ids = tuple(ids)\\n  File \"/home/odoo/workspace/odoo/odoo/orm/models.py\", line 6213, in <genexpr>\\n    return self.browse(rec_id for rec_id, rec in zip(self._ids, self) if func(rec))\\n  File \"/home/odoo/workspace/custom_addons/ksc_emp_customer_access/models/res_partner.py\", line 111, in <lambda>\\n    lambda o: o.offer_id.id == sale_order.offer_id.id\\nAttributeError: \\'company.offer.line\\' object has no attribute \\'offer_id\\'\\n'>"
+    },
+    {
+      "step": "create_project_manual",
+      "status": "PASS",
+      "detail": "project_id=2888"
+    },
+    {
+      "step": "status_new",
+      "status": "PASS",
+      "detail": "Set status to Newly created project"
+    },
+    {
+      "step": "status_analysis",
+      "status": "PASS",
+      "detail": "Set status to Requirement gathering"
+    },
+    {
+      "step": "status_pre_live",
+      "status": "PASS",
+      "detail": "Set status to Development & configuration stage"
+    },
+    {
+      "step": "status_go_live",
+      "status": "PASS",
+      "detail": "Set status to Go\u2011Live"
+    },
+    {
+      "step": "status_live_custom",
+      "status": "PASS",
+      "detail": "Set status to Live (On\u2011going customization)"
+    },
+    {
+      "step": "status_live_support",
+      "status": "PASS",
+      "detail": "Set status to Live (Support)"
+    },
+    {
+      "step": "status_closed",
+      "status": "PASS",
+      "detail": "Set status to Project Closed"
+    },
+    {
+      "step": "status_on_hold",
+      "status": "PASS",
+      "detail": "Set status to Project On\u2011Hold"
+    },
+    {
+      "step": "create_invoice",
+      "status": "FAIL",
+      "detail": "<Fault 2: \"Uh-oh! You\u2019ve got some company inconsistencies here:\\n- \u201cDraft Invoice\u201d belongs to company \u201cGroupe RISS\u201d while \u201cPartner\u201d (partner_id: 'odoo-fernet$gAAAAABqIRZxhjZ0Y5oq7Stv5BhOSIXhGV-w40FY9sjCkRmABWc9knW7RxN4sAHZIV8vCC0azFvWAvXBb6gSmRbpM0yT3FWyJ-QRs6pf8ctwWk48JGm2wpc=') belongs to another company.\\n- \u201cDraft Invoice\u201d belongs to company \u201cGroupe RISS\u201d while \u201cCommercial Entity\u201d (commercial_partner_id: 'odoo-fernet$gAAAAABqIRZxhjZ0Y5oq7Stv5BhOSIXhGV-w40FY9sjCkRmABWc9knW7RxN4sAHZIV8vCC0azFvWAvXBb6gSmRbpM0yT3FWyJ-QRs6pf8ctwWk48JGm2wpc=') belongs to another company.\\n- \u201cDraft Invoice\u201d belongs to company \u201cGroupe RISS\u201d while \u201cDelivery Address\u201d (partner_shipping_id: 'odoo-fernet$gAAAAABqIRZxhjZ0Y5oq7Stv5BhOSIXhGV-w40FY9sjCkRmABWc9knW7RxN4sAHZIV8vCC0azFvWAvXBb6gSmRbpM0yT3FWyJ-QRs6pf8ctwWk48JGm2wpc=') belongs to another company.\\nTo avoid a mess, no company crossover is allowed!\">"
+    }
+  ]
+}

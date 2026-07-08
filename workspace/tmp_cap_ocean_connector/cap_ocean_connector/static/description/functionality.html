@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Ocean.io Connector – Wizard Functionalities</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body {font-family: Arial, sans-serif; margin: 2rem; background:#fff; color:#212529;}
+  h1 {color:#BA131A;}
+  h2 {color:#212529; margin-top:2rem;}
+  table {width:100%; border-collapse:collapse; margin-top:1rem;}
+  th, td {border:1px solid #ddd; padding:0.5rem; text-align:left;}
+  th {background:#f2f2f2;}
+  .section {margin-bottom:3rem;}
+  .btn {display:inline-block; padding:0.4rem 0.8rem; background:#BA131A; color:#fff; border-radius:4px; text-decoration:none; margin-top:0.5rem;}
+</style>
+</head>
+<body>
+<h1>Ocean.io Connector – Wizard Functionalities</h1>
+
+<div class="section" id="people-lookup">
+<h2>1️⃣ People Lookup Wizard</h2>
+<table>
+<thead><tr><th>Feature</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Purpose</td><td>Retrieve the most accurate personal profile for a prospect (name, title, email, phone, LinkedIn, company) from Ocean.io.</td></tr>
+<tr><td>Key inputs</td><td>Ocean.io Instance, optional Partner link, Lookup method (Ocean ID, LinkedIn URL/handle, email, or name + company domain).</td></tr>
+<tr><td>Options</td><td>Apply Overwrite – force replacement of existing Odoo fields with values returned by Ocean.io.</td></tr>
+<tr><td>Async reveal</td><td>Tick Reveal Emails or Reveal Phones – Ocean.io processes asynchronously and POSTs verified data back to the webhook.</td></tr>
+<tr><td>Result</td><td>Immediate display of enriched data; “Apply to Contact” writes data back; async reveal updates later via webhook and creates a log entry.</td></tr>
+<tr><td>When to use</td><td>When you have only a name or LinkedIn URL and need richer details, or you want to enrich contacts one‑by‑one.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="lead-prospect">
+<h2>2️⃣ Lead Prospect Wizard</h2>
+<table>
+<thead><tr><th>Feature</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Purpose</td><td>Search Ocean.io for multiple prospects that match a set of filters (job title, seniority, location, industry, company size, etc.) and import them as Odoo CRM leads.</td></tr>
+<tr><td>Key inputs</td><td>Ocean.io Instance, filter fields (job title, location, company domain, keywords, seniority, etc.), max results.</td></tr>
+<tr><td>Options</td><td>Create Leads automatically – each matching prospect becomes a `crm.lead` record.</td></tr>
+<tr><td>Async reveal</td><td>Not applicable – results are returned synchronously.</td></tr>
+<tr><td>Result</td><td>List of matched prospects; select rows and click “Import Selected” to create Odoo leads. A short API log is stored.</td></tr>
+<tr><td>When to use</td><td>Building a fresh pipeline of qualified leads based on criteria you define, or quickly populating the CRM after a campaign.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="company-enrichment">
+<h2>3️⃣ Company Enrichment Wizard</h2>
+<table>
+<thead><tr><th>Feature</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Purpose</td><td>Pull structured company‑level data (industry, employee count, revenue, tech stack, HQ, website, social profiles) from Ocean.io and enrich the Odoo `res.partner` record.</td></tr>
+<tr><td>Key inputs</td><td>Ocean.io Instance, Partner (choose the company) or manually enter a domain/website, optional Ocean Company ID.</td></tr>
+<tr><td>Options</td><td>Apply Overwrite – replace existing fields on the partner with fresh data.</td></tr>
+<tr><td>Async reveal</td><td>Not needed – enrichment API returns the full payload synchronously.</td></tr>
+<tr><td>Result</td><td>Wizard displays the enriched profile; clicking “Apply to Partner” writes new values (industry, employees, revenue, etc.) back to `res.partner`.</td></tr>
+<tr><td>When to use</td><td>When you have a company record with only a name or domain and need up‑to‑date firmographic data, or for periodic database clean‑up.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="async-reveal">
+<h2>4️⃣ Async Reveal Options (shared)</h2>
+<table>
+<thead><tr><th>Feature</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Reveal Emails</td><td>Requests verified email addresses; Ocean.io processes asynchronously and POSTs to the webhook when ready.</td></tr>
+<tr><td>Reveal Phones</td><td>Same flow as emails but for phone numbers.</td></tr>
+<tr><td>Why async?</td><td>Some data requires extra verification and can take seconds to minutes; async handling prevents UI blocking.</td></tr>
+<tr><td>Visibility</td><td>All webhook attempts appear in **Ocean Webhook Log** with status `received → processed` or `error`.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="instance-management">
+<h2>5️⃣ Instance Management Form</h2>
+<table>
+<thead><tr><th>Feature</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>API Token</td><td>Your Ocean.io secret token – required for all API calls.</td></tr>
+<tr><td>Public HTTPS URL</td><td>Base URL of your Odoo instance (auto‑filled from `web.base.url` if left blank). Used to build the webhook endpoint.</td></tr>
+<tr><td>Webhook URL (computed)</td><td>`https://<public‑base>/webhooks/ocean?secret=<webhook_secret>&db=<odoo_db>` – copy‑paste into Ocean.io configuration.</td></tr>
+<tr><td>Webhook Secret / Token</td><td>Random UUIDs generated on record creation; secret verifies inbound calls, token is for legacy paths.</td></tr>
+<tr><td>Credit Balance</td><td>Buttons **Test Connection** and **Refresh Credits** display remaining recurrent/one‑time credits and daily rate‑limit left.</td></tr>
+<tr><td>Actions</td><td>Test Connection (validates token), Test Webhook URL (GET ping), Refresh Webhook URL (re‑compute after URL change).</td></tr>
+<tr><td>Status</td><td>`connection_status` shows *unknown / connected / failed* with a short message for troubleshooting.</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="section" id="webhook-log">
+<h2>6️⃣ Webhook Log View</h2>
+<table>
+<thead><tr><th>Feature</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Log entries</td><td>One row per inbound POST/GET: payload type, HTTP status, `records_updated`, and a short human‑readable message.</td></tr>
+<tr><td>Filtering</td><td>Filter by `payload_type` (e.g., `reveal_emails`, `enrich_companies`, `ping`).</td></tr>
+<tr><td>Debug</td><td>Raw JSON payload is stored in `payload_json` (truncated to 500 KB) for deep inspection.</td></tr>
+<tr><td>Audit trail</td><td>Provides a full history of what Ocean.io has sent to your Odoo instance – essential for compliance and debugging.</td></tr>
+</tbody>
+</table>
+</div>
+
+<a href="index.html" class="btn"><i class="fa fa-arrow-left"></i> Back to Overview Page</a>
+
+</body>
+</html>

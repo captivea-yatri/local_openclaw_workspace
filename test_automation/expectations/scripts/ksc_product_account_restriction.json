@@ -1,0 +1,7 @@
+{
+  "scenario": "ksc_product_account_restriction",
+  "description": "Script matrix expectations for ksc_product_account_restriction",
+  "full_access": [],
+  "blocked": {},
+  "notes": "Run run_script_matrix.py, review REPORT rows, then fill full_access and blocked."
+}

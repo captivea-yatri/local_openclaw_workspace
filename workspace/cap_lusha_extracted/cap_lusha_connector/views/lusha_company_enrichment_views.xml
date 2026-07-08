@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="lusha_company_enrichment_form_view" model="ir.ui.view">
+        <field name="name">lusha.company.enrichment.form</field>
+        <field name="model">lusha.company.enrichment</field>
+        <field name="arch" type="xml">
+            <form string="Company Enrichment">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="instance_id"/>
+                            <field name="partner_id"/>
+                            <field name="lusha_company_id"/>
+                            <field name="company_name"/>
+                            <field name="company_domain"/>
+                        </group>
+                        <group>
+                            <field name="apply_overwrite"/>
+                        </group>
+                    </group>
+                    <group string="Result" invisible="state == 'draft'">
+                        <field name="state" widget="badge"
+                               decoration-success="state == 'done'"
+                               decoration-danger="state == 'error'"
+                               decoration-warning="state == 'no_match'"/>
+                        <field name="result_message"/>
+                        <field name="enriched_at"/>
+                    </group>
+                    <group string="Enriched Data" invisible="state != 'done'">
+                        <group>
+                            <field name="lusha_company_id_result"/>
+                            <field name="enriched_name"/>
+                            <field name="enriched_domain"/>
+                            <field name="enriched_industry"/>
+                        </group>
+                        <group>
+                            <field name="enriched_size"/>
+                            <field name="enriched_revenue"/>
+                            <field name="enriched_country"/>
+                        </group>
+                    </group>
+                    <group string="Debug" invisible="not response_json" groups="base.group_no_one">
+                        <field name="response_json" nolabel="1" colspan="2"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_enrich"
+                            string="Enrich"
+                            type="object"
+                            class="btn-primary"
+                            invisible="state == 'done'"/>
+                    <button name="action_apply_to_partner"
+                            string="Apply to Contact"
+                            type="object"
+                            class="btn-secondary"
+                            invisible="state != 'done' or not partner_id"/>
+                    <button string="Close" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_lusha_company_enrichment" model="ir.actions.act_window">
+        <field name="name">Company Enrichment</field>
+        <field name="res_model">lusha.company.enrichment</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

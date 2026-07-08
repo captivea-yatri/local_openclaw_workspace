@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="crm_view_oppor_inherit_form" model="ir.ui.view">
+        <field name="name">crm.lead.oppor.inherit.form.custom</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="sale_crm.crm_case_form_view_oppor"/>
+        <field name="arch" type="xml">
+            <button name="action_sale_quotations_new" position="attributes">
+                <attribute name="groups">access_rights_management.show_sales,access_rights_management.role_sales_hot,access_rights_management.role_sales_cold,access_rights_management.role_sales_cold_team_manager,access_rights_management.role_sales_cold_team_director</attribute>
+            </button>
+            <button name="action_view_sale_quotation" position="attributes">
+                <attribute name="groups">access_rights_management.show_sales,access_rights_management.role_sales_hot,access_rights_management.role_sales_cold,access_rights_management.role_sales_cold_team_manager,access_rights_management.role_sales_cold_team_director</attribute>
+            </button>
+            <button name="action_view_sale_order" position="attributes">
+                <attribute name="groups">access_rights_management.show_sales,access_rights_management.role_sales_hot,access_rights_management.role_sales_cold,access_rights_management.role_sales_cold_team_manager,access_rights_management.role_sales_cold_team_director</attribute>
+            </button>
+        </field>
+    </record>
+
+    <record id="crm_case_kanban_view_leads_disable_quick_add" model="ir.ui.view">
+        <field name="name">crm.lead.kanban.lead</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                    <attribute name="quick_create">false</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

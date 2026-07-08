@@ -1,0 +1,49 @@
+{
+  "timestamp": 1782121136,
+  "database": "odoo19_captivea2",
+  "odoo_url": "https://uriah-apolitical-masako.ngrok-free.dev",
+  "module": "cap_account_intern_company_transection",
+  "checks": [
+    {
+      "label": "is_internal_invoice",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "label": "inverse_move_type",
+      "passed": true,
+      "detail": "in_invoice"
+    },
+    {
+      "label": "inter_comp_journal_entry_id",
+      "passed": true,
+      "detail": "344552"
+    },
+    {
+      "label": "action_post posted",
+      "passed": true,
+      "detail": "posted"
+    },
+    {
+      "label": "post related posted",
+      "passed": true,
+      "detail": "posted"
+    },
+    {
+      "label": "date_maturity",
+      "passed": true,
+      "detail": "1/1"
+    }
+  ],
+  "company_a_id": 1,
+  "company_b_id": 3,
+  "company_a_name": "Captivea USA",
+  "company_b_name": "Captivea France",
+  "product_id": 2002,
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "success": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "scenario": "task_need_solutions_ai",
+  "description": "AI Assistant generates Need and Solution from call transcript into task Description",
+  "modules": ["connect_mistral_ai", "project", "ai"],
+  "full_access": ["President"],
+  "blocked": {},
+  "notes": "UI-only scenario. Requires --task-url or --task-id for an existing project.task."
+}

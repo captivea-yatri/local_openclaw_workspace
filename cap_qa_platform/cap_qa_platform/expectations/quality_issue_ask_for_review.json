@@ -1,0 +1,5 @@
+{
+  "scenario": "quality_issue_ask_for_review",
+  "full_access": ["Team Manager", "President", "CEO", "Sales Manager", "HR", "HR Responsible"],
+  "blocked": {}
+}

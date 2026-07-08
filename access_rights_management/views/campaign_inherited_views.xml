@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="utm_campaign_view_form_access_rights">
+        <field name="name">utm.campaign.view.form.ac</field>
+        <field name="model">utm.campaign</field>
+        <field name="inherit_id" ref="sale.utm_campaign_view_form"/>
+        <field name="arch" type="xml">
+            <button name="action_redirect_to_invoiced" position="attributes">
+                <attribute name="groups">base.group_system,access_rights_management.role_ceo,access_rights_management.role_vp_of_sales</attribute>
+            </button>
+            <button name="action_redirect_to_quotations" position="attributes">
+                <attribute name="groups">access_rights_management.show_sales,sales_team.group_sale_salesman_all_leads</attribute>
+            </button>
+        </field>
+    </record>
+</odoo>

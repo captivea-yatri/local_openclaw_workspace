@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ocean_company_enrichment_form_view" model="ir.ui.view">
+        <field name="name">ocean.company.enrichment.form</field>
+        <field name="model">ocean.company.enrichment</field>
+        <field name="arch" type="xml">
+            <form string="Company Enrichment">
+                <sheet>
+                    <div class="alert alert-info" role="alert">
+                        <p>
+                            <strong>Company Enrichment</strong> submits domains to
+                            <code>POST /v2/enrich/companies</code>.
+                        </p>
+                        <p>
+                            Results are delivered asynchronously to your webhook URL.
+                            Configure it on the Ocean.io instance.
+                        </p>
+                    </div>
+                    <group>
+                        <group string="Domains">
+                            <field name="instance_id"/>
+                            <field name="partner_id"/>
+                            <field name="domain" placeholder="company.com"/>
+                            <field name="domains_text" placeholder="company1.com, company2.com"/>
+                        </group>
+                        <group string="Status" invisible="state == 'draft'">
+                            <field name="state" widget="badge"
+                                   decoration-success="state == 'submitted'"
+                                   decoration-danger="state == 'error'"/>
+                            <field name="result_message"/>
+                            <field name="submitted_at"/>
+                        </group>
+                    </group>
+                    <group string="Debug" invisible="not response_json" groups="base.group_no_one">
+                        <field name="response_json" nolabel="1" colspan="2"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_enrich_companies"
+                            string="Submit Enrichment"
+                            type="object"
+                            class="btn-primary"
+                            invisible="state == 'submitted'"/>
+                    <button string="Close" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_ocean_company_enrichment" model="ir.actions.act_window">
+        <field name="name">Company Enrichment</field>
+        <field name="res_model">ocean.company.enrichment</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

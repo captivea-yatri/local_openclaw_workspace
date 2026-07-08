@@ -1,0 +1,740 @@
+{
+  "account.account": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "account.analytic.account": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "timesheet.analytic.account": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "hr.applicant": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "account.asset": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "res.partner": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "hr.employee": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "hr.employee.public": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "gamification.challenge": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "gamification.goal": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "gamification.goal_finance_information": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "x_target_adjustment": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "account.journal": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "account.move": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "account.payment": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "account.tax": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "crm.lead": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "product.template": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "product.product": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "project.project": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "project.task": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "project.project.stage": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "sale.order": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "sale.order.line": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "crm.stage": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "crm.lost.reason": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "product.pricelist": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "website": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "helpdesk.ticket": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "helpdesk.team": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "purchase.order": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "po.comment": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "social.post": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "mail.mass_mailing": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "marketing.campaign": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "hr.attendance": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "go.live.change.request": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "sign": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "payroll": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "hr.leave": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  },
+  "ir.attachment": {
+    "read": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object search doesn't exist\">"
+    },
+    "create": {
+      "status": "blocked",
+      "error": "<Fault 2: \"Object fields_get doesn't exist\">"
+    },
+    "write": {
+      "status": "skipped",
+      "reason": "no record to write"
+    },
+    "delete": {
+      "status": "skipped",
+      "reason": "no test record created"
+    }
+  }
+}
