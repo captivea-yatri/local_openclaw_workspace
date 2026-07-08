@@ -31,13 +31,16 @@ class ScenarioEntry:
     def resolved_script(self) -> Path | None:
         if not self.script_relpath:
             return None
+
         candidates = [
             ADDONS_ROOT / self.script_relpath,
             LEGACY_BUNDLED_SCRIPTS / Path(self.script_relpath).name,
         ]
+
         for path in candidates:
             if path.is_file():
                 return path
+
         return candidates[0]
 
 
@@ -118,7 +121,12 @@ ROLE_MATRIX_ENTRIES: tuple[ScenarioEntry, ...] = (
     ScenarioEntry(
         id="project_cs_satisfaction_ticket",
         kind="role_matrix",
-        description="Test the customer satisfaction ticket creation and tracking workflow in a project context. This includes creating a project, creating a task, logging time, creating a customer satisfaction ticket linked to the project/task, and verifying the ticket flow through different states (new, in progress, resolved, closed) with satisfaction ratings.",
+        description=(
+            "Test the customer satisfaction ticket creation and tracking workflow in a project context. "
+            "This includes creating a project, creating a task, logging time, creating a customer "
+            "satisfaction ticket linked to the project/task, and verifying the ticket flow through "
+            "different states (new, in progress, resolved, closed) with satisfaction ratings."
+        ),
         modules=("project", "helpdesk", "account_analytic"),
         use_case="Project customer satisfaction ticket workflow.",
         layers=("backend",),
@@ -217,15 +225,15 @@ SCRIPT_ENTRIES: tuple[ScenarioEntry, ...] = (
         auth_user="admin",
         layers=("backend",),
     ),
-ScenarioEntry(
-    id="connect_deepseek_ai",
-    kind="script",
-    description="DeepSeek AI Connector (auto-generated smoke)",
-    modules=('connect_deepseek_ai', 'ai', 'ai_app'),
-    script_relpath="connect_deepseek_ai/models/test_connect_deepseek_ai_rpc.py",
-    auth_user="admin",
-    layers=("backend",),
-),
+    ScenarioEntry(
+        id="connect_deepseek_ai",
+        kind="script",
+        description="DeepSeek AI Connector (auto-generated smoke)",
+        modules=("connect_deepseek_ai", "ai", "ai_app"),
+        script_relpath="connect_deepseek_ai/models/test_connect_deepseek_ai_rpc.py",
+        auth_user="admin",
+        layers=("backend",),
+    ),
 )
 
 ROLE_MATRIX_BY_ID = {e.id: e for e in ROLE_MATRIX_ENTRIES}
@@ -236,16 +244,22 @@ ALL_SCENARIO_IDS: tuple[str, ...] = tuple(ALL_BY_ID.keys())
 
 def get_entry(scenario_id: str) -> ScenarioEntry:
     if scenario_id not in ALL_BY_ID:
-        raise KeyError(f"Unknown scenario {scenario_id!r}. Known: {', '.join(ALL_SCENARIO_IDS)}")
+        raise KeyError(
+            f"Unknown scenario {scenario_id!r}. Known: {', '.join(ALL_SCENARIO_IDS)}"
+        )
+
     return ALL_BY_ID[scenario_id]
 
 
 def list_scenarios(*, layer: LayerKind | None = None) -> list[dict]:
     rows = []
+
     for entry in ALL_SCENARIO_IDS:
         e = ALL_BY_ID[entry]
+
         if layer and layer not in e.layers:
             continue
+
         rows.append(
             {
                 "id": e.id,
@@ -256,4 +270,5 @@ def list_scenarios(*, layer: LayerKind | None = None) -> list[dict]:
                 "use_case": e.use_case,
             }
         )
+
     return rows
