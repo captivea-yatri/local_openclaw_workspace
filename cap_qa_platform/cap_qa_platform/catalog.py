@@ -115,6 +115,14 @@ ROLE_MATRIX_ENTRIES: tuple[ScenarioEntry, ...] = (
         use_case="Task form → AI Assistant → transcript + prompt → Let's do it! → Description.",
         layers=("ui",),
     ),
+    ScenarioEntry(
+        id="project_cs_satisfaction_ticket",
+        kind="role_matrix",
+        description="Test the customer satisfaction ticket creation and tracking workflow in a project context. This includes creating a project, creating a task, logging time, creating a customer satisfaction ticket linked to the project/task, and verifying the ticket flow through different states (new, in progress, resolved, closed) with satisfaction ratings.",
+        modules=("project", "helpdesk", "account_analytic"),
+        use_case="Project customer satisfaction ticket workflow.",
+        layers=("backend",),
+    ),
 )
 
 SCRIPT_ENTRIES: tuple[ScenarioEntry, ...] = (
