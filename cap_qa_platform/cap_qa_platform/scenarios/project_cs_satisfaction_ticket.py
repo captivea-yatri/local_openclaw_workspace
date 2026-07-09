@@ -4,7 +4,7 @@ from __future__ import annotations
 from datetime import date
 from typing import Any
 
-from cap_qa_platform.rpc.client import OdooRPCClient, m2o_id
+from cap_qa_platform.rpc.client import OdooRPCClient
 from cap_qa_platform.scenarios.base import ScenarioRunResult, StepOutcome
 
 
@@ -19,11 +19,10 @@ class ProjectCsSatisfactionTicketScenario:
         self.timesheet_id: int | None = None
         self.ticket_id: int | None = None
         self.rating_id: int | None = None
-        self.admin_user_id: int | None = None
+        self.admin: OdooRPCClient | None = None  # store the admin RPC client
 
-    def bind_admin(self, admin: dict[str, Any]) -> None:
-        self.admin_user_id = admin.get("id")
-        # admin may also contain partner_id etc.
+    def bind_admin(self, admin: OdooRPCClient) -> None:
+        self.admin = admin
 
     def run(self, rpc: OdooRPCClient, role_name: str) -> ScenarioRunResult:
         result = ScenarioRunResult(scenario=self.SCENARIO_ID, role_name=role_name, success=False)
@@ -58,7 +57,6 @@ class ProjectCsSatisfactionTicketScenario:
                     "name": f"Analytic for project {self.project_id}",
                 }
                 account_id = rpc.execute_kw("account.analytic.account", "create", [analytic_vals])
-                # Optionally link the analytic account to the project/task? Not needed for timesheet.
 
             # 4. Log time on the task
             today = date.today().isoformat()
@@ -157,27 +155,16 @@ class ProjectCsSatisfactionTicketScenario:
             assert ticket_data and ticket_data[0]["stage_id"][0] == closed_stage, "Failed to set stage to Closed"
 
             # 7. Add a customer satisfaction rating to the ticket
-            # Get the partner ID from the admin user (or create a partner if needed)
+            # Get the partner ID from the current user (or create a partner if needed)
             partner_id = False
-            if self.admin_user_id:
-                admin_data = rpc.execute_kw(
-                    "res.users",
-                    "read",
-                    [self.admin_user_id],
-                    {"fields": ["partner_id"]},
-                )
-                if admin_data and admin_data[0].get("partner_id"):
-                    partner_id = admin_data[0]["partner_id"][0]
-            if not partner_id:
-                # Fallback: use the partner of the current user
-                partner_data = rpc.execute_kw(
-                    "res.users",
-                    "read",
-                    [rpc.uid],
-                    {"fields": ["partner_id"]},
-                )
-                if partner_data and partner_data[0].get("partner_id"):
-                    partner_id = partner_data[0]["partner_id"][0]
+            partner_data = rpc.execute_kw(
+                "res.users",
+                "read",
+                [rpc.uid],
+                {"fields": ["partner_id"]},
+            )
+            if partner_data and partner_data[0].get("partner_id"):
+                partner_id = partner_data[0]["partner_id"][0]
             if not partner_id:
                 # As a last resort, create a generic partner
                 partner_vals = {
@@ -214,25 +201,30 @@ class ProjectCsSatisfactionTicketScenario:
     def cleanup_as_admin(self, admin) -> None:
         if self.no_cleanup:
             return
-        # We need an admin RPC client; we can reuse the one from bind_admin? Not available.
-        # Instead, we'll create a new OdooRPCClient using the same credentials as the admin user.
-        # However, the base class may have provided a way; but we don't have access to the RPC client here.
-        # The cleanup method is called by the framework with an admin user dict, but no RPC client.
-        # Looking at the base class scenario, the cleanup method likely receives an admin user record
-        # and the framework will create an admin RPC client internally? Actually, the base class
-        # ScenarioRunResult doesn't show that. We'll assume the framework handles RPC client creation.
-        # But the signature is `def cleanup_as_admin(self, admin) -> None:` with no RPC.
-        # This suggests the framework will call this method within an admin RPC context? Not sure.
-        # To be safe, we'll store the admin user ID and rely on the framework to provide an RPC client?
-        # Looking at other scenarios in the codebase might help, but we don't have them.
-        # Let's assume the framework will call this method with an admin user dict and we can
-        # create a temporary RPC client using the same environment as the run method? Not possible.
-        # Alternatively, the base class might have set up an admin RPC client and passed it via `admin`?
-        # The `admin` parameter is likely a user record dict, not an RPC client.
-        # We'll need to think: the scenario is run by the QA platform; it likely creates an RPC client
-        # for the role, runs `run`, then creates an admin RPC client and calls `cleanup_as_admin`.
-        # However, the method signature doesn't include the RPC client. Perhaps the base class
-        # expects us to store the RPC client from `run`? But we didn't.
-        # Let's check the base class by looking at the file? We can read the base scenario file.
-        # Let's do that quickly.
-        pass
+        # We need to clean up the records we created.
+        # We'll delete in reverse order to avoid foreign key issues.
+        if self.rating_id:
+            try:
+                admin.unlink("rating.rating", [self.rating_id])
+            except Exception:
+                pass
+        if self.ticket_id:
+            try:
+                admin.unlink("helpdesk.ticket", [self.ticket_id])
+            except Exception:
+                pass
+        if self.timesheet_id:
+            try:
+                admin.unlink("account.analytic.line", [self.timesheet_id])
+            except Exception:
+                pass
+        if self.task_id:
+            try:
+                admin.unlink("project.task", [self.task_id])
+            except Exception:
+                pass
+        if self.project_id:
+            try:
+                admin.unlink("project.project", [self.project_id])
+            except Exception:
+                pass
